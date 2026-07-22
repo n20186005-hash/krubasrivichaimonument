@@ -128,6 +128,7 @@
       "tag": "Getting here",
       "title": "How to reach the monument",
       "items": [
+        { "title": "From Chiang Mai International Airport", "desc": "The airport is ~8 km away. ① Take a taxi or Grab from the arrivals hall — about 15–20 min, roughly ฿150–250; ② Follow the Super Highway then head west on Huay Kaew Rd to the monument; ③ On a budget, take the airport bus to the Old City and transfer to a red songthaew." },
         { "title": "Red songthaew", "desc": "From Chiang Mai University / Nimman, ~15 min" },
         { "title": "Tuk-tuk or taxi", "desc": "From the old city, ~20 min" },
         { "title": "Car / motorbike", "desc": "Direct via Huay Kaew Road" }
@@ -197,7 +198,7 @@
       "items": [
         { "title": "Paved level paths", "desc": "Wheelchair accessible to the statue" },
         { "title": "Step-free viewing", "desc": "Open plaza in front of the monument" },
-        { "title": "Restrooms", "desc": "Available nearby" }
+        { "title": "Restrooms", "desc": "Public restrooms nearby" }
       ]
     },
     "faqTitle": "Frequently asked questions",
