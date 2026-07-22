@@ -1,0 +1,117 @@
+---
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const legacy = messages.legacy;
+---
+
+<section id="legacy" class="py-20 bg-ivory text-ink">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{legacy.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{legacy.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ink/80">{legacy.intro}</p>
+
+    <!-- 1. Three Core Philosophies -->
+    <div class="mt-12">
+      <h3 class="font-display text-2xl text-teak mb-2">{legacy.philosophies.title}</h3>
+      <p class="text-sm text-ink/75 mb-6 max-w-3xl">{legacy.philosophies.intro}</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        {legacy.philosophies.items.map((p) => (
+          <div class="rounded-2xl border border-gold/30 bg-white/60 p-6 shadow-sm">
+            <div class="font-display text-2xl text-teak font-semibold">{p.name}</div>
+            <div class="text-sm text-gold tracking-wide mb-3">{p.nameEn}</div>
+            <p class="text-sm font-medium text-teak/90 mb-3">{p.tagline}</p>
+            <ul class="space-y-2 text-sm text-ink/75">
+              {p.points.map((pt) => (
+                <li class="flex gap-2">
+                  <span class="text-gold mt-0.5" aria-hidden="true">•</span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 2. GMS Transnational Temple Network -->
+    <div class="mt-16">
+      <h3 class="font-display text-2xl text-teak mb-2">{legacy.gms.title}</h3>
+      <p class="text-sm text-ink/75 mb-6 max-w-3xl">{legacy.gms.intro}</p>
+      <div class="overflow-x-auto rounded-2xl border border-gold/30">
+        <table class="w-full text-sm border-collapse">
+          <thead class="bg-teak text-ivory">
+            <tr>
+              <th class="text-left font-medium px-5 py-3 w-48">{legacy.gms.headRegion}</th>
+              <th class="text-left font-medium px-5 py-3">{legacy.gms.headTemples}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {legacy.gms.rows.map((r) => (
+              <tr class="border-t border-gold/20 odd:bg-white/50">
+                <td class="px-5 py-4 align-top font-semibold text-teak whitespace-nowrap">{r.region}</td>
+                <td class="px-5 py-4 align-top text-ink/80">{r.temples}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3. UNESCO Assessment -->
+    <div class="mt-16">
+      <h3 class="font-display text-2xl text-teak mb-2">{legacy.unesco.title}</h3>
+      <p class="text-sm text-ink/75 mb-6 max-w-3xl">{legacy.unesco.intro}</p>
+      <div class="overflow-x-auto rounded-2xl border border-gold/30">
+        <table class="w-full text-sm border-collapse">
+          <thead class="bg-teak text-ivory">
+            <tr>
+              <th class="text-left font-medium px-5 py-3 w-48">{legacy.unesco.headArea}</th>
+              <th class="text-left font-medium px-5 py-3">{legacy.unesco.headFit}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {legacy.unesco.rows.map((r) => (
+              <tr class="border-t border-gold/20 odd:bg-white/50">
+                <td class="px-5 py-4 align-top font-semibold text-teak whitespace-nowrap">{r.area}</td>
+                <td class="px-5 py-4 align-top text-ink/80">{r.fit}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 4. Pilgrimage Route -->
+    <div class="mt-16">
+      <h3 class="font-display text-2xl text-teak mb-2">{legacy.pilgrimage.title}</h3>
+      <p class="text-sm text-ink/75 mb-6 max-w-3xl">{legacy.pilgrimage.intro}</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {legacy.pilgrimage.stations.map((s) => (
+          <div class="rounded-2xl border border-gold/25 bg-white/50 p-5">
+            <div class="font-display text-gold text-sm mb-2">{s.num}</div>
+            <h4 class="font-display text-teak font-semibold leading-snug mb-2">{s.name}</h4>
+            <p class="text-sm text-ink/70">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 5. Timeline -->
+    <div class="mt-16">
+      <h3 class="font-display text-2xl text-teak mb-6">{legacy.timeline.title}</h3>
+      <ol class="relative border-l-2 border-gold/40 ml-3 space-y-8">
+        {legacy.timeline.events.map((e) => (
+          <li class="ml-6">
+            <span class="absolute -left-[9px] mt-1.5 h-4 w-4 rounded-full bg-gold border-2 border-ivory"></span>
+            <div class="font-display text-gold text-sm">{e.date}</div>
+            <h4 class="font-display text-teak font-semibold text-lg">{e.title}</h4>
+            {e.place && <div class="text-sm text-teak/80">{e.place}</div>}
+            <p class="mt-1 text-sm text-ink/75">{e.desc}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

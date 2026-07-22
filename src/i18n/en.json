@@ -59,7 +59,7 @@
     "label": "About",
     "heading": "Who Was Kruba Srivichai?",
     "lead": "At the foot of Doi Suthep stands a quiet monument to one of Northern Thailand's most beloved spiritual figures.",
-    "paragraph1": "Kruba Srivichai (1878–1939) was a monk of the Lanna tradition, remembered across the North as 'Kruba' — a venerated teacher. Born near Lampang, he devoted his life to meditation, austerity and public works, gathering a vast following.",
+    "paragraph1": "Kruba Srivichai (1878–1939) was a monk of the Lanna tradition, remembered across the North as 'Kruba' — a venerated teacher. Born in Ban Bang village, Li District, Lamphun Province, he devoted his life to meditation, austerity and public works, gathering a vast following.",
     "paragraph2": "He is best known for organizing thousands of volunteers to build roads, bridges and temples where few existed. His most famous work, the road up Doi Suthep, still carries pilgrims and travelers to this day — which is why this monument stands at its base.",
     "neutrality": "This page is an independent, educational overview; it is not affiliated with any temple or foundation.",
     "quote": "He built the roads so that others could reach the mountain.",
@@ -86,9 +86,9 @@
     "heading": "History & Legends",
     "intro": "The story of Kruba Srivichai is woven into the modern history of Northern Thailand — a monk whose faith moved both people and, as legend has it, the earth itself.",
     "blocks": [
-      { "title": "Early life & ordination", "text": "Born in 1878 in Ban Pang, near Lampang, he was ordained as a novice and later became a monk devoted to meditation, austerity and public works. He gathered a large following across Lanna." },
+      { "title": "Early life & ordination", "text": "Born in 1878 in Ban Bang village, Li District, Lamphun Province, he was ordained as a novice and later became a monk devoted to meditation, austerity and public works. He gathered a large following across Lanna." },
       { "title": "The 'Engineer Monk'", "text": "At a time when Northern Thailand had few roads, Kruba Srivichai organized thousands of lay volunteers to build roads, bridges and temples. He is credited with restoring and founding more than a hundred religious sites." },
-      { "title": "The road to Doi Suthep", "text": "His most famous project was the road up Doi Suthep to Wat Phra That Doi Suthep, completed in the mid-1930s. Before this, pilgrims reached the temple on foot along a steep mountain trail." },
+      { "title": "The Doi Suthep Road Miracle", "text": "His most famous project was the road up Doi Suthep to Wat Phra That Doi Suthep. Work began on 9 November 1934; with no modern machinery or government funding, over 11,000 volunteers carved an 11.5 km mountain road by hand in just 5 months and 22 days (opened 30 April 1935), ending the era of pilgrimage on foot—hailed as the 'Doi Suthep Road Miracle'." },
       { "title": "Passing & the monument", "text": "Kruba Srivichai fell ill and passed away in 1939. Decades later, this monument was raised at the mountain's foot so that travelers would remember the monk who connected the city to its sacred hill." }
     ],
     "legend": {
@@ -97,7 +97,7 @@
     },
     "didYouKnow": {
       "title": "Did you know?",
-      "text": "He is often called the 'Father of Northern Thai Roads'. The Doi Suthep road was built largely by volunteer labor in the 1930s. His death anniversary is still marked by candle processions and offerings, and the monument sits at the traditional 'kilometer zero' of the Doi Suthep climb."
+      "text": "He is often called the 'Father of Northern Thai Roads'. The Doi Suthep road was built by hand by over 11,000 volunteers in just 5 months and 22 days (opened 30 April 1935). His death anniversary is still marked by candle processions and offerings, and the monument sits at the traditional 'kilometer zero' of the Doi Suthep climb."
     },
     "folklore": {
       "title": "Stories still told",
@@ -343,6 +343,61 @@
     "unofficial": "This is an unofficial, non-commercial visitors' guide.",
     "dataSource": "Data from open sources and the Google Maps listing.",
     "copyright": "© 2026 Kruba Srivichai Monument · non-profit"
+  },
+  "legacy": {
+    "label": "Cultural Depth · Transnational Faith Network",
+    "heading": "The Path of Kruba Sriwichai: Dharma, Culture & Development",
+    "intro": "The master's lifelong contributions to society, culture and faith form the core of the “Path of Kruba Sriwichai”, whose influence crossed borders to reach across the entire Greater Mekong Subregion.",
+    "philosophies": {
+      "title": "The Path of Kruba Sriwichai — Three Dimensions",
+      "intro": "From the remote hills of Lanna to the whole Greater Mekong Subregion, the master's spirit is carried on through three threads: faith and the inner life, guardianship of cultural heritage, and grassroots infrastructure.",
+      "items": [
+        { "name": "Dharma Path", "nameEn": "Dharma Path", "tagline": "Source of faith and the inner life", "points": [ "Strict observance: rooted in rigorous Buddhist precepts, he upheld vegetarianism and ascetic practice, teaching plain yet profound Dharma wisdom.", "Spiritual guidance: helping people find inner peace, compassion and moral cultivation in daily life." ] },
+        { "name": "Cultural Path", "nameEn": "Cultural Path", "tagline": "Guardian of Lanna heritage", "points": [ "Art for the Dharma: guided by the ideal of “art for the Dharma,” he led the restoration of over a hundred northern Thai religious sites and Lanna-style temples.", "Cultural continuity: protecting and reviving Lanna architecture, crafts and faith traditions for generations to come." ] },
+        { "name": "Development Path", "nameEn": "Development Path", "tagline": "Livelihoods and infrastructure", "points": [ "Mobilising society: using faith as a bond, he called on tens of thousands of devotees to join public works voluntarily.", "Improving lives: he initiated and led the building of roads (such as the famous Doi Suthep mountain road), bridges and public facilities, greatly improving local transport and community living standards." ] }
+      ]
+    },
+    "gms": {
+      "title": "The Greater Mekong Subregion Transnational Temple Network",
+      "intro": "Research by international scholars (e.g. Paul Cohen, Katherine A. Bowie, Charles Keyes) shows that after the master's passing, his disciples and spiritual friends extended his teachings and network across the entire Greater Mekong Subregion (GMS), forging broad cross-border faith and cultural ties.",
+      "headRegion": "Country / Region",
+      "headTemples": "Affiliated & Lineage Temples",
+      "rows": [
+        { "region": "China (Xishuangbanna, etc.)", "temples": "Wat Pa Chet Maha Ratchathan, Wat Maha Ratchathan Sutthawas, Wat Ratchathan Luang Chang Khob Chom Chai, Wat Phra That Luang Chin Ngoen, Wat Phra Kaew, and others." },
+        { "region": "Myanmar", "temples": "Wat Phra That Chom Chaeng, Wat Ban Yuen, Wat Yang Mon, Wat Kad Fa, Wat Ratchathan Hua Khuang, Wat Phra That Luang Chom Kham, Wat Sri Bun Rueang." },
+        { "region": "Laos", "temples": "Wat Pa Phao, Wat Sanguankhalam, Wat Phu Khwai." },
+        { "region": "Thailand (Northern core)", "temples": "Wat Phra That Hariphunchai, Wat Ban Bang, Wat Ban Hong Luang, Wat Phra That Doi Suthep." }
+      ]
+    },
+    "unesco": {
+      "title": "UNESCO Nomination Highlights",
+      "intro": "Thailand's Ministry of Culture, Tourism Authority of Thailand and Lamphun Province are jointly promoting Kruba Sriwichai for inclusion among UNESCO's 2028 anniversary eminent figures. His qualities fully meet UNESCO's selection criteria:",
+      "headArea": "UNESCO Field",
+      "headFit": "Alignment & Contribution",
+      "rows": [
+        { "area": "Social and Human Sciences", "fit": "Embodying noble character and selfless devotion, aligning with UNESCO Global Citizenship Education (GCED) values of compassion, empathy, fairness and social responsibility." },
+        { "area": "Culture Sector", "fit": "Protecting and strengthening Lanna traditional culture, fostering cultural diversity, intercultural dialogue and a culture of peace." },
+        { "area": "Education", "fit": "Setting a moral and ethical role model for children and youth to engage actively in society, cultivating global citizenship." }
+      ]
+    },
+    "pilgrimage": {
+      "title": "Pilgrimage & Cultural Tourism Route (Lamphun ➔ Chiang Mai)",
+      "intro": "Key stops of the “Lanna Sage Kruba Sriwichai Pilgrimage Route” launched by the Lamphun Provincial Cultural Office:",
+      "stations": [
+        { "num": "Stop 1", "name": "Wat Ban Bang, Lamphun", "desc": "Place of birth: the source and birthplace of Kruba Sriwichai." },
+        { "num": "Stop 2", "name": "Wat Ban Hong Luang, Lamphun", "desc": "Place of ordination: where at age 21 he was ordained and received the name “Sriwichai”." },
+        { "num": "Stop 3", "name": "Wat Phra That Hariphunchai, Lamphun", "desc": "Center of faith: a “living museum” preserving the master's life story and relics." },
+        { "num": "Stop 4", "name": "Kruba Srivichai Monument & Doi Suthep, Chiang Mai", "desc": "Ultimate holy site: the starting point of the road and the gateway to Wat Phra That Doi Suthep." }
+      ]
+    },
+    "timeline": {
+      "title": "Key Dates & Academic Events",
+      "events": [
+        { "date": "1–11 June 2025", "title": "Dharma Pilgrimage Tour", "place": "Tessantri Vithi Kruba Sriwichai", "desc": "A cross-regional Dharma pilgrimage tracing the master's footsteps." },
+        { "date": "27–29 September 2026", "title": "11th National & 2nd International Academic Conference", "place": "Lamphun Buddhist College / Mahachulalongkornrajavidyalaya University (MCU)", "desc": "Theme: “The 150th Anniversary of Kruba Sriwichai's Birth: A World-Renowned Figure”." },
+        { "date": "2028", "title": "150th Birth Anniversary & UNESCO Nomination Year", "place": "", "desc": "Thailand is promoting his inclusion among UNESCO anniversary eminent figures as the highest tribute for his 150th birth anniversary." }
+      ]
+    }
   },
   "legal": {
     "privacy-policy": {

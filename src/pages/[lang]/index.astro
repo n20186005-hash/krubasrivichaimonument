@@ -5,6 +5,7 @@ import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import About from '../../components/About.astro';
 import History from '../../components/History.astro';
+import Legacy from '../../components/Legacy.astro';
 import Guide from '../../components/Guide.astro';
 import Sources from '../../components/Sources.astro';
   import Food from '../../components/Food.astro';
@@ -27,6 +28,7 @@ const { lang, messages } = await getI18n(Astro.url);
     <Hero lang={lang} messages={messages} />
     <About messages={messages} />
     <History messages={messages} />
+    <Legacy messages={messages} />
     <Guide messages={messages} />
     <Food messages={messages} />
     <Gallery messages={messages} />
