@@ -1,0 +1,372 @@
+{
+  "meta": {
+    "title": "Kruba Srivichai Monument — History, Visit Guide & Photos",
+    "description": "A complete guide to the Kruba Srivichai Monument in Chiang Mai: the life and legends of the revered 'Engineer Monk', how to get there, what to see, nearby food, and visitor reviews.",
+    "keywords": "Kruba Srivichai Monument, Chiang Mai, Doi Suthep, Lanna monk, Thailand attractions"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "history": "History",
+    "guide": "Visit Guide",
+    "food": "Nearby Eats",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "map": "Map"
+  },
+  "hero": {
+    "eyebrow": "A Landmark of Northern Thai Devotion",
+    "label": "Monument",
+    "titleMain": "Kruba Srivichai Monument",
+    "titleAccent": "Kruba Srivichai",
+    "subtitle": "At the foot of Doi Suthep stands a serene standing statue honoring Kruba Srivichai (1878–1939), the beloved Lanna monk known as the 'Engineer Monk' who led the building of roads and temples across Northern Thailand.",
+    "cta1": "Plan Your Visit",
+    "cta2": "View Photos",
+    "quickNav": [
+      { "label": "History", "href": "#history" },
+      { "label": "Getting There", "href": "#guide" },
+      { "label": "Map", "href": "#map" },
+      { "label": "Reviews", "href": "#reviews" }
+    ],
+    "rating": "4.7",
+    "reviewCount": "8,621",
+    "coordsLabel": "Coords: 18.8128°N, 98.9435°E",
+    "viewLocation": "View on Google Maps",
+    "boardCategory": "Sacred Site",
+    "boardTitle": "Kruba Srivichai Monument",
+    "boardEn": "Chiang Mai, Thailand",
+    "plannerTitle": "Live Weather",
+    "liveWeather": "Live",
+    "plannerNote": "Based on current conditions",
+    "defaultTemp": "28°",
+    "defaultCond": "Clear",
+    "defaultWind": "8 km/h",
+    "sunsetIndexLabel": "Sunset Viewing Index",
+    "sunsetIndexDefault": "☀️ Clear · Golden-light 85%",
+    "goldenHourLabel": "Golden Hour",
+    "defaultGolden": "06:30 – 07:30",
+    "sunsetLabel": "Sunset",
+    "defaultSunset": "18:45",
+    "blueHourLabel": "Blue Hour",
+    "defaultBlue": "19:05 – 19:35",
+    "crowdWarningLabel": "Tip",
+    "defaultTip": "Busy in the early evening",
+    "lightCaption": "Times are calculated from the monument's actual coordinates.",
+    "weatherError": "",
+    "goldenChanceLabel": "Golden chance"
+  },
+  "about": {
+    "label": "About",
+    "heading": "Who Was Kruba Srivichai?",
+    "lead": "At the foot of Doi Suthep stands a quiet monument to one of Northern Thailand's most beloved spiritual figures.",
+    "paragraph1": "Kruba Srivichai (1878–1939) was a monk of the Lanna tradition, remembered across the North as 'Kruba' — a venerated teacher. Born near Lampang, he devoted his life to meditation, austerity and public works, gathering a vast following.",
+    "paragraph2": "He is best known for organizing thousands of volunteers to build roads, bridges and temples where few existed. His most famous work, the road up Doi Suthep, still carries pilgrims and travelers to this day — which is why this monument stands at its base.",
+    "neutrality": "This page is an independent, educational overview; it is not affiliated with any temple or foundation.",
+    "quote": "He built the roads so that others could reach the mountain.",
+    "quoteAuthor": "— A Northern Thai saying about Kruba Srivichai",
+    "stats": [
+      { "value": "1878–1939", "label": "Life of Kruba Srivichai" },
+      { "value": "100+", "label": "Temples & sites restored" },
+      { "value": "24h", "label": "Monument open daily" },
+      { "value": "4.7★", "label": "Visitor rating" }
+    ],
+    "highlights": [
+      { "tag": "🛕", "title": "Pay respects", "desc": "Offer flowers or a candle at the base of the statue." },
+      { "tag": "🥾", "title": "Start the climb", "desc": "Songthaews and the trail to Doi Suthep begin here." },
+      { "tag": "📸", "title": "Photograph", "desc": "Morning light and the mountain make the best frames." }
+    ],
+    "editorTip": {
+      "tag": "Editor's note",
+      "text": "Visiting info may change — verify hours and access before you travel.",
+      "ctaLabel": "See sources"
+    }
+  },
+  "history": {
+    "label": "History",
+    "heading": "History & Legends",
+    "intro": "The story of Kruba Srivichai is woven into the modern history of Northern Thailand — a monk whose faith moved both people and, as legend has it, the earth itself.",
+    "blocks": [
+      { "title": "Early life & ordination", "text": "Born in 1878 in Ban Pang, near Lampang, he was ordained as a novice and later became a monk devoted to meditation, austerity and public works. He gathered a large following across Lanna." },
+      { "title": "The 'Engineer Monk'", "text": "At a time when Northern Thailand had few roads, Kruba Srivichai organized thousands of lay volunteers to build roads, bridges and temples. He is credited with restoring and founding more than a hundred religious sites." },
+      { "title": "The road to Doi Suthep", "text": "His most famous project was the road up Doi Suthep to Wat Phra That Doi Suthep, completed in the mid-1930s. Before this, pilgrims reached the temple on foot along a steep mountain trail." },
+      { "title": "Passing & the monument", "text": "Kruba Srivichai fell ill and passed away in 1939. Decades later, this monument was raised at the mountain's foot so that travelers would remember the monk who connected the city to its sacred hill." }
+    ],
+    "legend": {
+      "title": "The legend of the moving earth",
+      "text": "Local lore says that when volunteers struggled to haul giant stones up the mountain, Kruba Srivichai's blessings seemed to lighten the load — and that rocks reportedly rolled into place on their own. Whether miracle or morale, the road was finished against all expectation."
+    },
+    "didYouKnow": {
+      "title": "Did you know?",
+      "text": "He is often called the 'Father of Northern Thai Roads'. The Doi Suthep road was built largely by volunteer labor in the 1930s. His death anniversary is still marked by candle processions and offerings, and the monument sits at the traditional 'kilometer zero' of the Doi Suthep climb."
+    },
+    "folklore": {
+      "title": "Stories still told",
+      "tale": "Elders say Kruba Srivichai could calm storms and that his merit protected workers from harm. Whether literal or symbolic, these stories show how deeply he is trusted as a guardian of the road and the mountain.",
+      "shrineTitle": "About this monument",
+      "shrine": "The standing statue at the foot of Doi Suthep marks where the climb begins. It is a place to pause, offer respect, and begin the pilgrimage upward."
+    }
+  },
+  "guide": {
+    "label": "Visit Guide",
+    "heading": "Plan Your Visit",
+    "lead": "Free, open around the clock, and easy to reach — here is everything you need for a smooth visit to the monument and the lower slopes of Doi Suthep.",
+    "hours": {
+      "tag": "Opening hours",
+      "time": "Open 24 hours",
+      "items": [ { "label": "Every day", "value": "00:00–23:59" } ]
+    },
+    "fees": {
+      "tag": "Admission",
+      "title": "Free entry",
+      "items": [
+        { "title": "Monument grounds", "desc": "Open to everyone, no ticket" },
+        { "title": "Roadside parking", "desc": "Small local fee" },
+        { "title": "Doi Suthep temple", "desc": "Separate ticket on the mountain" }
+      ]
+    },
+    "transport": {
+      "tag": "Getting here",
+      "title": "How to reach the monument",
+      "items": [
+        { "title": "Red songthaew", "desc": "From Chiang Mai University / Nimman, ~15 min" },
+        { "title": "Tuk-tuk or taxi", "desc": "From the old city, ~20 min" },
+        { "title": "Car / motorbike", "desc": "Direct via Huay Kaew Road" }
+      ]
+    },
+    "photography": {
+      "title": "Photography tips",
+      "intro": "The white statue and the green mountain make a photogenic pair in almost any light.",
+      "timesTitle": "Best times",
+      "times": [
+        { "period": "Sunrise (06:30–08:00)", "desc": "Soft light on the face of the statue" },
+        { "period": "Late afternoon (17:30–18:45)", "desc": "Warm backlight and golden glow" }
+      ],
+      "spotsTitle": "Where to shoot",
+      "spots": [
+        { "name": "Front plaza", "view": "Full statue with mountains behind", "tip": "Low angle to include the hill" },
+        { "name": "Side path", "view": "Framed by trees and stones", "tip": "Good for candid devotees" }
+      ],
+      "settingsTitle": "Camera settings",
+      "settings": [
+        { "style": "Portrait of statue", "camera": "50–85mm", "phone": "Portrait mode" },
+        { "style": "Wide landscape", "camera": "16–35mm", "phone": "0.5x wide" }
+      ],
+      "tipsTitle": "Quick tips",
+      "tips": [
+        "Go early to avoid crowds",
+        "Bring a polarizer for the sky",
+        "Respect worshippers when framing"
+      ],
+      "viewLabel": "View",
+      "cameraLabel": "Camera",
+      "phoneLabel": "Phone"
+    },
+    "bestTime": {
+      "title": "When to come",
+      "intro": "Chiang Mai has three clear seasons; the cool and dry months are most comfortable.",
+      "seasons": [
+        { "tag": "Cool", "months": "Nov–Feb", "name": "Best weather", "desc": "Pleasant temperatures, clear skies, busiest season." },
+        { "tag": "Hot", "months": "Mar–May", "name": "Hot & hazy", "desc": "High heat; haze can mute distant views." },
+        { "tag": "Rainy", "months": "Jun–Oct", "name": "Green season", "desc": "Afternoon showers, lush hills, fewer crowds." }
+      ]
+    },
+    "safety": {
+      "title": "Stay safe",
+      "items": [
+        { "title": "Traffic on Huay Kaew Rd", "desc": "Busy road — use the crosswalk" },
+        { "title": "Monkeys on the trail", "desc": "Do not feed or provoke them" },
+        { "title": "Belongings", "desc": "Keep valuables close in crowds" }
+      ]
+    },
+    "hazeSeason": {
+      "tag": "Haze season (Mar–Apr)",
+      "text": "During burning season, air quality can drop. Check the AQI and consider a mask for long outdoor stays."
+    },
+    "emergency": {
+      "title": "Useful numbers",
+      "intro": "Keep these handy during your trip:",
+      "items": [
+        { "title": "Tourist Police (English)", "value": "1155" },
+        { "title": "Ambulance / Rescue", "value": "1669" },
+        { "title": "Police", "value": "191" }
+      ]
+    },
+    "accessibility": {
+      "title": "Getting around",
+      "intro": "The site is friendly to most visitors:",
+      "items": [
+        { "title": "Paved level paths", "desc": "Wheelchair accessible to the statue" },
+        { "title": "Step-free viewing", "desc": "Open plaza in front of the monument" },
+        { "title": "Restrooms", "desc": "Available nearby" }
+      ]
+    },
+    "faqTitle": "Frequently asked questions",
+    "faqs": [
+      { "q": "Is there an entrance fee?", "a": "No. The monument grounds are open to everyone free of charge, 24 hours a day." },
+      { "q": "How do I continue to Doi Suthep?", "a": "From the monument you can take a red songthaew up the mountain, or walk part of the trail. The temple is a short drive above." },
+      { "q": "What should I wear?", "a": "As a religious site, please dress modestly — cover shoulders and knees, and remove hats near the statue." },
+      { "q": "When is the best time to visit?", "a": "Early morning for cool air and soft light, or late afternoon for the sunset glow on the statue." }
+    ],
+    "nearby": {
+      "title": "Nearby sights",
+      "items": [
+        { "name": "Wat Phra That Doi Suthep", "desc": "The famous mountaintop temple, a short drive above.", "url": "https://en.wikipedia.org/wiki/Wat_Phra_That_Doi_Suthep" },
+        { "name": "Huay Kaew Waterfall", "desc": "A small waterfall a short walk from the monument.", "url": "" },
+        { "name": "Chiang Mai University", "desc": "Shops, cafés and the Nimman area nearby.", "url": "" }
+      ],
+      "cta": "Open in maps"
+    }
+  },
+  "reviews": {
+    "label": "Reviews",
+    "heading": "What Visitors Say",
+    "intro": "Travelers from Thailand and around the world stop here on their way to Doi Suthep. Here is a sample of what they share.",
+    "disclaimer": "Aggregated from public Google reviews.",
+    "declaration": "Reviews shown for reference; ratings reflect Google as of listing.",
+    "featured": [
+      { "text": "A peaceful spot to pause and pay respect before heading up the mountain. The statue is beautiful and the air feels calm.", "source": "— A visitor from Bangkok" },
+      { "text": "Our songthaew driver stopped here so we could light a candle. Learning about the monk who built the road made the climb meaningful.", "source": "— A traveler from Germany" }
+    ],
+    "items": [
+      { "text": "[Atmosphere] Quiet and reverent, not touristy at all. Loved the mountain backdrop.", "rating": "5", "name": "Pimrada T.", "date": "2025-11-02" },
+      { "text": "[History] Finally understood why locals respect Kruba Srivichai so much. Great starting point for Doi Suthep.", "rating": "5", "name": "Daniel R.", "date": "2025-10-18" },
+      { "text": "[Photo] Came at 7am, perfect light on the statue. Easy to combine with the temple above.", "rating": "5", "name": "Yuki M.", "date": "2025-09-30" },
+      { "text": "[Family] Our kids enjoyed the open space and the story. Free and accessible.", "rating": "4", "name": "Somchai K.", "date": "2025-12-05" },
+      { "text": "[Tip] Combine with Huay Kaew waterfall a short walk away. Bring water in the heat.", "rating": "5", "name": "Emma L.", "date": "2025-08-21" },
+      { "text": "[Local] We stop here every year on his anniversary — very meaningful for Northern Thais.", "rating": "5", "name": "Nisachon W.", "date": "2025-07-14" },
+      { "text": "[Convenience] Right by the road, hard to miss if you're heading to Doi Suthep.", "rating": "4", "name": "Tom B.", "date": "2025-06-09" },
+      { "text": "[Peace] A calm breath before the busy temple. Worth five minutes of your time.", "rating": "5", "name": "Aisha P.", "date": "2025-05-27" }
+    ]
+  },
+  "gallery": {
+    "label": "Gallery",
+    "heading": "Monument Gallery",
+    "intro": "A look at the statue, the surrounding grounds, and the mountain it watches over.",
+    "historicalNote": "",
+    "credits": "Photos via public Google Maps contributors.",
+    "alts": [
+      "Kruba Srivichai Monument standing statue",
+      "Front view of the monument at the foot of Doi Suthep",
+      "Devotees offering flowers and candles",
+      "The statue framed by the mountains",
+      "Close-up of the serene facial features",
+      "Evening light on the white monument",
+      "The base and surrounding garden",
+      "Pilgrims beginning the climb to Doi Suthep",
+      "Floral garlands at the altar",
+      "The monument against a blue northern sky",
+      "Walking path leading up the mountain",
+      "Candle offerings at dusk",
+      "Wide view of the grounds and hills",
+      "The standing figure in golden hour",
+      "Stone steps and shaded trees",
+      "Visitors taking photos",
+      "The monument seen from Huay Kaew Road",
+      "Peaceful corner with benches"
+    ],
+    "viewLocation": "View on Google Maps"
+  },
+  "food": {
+    "label": "Nearby Eats",
+    "heading": "Taste Northern Thai Food",
+    "lead": "The monument sits between Chiang Mai University, Nimman and the old city — a great base to try the flavors of Lanna.",
+    "dishes": [
+      { "tag": "🍜", "name": "Khao Soi", "price": "฿50–80", "desc": "Northern curry noodle soup with crispy noodles." },
+      { "tag": "🌭", "name": "Sai Ua", "price": "฿60–100", "desc": "Herbal Northern Thai sausage, grilled." },
+      { "tag": "🌶️", "name": "Nam Prik Num", "price": "฿40–70", "desc": "Roasted green-chili dip with vegetables." },
+      { "tag": "🍲", "name": "Khantoke set", "price": "฿200–400", "desc": "A shareable Northern feast on a low tray." },
+      { "tag": "🍧", "name": "Thai iced tea", "price": "฿30–50", "desc": "Sweet, creamy refreshment for the heat." }
+    ],
+    "quote": {
+      "text": "After paying respects, nothing beats a bowl of khao soi in Nimman just down the road.",
+      "author": "— A Chiang Mai local"
+    }
+  },
+  "sources": {
+    "label": "Sources",
+    "heading": "References & Credits",
+    "intro": "This non-profit guide compiles publicly available information to help visitors learn about the monument.",
+    "photoTitle": "Photo credits",
+    "photoItems": [
+      { "text": "Photos are sourced from public Google Maps contributors; copyright belongs to the original authors.", "url": "", "linkLabel": "" },
+      { "text": "Historical context adapted from open encyclopedic sources.", "url": "https://en.wikipedia.org/wiki/Kruba_Srivichai", "linkLabel": "Wikipedia" }
+    ],
+    "factTitle": "Fact-checking",
+    "factText": "Key facts (coordinates, rating, hours) are drawn from the official Google Maps listing and public references. If something looks off, tell us.",
+    "correctionTitle": "Found an error?",
+    "correctionText": "We are a small volunteer team. If you spot a mistake in the history or visiting info, please let us know.",
+    "correctionMailto": "mailto:editor@krubasrivichaimonument.com",
+    "correctionCta": "Suggest a correction",
+    "copyright": "Kruba Srivichai Monument project"
+  },
+  "mapSection": {
+    "label": "Location",
+    "heading": "Location & Directions",
+    "lead": "Find the monument at the foot of Doi Suthep on Huay Kaew Road — the gateway to the mountain.",
+    "stats": [
+      { "tag": "Rating", "value": "4.7", "sub": "from 8,621 reviews" },
+      { "tag": "Hours", "value": "24 hrs", "sub": "open every day" },
+      { "tag": "Admission", "value": "Free", "sub": "no ticket required" },
+      { "tag": "Setting", "value": "Doi Suthep", "sub": "Chiang Mai" }
+    ],
+    "address": "99 Huay Kaew Rd, Tambon Su Thep, Mueang Chiang Mai District, Chiang Mai 50300, Thailand",
+    "plusCode": "RW7W+4F",
+    "coords": "18.8128°N, 98.9435°E",
+    "rWalkTip": {
+      "title": "Start of the climb",
+      "desc": "This is the traditional launch point for songthaews and the walking trail up to Wat Phra That Doi Suthep."
+    }
+  },
+  "footer": {
+    "brand": { "name": "Kruba Srivichai Monument", "tagline": "A Chiang Mai landmark of devotion" },
+    "about": "An independent, non-profit guide to the Kruba Srivichai Monument — history, visiting tips, and photos for travelers and devotees alike.",
+    "navTitle": "Menu",
+    "navItems": [
+      { "href": "#about", "label": "About" },
+      { "href": "#history", "label": "History" },
+      { "href": "#guide", "label": "Visit Guide" },
+      { "href": "#food", "label": "Nearby Eats" },
+      { "href": "#gallery", "label": "Gallery" },
+      { "href": "#reviews", "label": "Reviews" },
+      { "href": "#map", "label": "Map" }
+    ],
+    "noteTitle": "Good to know",
+    "note": "Information may change; verify before traveling.",
+    "mapsLabel": "Google Maps →",
+    "sourcesTitle": "Sources",
+    "sourcesNote": "References used on this site.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Settings",
+    "disclaimerLead": "This site is for educational and informational purposes.",
+    "unofficial": "This is an unofficial, non-commercial visitors' guide.",
+    "dataSource": "Data from open sources and the Google Maps listing.",
+    "copyright": "© 2026 Kruba Srivichai Monument · non-profit"
+  },
+  "legal": {
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "body": [
+        "This is a non-profit, static information site. We do not require registration and do not collect personal data through forms.",
+        "We may use privacy-respecting, anonymous analytics to understand general traffic. We do not sell or share your information.",
+        "External links (Google Maps, Wikipedia, Tourism Thailand) are governed by their own privacy policies."
+      ]
+    },
+    "terms-of-service": {
+      "title": "Terms of Service",
+      "body": [
+        "The content here is provided for general informational purposes about the Kruba Srivichai Monument.",
+        "While we strive for accuracy, visiting details (hours, access, prices) may change. Always verify with official sources before travel.",
+        "Photos remain the property of their respective authors; reuse requires their permission."
+      ]
+    },
+    "cookie-settings": {
+      "title": "Cookie Settings",
+      "body": [
+        "This site itself does not set advertising cookies. Any third-party embeds (such as maps) may set their own cookies.",
+        "You can control cookies through your browser settings at any time.",
+        "Because the site is static and non-commercial, no personal profiling is performed."
+      ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+# ---- 依赖 ----
+node_modules/
+.pnp
+.pnp.js
+
+# ---- 构建产物（静态站点由 npm run build 重新生成，无需上传） ----
+dist/
+.output/
+.vercel/
+.netlify/
+
+# ---- Astro 缓存 ----
+.astro/
+
+# ---- 日志（含本次构建产生的 build.log / install.log） ----
+*.log
+build.log
+build.err
+install.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---- 环境变量 / 密钥 ----
+.env
+.env.*
+!.env.example
+
+# ---- 临时 / 一次性检查脚本（非站点代码，勿上传） ----
+check*.cjs
+check*.js
+update*.js
+update*.cjs
+rename*.js
+rename*.cjs
+*.tmp
+tmp/
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+
+# ---- TypeScript / 缓存 ----
+*.tsbuildinfo

@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { languagesList, type Lang } from '../../i18n/ui';
+
+export async function getStaticPaths() {
+  const docs = ['privacy-policy', 'terms-of-service', 'cookie-settings'];
+  const paths = [];
+  for (const lang of languagesList) {
+    for (const doc of docs) {
+      paths.push({ params: { lang, doc } });
+    }
+  }
+  return paths;
+}
+
+const { lang, doc } = Astro.params as { lang: Lang; doc: string };
+const { getI18n } = await import('../../i18n/ui');
+const { messages } = await getI18n(new URL(`/${lang}/${doc}`, 'http://localhost'));
+const legal = (messages.legal && messages.legal[doc]) || { title: doc, body: [] };
+const description = (legal.body && legal.body[0]) || legal.title;
+---
+
+<BaseLayout lang={lang} title={legal.title} description={description} messages={messages}>
+  <div class="min-h-screen bg-ivory text-ink pt-28 pb-20">
+    <div class="max-w-3xl mx-auto px-5">
+      <a href={`/${lang}/`} class="text-sm text-gold hover:underline">← {messages.footer.brand.name}</a>
+      <h1 class="font-display text-3xl md:text-4xl text-teak mt-4">{legal.title}</h1>
+      <div class="mt-6 space-y-4 text-ink/80 leading-relaxed">
+        {legal.body.map((p: string) => <p>{p}</p>)}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
