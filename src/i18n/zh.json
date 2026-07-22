@@ -210,9 +210,9 @@
     "nearby": {
       "title": "周边景点",
       "items": [
-        { "name": "素贴山双龙寺", "desc": "著名的山顶寺院，上山不远即达。", "url": "https://en.wikipedia.org/wiki/Wat_Phra_That_Doi_Suthep" },
-        { "name": "惠考瀑布", "desc": "纪念碑步行不远的小瀑布。", "url": "" },
-        { "name": "清迈大学", "desc": "附近的商店、咖啡馆与宁曼商圈。", "url": "" }
+        { "name": "素贴山双龙寺", "desc": "著名的山顶寺院，上山不远即达。", "url": "https://www.google.com/maps/search/?api=1&query=Wat+Phra+That+Doi+Suthep+18.8061,98.9207" },
+        { "name": "惠考瀑布", "desc": "纪念碑步行不远的小瀑布。", "url": "https://www.google.com/maps/search/?api=1&query=Huay+Kaew+Waterfall+18.8068,98.9512" },
+        { "name": "清迈大学", "desc": "附近的商店、咖啡馆与宁曼商圈。", "url": "https://www.google.com/maps/search/?api=1&query=Chiang+Mai+University+18.7956,98.9520" }
       ],
       "cta": "在地图中打开"
     }

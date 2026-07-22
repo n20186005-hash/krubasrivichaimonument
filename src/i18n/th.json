@@ -210,9 +210,9 @@
     "nearby": {
       "title": "สถานที่ใกล้เคียง",
       "items": [
-        { "name": "วัดพระธาตุดอยสุเทพ", "desc": "วัดบนยอดเขาชื่อดัง ขึ้นรถไม่ไกล", "url": "https://en.wikipedia.org/wiki/Wat_Phra_That_Doi_Suthep" },
-        { "name": "น้ำตกห้วยแก้ว", "desc": "น้ำตกเล็กๆ เดินไม่ไกลจากอนุสาวรีย์", "url": "" },
-        { "name": "มหาวิทยาลัยเชียงใหม่", "desc": "ร้านค้า คาเฟ่ และย่านนิมมานใกล้เคียง", "url": "" }
+        { "name": "วัดพระธาตุดอยสุเทพ", "desc": "วัดบนยอดเขาชื่อดัง ขึ้นรถไม่ไกล", "url": "https://www.google.com/maps/search/?api=1&query=Wat+Phra+That+Doi+Suthep+18.8061,98.9207" },
+        { "name": "น้ำตกห้วยแก้ว", "desc": "น้ำตกเล็กๆ เดินไม่ไกลจากอนุสาวรีย์", "url": "https://www.google.com/maps/search/?api=1&query=Huay+Kaew+Waterfall+18.8068,98.9512" },
+        { "name": "มหาวิทยาลัยเชียงใหม่", "desc": "ร้านค้า คาเฟ่ และย่านนิมมานใกล้เคียง", "url": "https://www.google.com/maps/search/?api=1&query=Chiang+Mai+University+18.7956,98.9520" }
       ],
       "cta": "เปิดในแผนที่"
     }

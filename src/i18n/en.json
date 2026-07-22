@@ -210,9 +210,9 @@
     "nearby": {
       "title": "Nearby sights",
       "items": [
-        { "name": "Wat Phra That Doi Suthep", "desc": "The famous mountaintop temple, a short drive above.", "url": "https://en.wikipedia.org/wiki/Wat_Phra_That_Doi_Suthep" },
-        { "name": "Huay Kaew Waterfall", "desc": "A small waterfall a short walk from the monument.", "url": "" },
-        { "name": "Chiang Mai University", "desc": "Shops, cafés and the Nimman area nearby.", "url": "" }
+        { "name": "Wat Phra That Doi Suthep", "desc": "The famous mountaintop temple, a short drive above.", "url": "https://www.google.com/maps/search/?api=1&query=Wat+Phra+That+Doi+Suthep+18.8061,98.9207" },
+        { "name": "Huay Kaew Waterfall", "desc": "A small waterfall a short walk from the monument.", "url": "https://www.google.com/maps/search/?api=1&query=Huay+Kaew+Waterfall+18.8068,98.9512" },
+        { "name": "Chiang Mai University", "desc": "Shops, cafés and the Nimman area nearby.", "url": "https://www.google.com/maps/search/?api=1&query=Chiang+Mai+University+18.7956,98.9520" }
       ],
       "cta": "Open in maps"
     }
