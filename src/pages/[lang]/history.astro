@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { languagesList, type Lang, getI18n } from '../../i18n/ui';
+import { siteConfig } from '../../config';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const { messages } = await getI18n(new URL(`/${lang}/history/`, 'http://localhost'));
+const p = messages.historyPage;
+---
+
+<BaseLayout
+  lang={lang}
+  title={p.meta.title}
+  description={p.meta.description}
+  messages={messages}
+  meta={p.meta}
+  pagePath="history/"
+  pageName={p.title}
+  includeFaq={false}
+>
+  <Header lang={lang} messages={messages} base={`/${lang}/`} switchPath="history/" />
+
+  <main class="pt-28 pb-20 bg-ivory text-ink">
+    <div class="max-w-4xl mx-auto px-5">
+      <nav aria-label="Breadcrumb" class="text-xs text-ink/55">
+        <a href={`/${lang}/`} class="hover:text-gold">{siteConfig.name[lang]}</a>
+        <span class="mx-1.5 text-gold/60">›</span>
+        <span class="text-ink/75">{p.title}</span>
+      </nav>
+
+      <p class="font-hand text-gold text-xl md:text-2xl mt-6">{p.eyebrow}</p>
+      <h1 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{p.title}</h1>
+      <p class="mt-4 text-lg text-ink/80">{p.subtitle}</p>
+      <div class="section-divider my-8"></div>
+      <p class="text-ink/80 leading-relaxed">{p.intro}</p>
+    </div>
+
+    <!-- ① Timeline -->
+    <section id="timeline" class="max-w-4xl mx-auto px-5 mt-14">
+      <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{p.timeline.title}</h2>
+      <p class="mt-2 text-sm text-ink/70">{p.timeline.note}</p>
+
+      <ol class="mt-6 border-l-2 border-gold/40 pl-0">
+        {
+          p.timeline.items.map((t: any) => (
+            <li class="relative pl-6 pb-6 last:pb-0">
+              <span class="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-teak ring-4 ring-ivory"></span>
+              <div class="chip text-gold">{t.date}</div>
+              <h3 class="font-display text-lg text-teak font-semibold mt-1.5">{t.title}</h3>
+              <p class="text-sm text-ink/75 mt-1">{t.desc}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <!-- ② Life -->
+    <section id="life" class="max-w-4xl mx-auto px-5 mt-16">
+      <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{p.life.title}</h2>
+      <div class="mt-4 space-y-4 text-ink/80 leading-relaxed">
+        {p.life.paragraphs.map((t: string) => <p>{t}</p>)}
+      </div>
+    </section>
+
+    <!-- ③ The road -->
+    <section id="road" class="max-w-4xl mx-auto px-5 mt-16">
+      <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{p.road.title}</h2>
+      <p class="mt-2 text-ink/75">{p.road.lead}</p>
+
+      <dl class="mt-6 rounded-2xl border border-gold/30 bg-white/60 p-6 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+        {
+          p.road.facts.map((f: any) => (
+            <div class="flex justify-between gap-4 border-b border-gold/15 pb-2">
+              <dt class="text-ink/55">{f.label}</dt>
+              <dd class="text-teak font-medium text-right">{f.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      <div class="mt-6 space-y-4 text-ink/80 leading-relaxed">
+        {p.road.paragraphs.map((t: string) => <p>{t}</p>)}
+      </div>
+    </section>
+
+    <!-- ④ Other works -->
+    <section id="deeds" class="max-w-4xl mx-auto px-5 mt-16">
+      <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{p.deeds.title}</h2>
+      <p class="mt-2 text-sm text-ink/70">{p.deeds.note}</p>
+      <div class="mt-6 space-y-3">
+        {
+          p.deeds.items.map((d: any) => (
+            <div class="rounded-xl border border-gold/25 bg-teak/5 p-5">
+              <div class="font-display text-teak font-semibold">{d.name}</div>
+              <p class="mt-1.5 text-sm text-ink/75">{d.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- ⑤ The monument itself -->
+    <section id="monument" class="max-w-4xl mx-auto px-5 mt-16">
+      <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{p.monument.title}</h2>
+      <div class="mt-4 space-y-4 text-ink/80 leading-relaxed">
+        {p.monument.paragraphs.map((t: string) => <p>{t}</p>)}
+      </div>
+    </section>
+
+    <!-- ⑥ Recorded vs told -->
+    <section id="legends" class="max-w-4xl mx-auto px-5 mt-16">
+      <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{p.legends.title}</h2>
+      <p class="mt-2 text-sm text-ink/70">{p.legends.note}</p>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-5">
+        <div class="rounded-2xl border border-gold/30 bg-white/60 p-6">
+          <h3 class="font-display text-lg text-teak font-semibold">{p.legends.recordedTitle}</h3>
+          <ul class="mt-3 space-y-2 text-sm text-ink/75 list-disc pl-5">
+            {p.legends.recorded.map((t: string) => <li>{t}</li>)}
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-gold/25 bg-sand p-6">
+          <h3 class="font-display text-lg text-teak font-semibold">{p.legends.oralTitle}</h3>
+          <ul class="mt-3 space-y-2 text-sm text-ink/75 list-disc pl-5">
+            {p.legends.oral.map((t: string) => <li>{t}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑦ Still remembered -->
+    <section id="today" class="max-w-4xl mx-auto px-5 mt-16">
+      <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{p.today.title}</h2>
+      <p class="mt-3 text-ink/80 leading-relaxed">{p.today.body}</p>
+      <a
+        href={`/${lang}/#legacy`}
+        class="inline-flex items-center gap-2 mt-4 text-gold hover:text-teak transition-colors underline underline-offset-4"
+      >
+        {p.today.linkLabel} <span aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <!-- ⑧ Accuracy note -->
+    <section id="accuracy" class="max-w-4xl mx-auto px-5 mt-14">
+      <div class="rounded-2xl border border-gold/40 bg-sand p-6">
+        <h2 class="font-display text-lg text-teak font-semibold">{p.accuracy.title}</h2>
+        <p class="mt-2 text-sm text-ink/80 leading-relaxed">{p.accuracy.body}</p>
+      </div>
+    </section>
+
+    <!-- ⑨ Reverse internal links across the hub -->
+    <section id="back" class="max-w-4xl mx-auto px-5 mt-14">
+      <div class="rounded-2xl bg-teakDeep text-ivory p-7">
+        <h2 class="font-display text-2xl text-goldBright">{p.back.title}</h2>
+        <p class="mt-2 text-sm text-ivory/80">{p.back.body}</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a
+            href={`/${lang}/katha/`}
+            class="inline-flex items-center bg-gold text-teakDeep font-semibold px-5 py-2.5 rounded-full hover:bg-goldBright transition-colors"
+          >
+            {p.back.kathaLink}
+          </a>
+          <a
+            href={`/${lang}/#guide`}
+            class="inline-flex items-center border border-gold/60 text-gold px-5 py-2.5 rounded-full hover:bg-gold/10 transition-colors"
+          >
+            {p.back.guideLink}
+          </a>
+          <a
+            href={`/${lang}/#map`}
+            class="inline-flex items-center border border-gold/60 text-gold px-5 py-2.5 rounded-full hover:bg-gold/10 transition-colors"
+          >
+            {p.back.mapLink}
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} messages={messages} />
+</BaseLayout>

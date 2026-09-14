@@ -1,0 +1,42 @@
+---
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const s = messages.seasons;
+---
+
+<section id="seasons" class="py-20 bg-teak text-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{s.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-2">{s.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ivory/80">{s.intro}</p>
+
+    <div class="mt-10 space-y-4">
+      {
+        s.rows.map((row: any) => (
+          <div class="rounded-2xl border border-gold/25 bg-teakDeep/60 p-5 md:p-6 grid md:grid-cols-12 gap-4 md:gap-6">
+            <div class="md:col-span-3">
+              <p class="text-xs text-gold/80">{s.headSeason}</p>
+              <h3 class="font-display text-lg text-goldBright mt-1">{row.season}</h3>
+            </div>
+            <div class="md:col-span-3">
+              <p class="text-xs text-ivory/50">{s.headWeather}</p>
+              <p class="text-sm text-ivory/85 mt-1 leading-relaxed">{row.weather}</p>
+            </div>
+            <div class="md:col-span-3">
+              <p class="text-xs text-ivory/50">{s.headCrowd}</p>
+              <p class="text-sm text-ivory/85 mt-1 leading-relaxed">{row.crowd}</p>
+            </div>
+            <div class="md:col-span-3">
+              <p class="text-xs text-ivory/50">{s.headAdvice}</p>
+              <p class="text-sm text-ivory/85 mt-1 leading-relaxed">{row.advice}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    {s.note && <p class="mt-8 text-sm text-ivory/60 border-l-4 border-gold pl-4 leading-relaxed">{s.note}</p>}
+  </div>
+</section>

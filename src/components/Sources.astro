@@ -33,6 +33,21 @@ const s = messages.sources;
       </div>
     </div>
 
+    <!-- Reviews attribution: rating & reviews synced from Google Maps, page display only -->
+    <div class="mt-8 rounded-2xl border border-gold/30 bg-white/5 p-5">
+      <h3 class="font-display text-lg text-goldBright">{s.reviewTitle}</h3>
+      <p class="mt-2 text-sm font-semibold text-ivory/90">{s.reviewSync}</p>
+      <p class="mt-2 text-sm text-ivory/80">{s.reviewNote}</p>
+      <a
+        href={siteConfig.mapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block mt-3 text-sm text-goldBright underline underline-offset-2 hover:text-gold"
+      >
+        {s.reviewLinkLabel} ↗
+      </a>
+    </div>
+
     <div class="mt-8 rounded-2xl border border-gold/30 bg-white/5 p-5">
       <h3 class="font-display text-lg text-goldBright">{s.correctionTitle}</h3>
       <p class="mt-2 text-sm text-ivory/80">{s.correctionText}</p>
@@ -44,6 +59,8 @@ const s = messages.sources;
       </a>
     </div>
 
-    <p class="mt-8 text-xs text-ivory/45">© {new Date().getFullYear()} {s.copyright}</p>
+    {s.photoCredit && <p class="mt-8 text-xs text-ivory/60">{s.photoCredit}</p>}
+    {s.lastUpdated && <p class="mt-2 text-xs text-ivory/45">{s.lastUpdated}</p>}
+    <p class="mt-2 text-xs text-ivory/45">© {new Date().getFullYear()} {s.copyright}</p>
   </div>
 </section>

@@ -20,6 +20,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* keep anchored sections clear of the fixed header */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: var(--font-body);
   background-color: #f5ecd7;

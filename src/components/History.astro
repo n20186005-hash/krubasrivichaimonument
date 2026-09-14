@@ -10,6 +10,7 @@ const history = messages.history;
   <div class="max-w-7xl mx-auto px-5">
     <p class="font-hand text-gold text-xl md:text-2xl">{history.label}</p>
     <h2 class="font-display font-semibold text-3xl md:text-5xl text-ivory mt-2">{history.heading}</h2>
+    {history.subheading && <h3 class="font-display text-xl text-goldBright mt-2">{history.subheading}</h3>}
     <p class="mt-4 max-w-2xl text-ivory/80">{history.intro}</p>
 
     <div class="grid md:grid-cols-3 gap-6 mt-12">

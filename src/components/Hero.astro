@@ -8,6 +8,7 @@ interface Props {
 }
 const { lang, messages } = Astro.props;
 const hero = messages.hero;
+const reviewsNote = messages.reviews;
 
 const main = hero.titleMain as string;
 const accent = hero.titleAccent as string;
@@ -46,7 +47,7 @@ const weatherMap = Object.fromEntries(
 ---
 
 <section id="home" class="relative min-h-screen flex items-end overflow-hidden">
-  <img src={heroImg} alt={main} class="absolute inset-0 w-full h-full object-cover" />
+  <img src={heroImg} alt={hero.imgAlt || main} class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" />
   <div class="absolute inset-0 bg-gradient-to-t from-teakDeep via-teakDeep/70 to-teak/40"></div>
   <div class="hero-glow absolute inset-0"></div>
 
@@ -55,6 +56,7 @@ const weatherMap = Object.fromEntries(
       <p class="font-hand text-gold text-xl md:text-2xl mb-3">{hero.eyebrow}</p>
       <h1 class="font-display font-semibold leading-[1.05] text-5xl md:text-7xl lg:text-8xl text-ivory">
         {parts[0]}<span class="gold-text-bright">{accent}</span>{parts[1] ?? ''}
+        {hero.city && <span class="block text-2xl md:text-4xl lg:text-5xl font-normal text-ivory/90 mt-3">({hero.city})</span>}
       </h1>
       <p class="mt-6 max-w-xl text-ivory/85 text-lg md:text-xl">{hero.subtitle}</p>
 
@@ -77,14 +79,24 @@ const weatherMap = Object.fromEntries(
         </div>
       )}
 
-      <div class="mt-8 flex flex-wrap items-center gap-5 text-sm text-ivory/80">
-        <span class="stars text-lg">★ {hero.rating}</span>
-        <span>{hero.reviewCount} Google</span>
-        <span class="hidden sm:inline text-ivory/40">·</span>
-        <span>{coordsLabel}</span>
+      <div class="mt-8">
+        <div class="flex flex-wrap items-center gap-5 text-sm text-ivory/80">
+          <span class="stars text-lg">★ {siteConfig.rating}</span>
+          <span>{siteConfig.reviewCount} Google</span>
+          <span class="hidden sm:inline text-ivory/40">·</span>
+          <span>{coordsLabel}</span>
+        </div>
+        {reviewsNote && (
+          <p class="mt-2 text-[11px] md:text-xs text-ivory/60 leading-relaxed">
+            {reviewsNote.ratingNote} ·{' '}
+            <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="text-goldBright hover:text-gold underline underline-offset-2">
+              {reviewsNote.ratingNoteLink} ↗
+            </a>
+          </p>
+        )}
       </div>
 
-      <a href={mapsUrl} target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 text-goldBright hover:text-gold underline-offset-4 hover:underline text-sm">
+      <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 text-goldBright hover:text-gold underline-offset-4 hover:underline text-sm">
         {hero.viewLocation}
       </a>
 

@@ -8,11 +8,21 @@ import History from '../../components/History.astro';
 import Legacy from '../../components/Legacy.astro';
 import Guide from '../../components/Guide.astro';
 import Sources from '../../components/Sources.astro';
-  import Food from '../../components/Food.astro';
+import Food from '../../components/Food.astro';
+import Ecosystem from '../../components/Ecosystem.astro';
+import Weather from '../../components/Weather.astro';
+import Seasons from '../../components/Seasons.astro';
+import Audiences from '../../components/Audiences.astro';
+import Routes from '../../components/Routes.astro';
+import Facilities from '../../components/Facilities.astro';
 import Gallery from '../../components/Gallery.astro';
 import Reviews from '../../components/Reviews.astro';
+import Responsibility from '../../components/Responsibility.astro';
 import MapSection from '../../components/MapSection.astro';
 import Footer from '../../components/Footer.astro';
+import KathaCTA from '../../components/KathaCTA.astro';
+import HistoryCTA from '../../components/HistoryCTA.astro';
+import MobileCTA from '../../components/MobileCTA.astro';
 import { getI18n } from '../../i18n/ui';
 
 export async function getStaticPaths() {
@@ -27,14 +37,24 @@ const { lang, messages } = await getI18n(Astro.url);
   <main>
     <Hero lang={lang} messages={messages} />
     <About messages={messages} />
+    <KathaCTA lang={lang} messages={messages} />
     <History messages={messages} />
+    <HistoryCTA lang={lang} messages={messages} />
     <Legacy messages={messages} />
+    <Ecosystem messages={messages} />
     <Guide messages={messages} />
     <Food messages={messages} />
-    <Gallery messages={messages} />
+    <Weather lang={lang} messages={messages} />
+    <Seasons messages={messages} />
+    <Audiences lang={lang} messages={messages} />
+    <Routes messages={messages} />
+    <Facilities messages={messages} />
+    <Gallery lang={lang} messages={messages} />
     <Reviews messages={messages} />
+    <Responsibility messages={messages} />
     <Sources messages={messages} />
     <MapSection lang={lang} messages={messages} />
   </main>
   <Footer lang={lang} messages={messages} />
+  <MobileCTA lang={lang} messages={messages} />
 </BaseLayout>

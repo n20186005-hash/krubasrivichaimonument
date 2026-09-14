@@ -6,8 +6,7 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/"/>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/"/><lastmod>2026-09-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -15,8 +14,7 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/"/>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/"/><lastmod>2026-09-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -24,53 +22,91 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/"/>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/"/><lastmod>2026-09-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://krubasrivichaimonument.com/th/privacy-policy/</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://krubasrivichaimonument.com/th/katha/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/katha/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/katha/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/katha/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/katha/"/><lastmod>2026-09-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://krubasrivichaimonument.com/en/katha/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/katha/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/katha/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/katha/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/katha/"/><lastmod>2026-09-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://krubasrivichaimonument.com/zh/katha/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/katha/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/katha/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/katha/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/katha/"/><lastmod>2026-09-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://krubasrivichaimonument.com/th/history/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/history/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/history/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/history/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/history/"/><lastmod>2026-09-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://krubasrivichaimonument.com/en/history/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/history/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/history/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/history/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/history/"/><lastmod>2026-09-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://krubasrivichaimonument.com/zh/history/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/history/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/history/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/history/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/history/"/><lastmod>2026-09-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://krubasrivichaimonument.com/th/privacy-policy/</loc><lastmod>2026-09-14</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://krubasrivichaimonument.com/en/privacy-policy/</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://krubasrivichaimonument.com/en/privacy-policy/</loc><lastmod>2026-09-14</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://krubasrivichaimonument.com/zh/privacy-policy/</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://krubasrivichaimonument.com/zh/privacy-policy/</loc><lastmod>2026-09-14</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://krubasrivichaimonument.com/th/terms-of-service/</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://krubasrivichaimonument.com/th/terms-of-service/</loc><lastmod>2026-09-14</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://krubasrivichaimonument.com/en/terms-of-service/</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://krubasrivichaimonument.com/en/terms-of-service/</loc><lastmod>2026-09-14</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://krubasrivichaimonument.com/zh/terms-of-service/</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://krubasrivichaimonument.com/zh/terms-of-service/</loc><lastmod>2026-09-14</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://krubasrivichaimonument.com/th/cookie-settings/</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://krubasrivichaimonument.com/th/cookie-settings/</loc><lastmod>2026-09-14</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://krubasrivichaimonument.com/en/cookie-settings/</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://krubasrivichaimonument.com/en/cookie-settings/</loc><lastmod>2026-09-14</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://krubasrivichaimonument.com/zh/cookie-settings/</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://krubasrivichaimonument.com/zh/cookie-settings/</loc><lastmod>2026-09-14</lastmod>
     <priority>0.3</priority>
   </url>
 </urlset>

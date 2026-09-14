@@ -1,15 +1,240 @@
 {
   "meta": {
-    "title": "Kruba Srivichai Monument — History, Visit Guide & Photos",
-    "description": "A complete guide to the Kruba Srivichai Monument in Chiang Mai: the life and legends of the revered 'Engineer Monk', how to get there, what to see, nearby food, and visitor reviews.",
-    "keywords": "Kruba Srivichai Monument, Chiang Mai, Doi Suthep, Lanna monk, Thailand attractions"
+    "title": "Kruba Srivichai Monument, Chiang Mai: Doi Suthep Map & Hours",
+    "description": "Free and open 24/7 at the foot of Doi Suthep. Exact location, plus code, songthaew directions, best photo times and the story of the road-building monk.",
+    "keywords": "Kruba Srivichai Monument, Khruba Siwichai Monument, Kruba Srivichai, Chiang Mai, Doi Suthep, Huay Kaew Road, songthaew, Thailand attractions",
+    "ogTitle": "Kruba Srivichai Monument, Chiang Mai — Free 24/7 at the Foot of Doi Suthep",
+    "ogDescription": "Visitor guide to Kruba Srivichai Monument (อนุสาวรีย์ครูบาศรีวิชัย) in Chiang Mai: map, plus code, hours, songthaew route and the story of the monk who built the Doi Suthep road.",
+    "ogImageAlt": "Kruba Srivichai Monument in Chiang Mai, Thailand"
+  },
+  "mobileCta": {
+    "map": "Navigate",
+    "guide": "Visit guide"
+  },
+  "katha": {
+    "meta": {
+      "title": "Kruba Srivichai Katha: Chants, Offerings & Worship Guide",
+      "description": "What to chant and how to pay respects at Kruba Srivichai Monument, Chiang Mai: Namo Tassa, Namo Buddhaya, Itipiso, offerings, dress code and the best time to visit.",
+      "keywords": "Kruba Srivichai katha, Kruba Srivichai prayer, Khruba Siwichai katha, คาถาบูชาครูบาศรีวิชัย, Kruba Srivichai worship guide, Chiang Mai monument prayer, Itipiso Thai chant",
+      "ogTitle": "Kruba Srivichai Katha — Chants, Offerings & Worship Guide",
+      "ogDescription": "The chanting, offerings and etiquette used by Thai Buddhists at the Kruba Srivichai Monument at the foot of Doi Suthep.",
+      "ogImageAlt": "Devotee paying respects at Kruba Srivichai Monument, Chiang Mai"
+    },
+    "eyebrow": "Worship guide",
+    "title": "Katha & How to Pay Respects",
+    "subtitle": "The chanting, offerings and etiquette used by Thai Buddhists at the monument of Kruba Srivichai.",
+    "intro": "Kruba Srivichai (ครูบาศรีวิชัย) is the Northern Thai monk honoured for leading the building of the road up Doi Suthep. People come to his monument on Huay Kaew Road to pay respects, ask for blessings and give thanks. The monument is a public roadside shrine: free of charge, open 24 hours, with no resident monk and no fixed ceremony — so you can follow the standard Thai Buddhist practice below at your own pace.",
+    "steps": {
+      "label": "Order of chanting",
+      "note": "Recite at your own pace. Thai Buddhists traditionally begin with the opening homage repeated three times.",
+      "repeatLabel": "Rounds",
+      "paliLabel": "Pali",
+      "thaiLabel": "Thai script",
+      "romanLabel": "How to say it",
+      "meaningLabel": "Meaning",
+      "items": [
+        {
+          "no": "1",
+          "title": "Opening homage — Namo Tassa",
+          "repeat": "3 times",
+          "pali": "Namo tassa bhagavato arahato sammāsambuddhassa",
+          "thai": "นะโม ตัสสะ ภะคะวะโต อะระหะโต สัมมาสัมพุทธัสสะ",
+          "roman": "Na-mo tat-sa pha-kha-wa-to a-ra-ha-to sam-ma-sam-phut-that-sa",
+          "meaning": "Homage to the Blessed One, the Worthy One, the Perfectly Self-Enlightened One."
+        },
+        {
+          "no": "2",
+          "title": "Homage to the Buddha — Na Mo Phutthaya",
+          "repeat": "as you wish",
+          "pali": "Namo Buddhāya",
+          "thai": "นะ โม พุท ธา ยะ",
+          "roman": "Na Mo Phut Tha Ya",
+          "meaning": "“Homage to the Buddha” — the five-syllable formula widely recited in Thai and Lanna worship."
+        },
+        {
+          "no": "3",
+          "title": "Itipiso — the virtues of the Buddha",
+          "repeat": "1 time or more",
+          "pali": "Iti pi so bhagavā arahaṃ sammāsambuddho vijjācaraṇasampanno sugato lokavidū anuttaro purisadammasārathi devamanussānaṃ satthā buddho bhagavā ti",
+          "thai": "อิติปิ โส ภะคะวา อะระหัง สัมมาสัมพุทโธ วิชชาจะระณะสัมปันโน สุคะโต โลกะวิทู อนุตตะโร ปุริสะทัมมะสารถิ เทวะมะนุสสานัง สัตถา พุทโธ ภะคะวา ติ",
+          "roman": "Iti-pi so pha-kha-wa a-ra-hang sam-ma-sam-phut-tho wit-cha-cha-ra-na-sam-pan-no su-kha-to lo-ka-wi-du a-nut-ta-ro pu-ri-sa-tham-ma-sa-rat-thi the-wa-ma-nut-sa-nang sat-tha phut-tho pha-kha-wa ti",
+          "meaning": "The nine virtues of the Buddha: worthy, perfectly self-enlightened, endowed with knowledge and conduct, well-gone, knower of the worlds, unsurpassed guide of those to be tamed, teacher of gods and humans, awakened, blessed."
+        },
+        {
+          "no": "4",
+          "title": "Loving-kindness & sharing of merit",
+          "repeat": "1 time",
+          "pali": "Sabbe sattā averā hontu, abyāpajjhā hontu, anīghā hontu, sukhī attānaṃ pariharantu",
+          "thai": "สัพเพ สัตตา อะเวรา โหนตุ อัพยาปัชฌา โหนตุ อนีฆา โหนตุ สุขี อัตตานัง ปะริหะรันตุ",
+          "roman": "Sap-phe sat-ta a-we-ra hon-tu ap-ya-pat-cha hon-tu a-ni-kha hon-tu su-khi at-ta-nang pa-ri-ha-ran-tu",
+          "meaning": "May all beings be free from enmity, free from ill-will, free from distress, and may they keep themselves happy."
+        }
+      ]
+    },
+    "offerings": {
+      "title": "Offerings",
+      "note": "Nothing is required — this is a free public shrine. These are customary Thai Buddhist offerings, sold at stalls along Huay Kaew Road.",
+      "items": [
+        { "name": "9 incense sticks", "desc": "The number Thai devotees commonly use to honour a revered monk; three sticks is also widely used." },
+        { "name": "Yellow flowers / marigold garlands", "desc": "Yellow and gold are the colours associated with Kruba Srivichai; marigold garlands are the offering you will see most often." },
+        { "name": "Candles", "desc": "Usually one or two, lit together with the incense." },
+        { "name": "Jasmine", "desc": "A lighter everyday alternative to garlands." }
+      ]
+    },
+    "etiquette": {
+      "title": "Etiquette at the monument",
+      "items": [
+        { "name": "Dress modestly", "desc": "Shoulders and knees covered; take off your hat when standing in front of the statue." },
+        { "name": "Shoes off on the platform", "desc": "The base of the monument is a shrine platform — leave your shoes at the step if you walk up onto it." },
+        { "name": "Walk clockwise", "desc": "Thai devotees circumambulate the base keeping the monument on their right, following the Buddhist custom of keeping the sacred object to the right." },
+        { "name": "Do not point your feet", "desc": "Never sit with the soles of your feet towards the statue, and do not climb on the base." },
+        { "name": "Photographs are fine", "desc": "There is no photography ban. Just avoid blocking people who are praying, and keep your voice low." },
+        { "name": "A note for women", "desc": "Some Thai Buddhists follow the tradition of not touching monk statues directly. Nobody will ask you to follow it — it is a personal choice." }
+      ]
+    },
+    "bestTime": {
+      "title": "When to come",
+      "items": [
+        { "label": "Early morning (06:00–08:00)", "value": "Cool, quiet and soft light — the calmest time to pray." },
+        { "label": "Late afternoon (16:00–18:00)", "value": "Golden light on the gold-painted statue; the busiest time." },
+        { "label": "Buddhist holy days", "value": "More devotees, more flower stalls and a more ceremonial atmosphere." },
+        { "label": "Any hour", "value": "It is a roadside public shrine: free of charge and open 24 hours." }
+      ]
+    },
+    "accuracy": {
+      "title": "About the texts on this page",
+      "body": "The chanting above is standard Pali used across Thai Buddhism, and it is what Thai devotees recite at shrines of revered monks such as Kruba Srivichai. We have deliberately not reproduced a “Kruba Srivichai katha” (คาถาบูชาครูบาศรีวิชัย): the versions circulating on blogs and video platforms differ from one another, and none can be traced to an authoritative temple or monument publication. Publishing one would risk presenting an unverifiable text as authentic. If you hold a text issued by the monument or by a monastery, please send it to us — we will check it and add it with attribution."
+    },
+    "back": {
+      "title": "Going to the monument?",
+      "body": "Practical details — exact coordinates, plus code, the songthaew route from the old city, parking and opening hours — are on the main guide.",
+      "guideLink": "Visitor guide",
+      "mapLink": "Map & directions"
+    }
+  },
+  "kathaCta": {
+    "tag": "Praying at the monument?",
+    "title": "Kruba Srivichai Katha & Worship Guide",
+    "body": "The chants Thai devotees recite here, what to bring as an offering and how to pay respect — ready to read on your phone at the monument.",
+    "button": "Read the worship guide"
+  },
+  "historyPage": {
+    "meta": {
+      "title": "Kruba Srivichai: Life, Deeds & the Doi Suthep Road",
+      "description": "The life of Kruba Srivichai (1878–1939): how 11,000 volunteers hand-built the 11.5 km Doi Suthep road in 5 months and 22 days, his legacy, and the monument's story.",
+      "keywords": "Kruba Srivichai history, Khruba Siwichai biography, ครูบาศรีวิชัย ประวัติ, Doi Suthep road 1935, Kruba Srivichai monument history, 古巴洗威猜 生平与事蹟",
+      "ogTitle": "Kruba Srivichai — Life, Deeds & the Doi Suthep Road",
+      "ogDescription": "From a Lamphun village to the mountain road that changed Chiang Mai: the life and legacy of the monk known as the Father of Northern Thai Roads.",
+      "ogImageAlt": "Kruba Srivichai Monument at the foot of Doi Suthep, Chiang Mai"
+    },
+    "eyebrow": "History & legacy",
+    "title": "Life & Deeds of Kruba Srivichai",
+    "subtitle": "How a monk from Lamphun organised 11,000 volunteers and cut a road into Doi Suthep by hand — and why Chiang Mai still remembers him.",
+    "intro": "Kruba Srivichai (ครูบาศรีวิชัย) is the most revered monk of modern Northern Thailand. He never held office and, by the accounts preserved here, worked without government money — yet he restored more than a hundred religious sites and, in 1934–35, led the building of the road up Doi Suthep that pilgrims still travel today. This page sets out what is recorded, what is legend, and where the two must not be confused.",
+    "timeline": {
+      "title": "Timeline",
+      "note": "Dates follow the account used by Thai sources and by this site's history section.",
+      "items": [
+        { "date": "1878", "title": "Born in Ban Bang village", "desc": "Li District, Lamphun Province, in the old Lanna kingdom." },
+        { "date": "c. 1899", "title": "Full ordination", "desc": "Ordained at about twenty-one at Wat Ban Hong Luang, Lamphun, and given the monastic name “Srivichai”." },
+        { "date": "1900s–1930s", "title": "Restoration & public works", "desc": "Restores and founds religious sites across Lanna; builds roads and bridges with volunteer labour." },
+        { "date": "9 Nov 1934", "title": "Work begins on the Doi Suthep road", "desc": "No machinery, no government funding — only hand tools and volunteers." },
+        { "date": "30 Apr 1935", "title": "The road opens", "desc": "11.5 km finished in 5 months and 22 days, ending the era of climbing Doi Suthep on foot." },
+        { "date": "1939", "title": "His passing", "desc": "He falls ill and dies. Some sources give 1938 — see the note at the foot of this page." },
+        { "date": "Late 20th c.", "title": "The monument is raised", "desc": "A standing statue is erected on Huay Kaew Road at the foot of Doi Suthep, at the traditional “kilometre zero” of the climb." },
+        { "date": "2028", "title": "150th birth anniversary", "desc": "Thailand promotes his inclusion in UNESCO's anniversary programme; a pilgrimage route links his Lamphun sites to Chiang Mai." }
+      ]
+    },
+    "life": {
+      "title": "The life",
+      "paragraphs": [
+        "He was born in 1878 in Ban Bang village, Li District, Lamphun. Ordained as a novice while still young, he took full ordination at about twenty-one at Wat Ban Hong Luang and received the name by which he is known today.",
+        "What set him apart was not scholarship but work. He kept a strict discipline — vegetarian, committed to meditation and austerity — and treated the repair of a temple and the cutting of a road as the same kind of offering. Followers across Lanna came to regard him as a monk who could ask for labour and receive it.",
+        "That reputation is why a road project with no budget was conceivable at all. When he called for volunteers they came: farmers, monks, whole villages, sometimes for weeks at a time."
+      ]
+    },
+    "road": {
+      "title": "The Doi Suthep road",
+      "lead": "The project that made his name — and the reason this monument stands where it does.",
+      "facts": [
+        { "label": "Length", "value": "11.5 km" },
+        { "label": "Volunteers", "value": "over 11,000" },
+        { "label": "Duration", "value": "5 months 22 days" },
+        { "label": "Began", "value": "9 November 1934" },
+        { "label": "Opened", "value": "30 April 1935" },
+        { "label": "Machinery & funding", "value": "Hand tools, no government budget" }
+      ],
+      "paragraphs": [
+        "Before 1935, reaching Wat Phra That Doi Suthep meant a long climb on foot. Work on a road began on 9 November 1934. There was no modern machinery and no government money: the route was cut with hand tools by more than 11,000 volunteers, organised and fed by a monastic network rather than a contractor.",
+        "The road opened on 30 April 1935 — 5 months and 22 days after work started. Northern Thai sources call it the “Doi Suthep Road Miracle”, a phrase that refers as much to the organisation of the labour as to anything supernatural.",
+        "The monument on Huay Kaew Road stands at the foot of that road. For Chiang Mai it is not a memorial placed on a detour: it is the point where the climb begins."
+      ]
+    },
+    "deeds": {
+      "title": "Other works",
+      "note": "The Doi Suthep road is the best-known project, but it was one among many.",
+      "items": [
+        { "name": "Restoring Lanna's temples", "desc": "He is credited with restoring or founding more than a hundred religious sites across Northern Thailand, working in the Lanna style rather than replacing it." },
+        { "name": "Roads and bridges before Doi Suthep", "desc": "Long before 1934 he was organising village labour to build and repair local roads and crossings in a region that had almost none." },
+        { "name": "A network that outlived him", "desc": "After his death his disciples carried the practice into neighbouring countries; temples associated with the tradition are found in Myanmar, Laos and the Xishuangbanna area of China as well as northern Thailand." }
+      ]
+    },
+    "monument": {
+      "title": "The monument itself",
+      "paragraphs": [
+        "The monument is a standing statue of Kruba Srivichai on Huay Kaew Road, at the foot of Doi Suthep and a short distance from Chiang Mai Zoo. It is a public roadside shrine: free of charge, open at all hours, and with no resident monk.",
+        "It is a working landmark rather than a purely commemorative one. Red songthaews to Doi Suthep start nearby, and the statue marks the traditional “kilometre zero” of the climb — the point from which the road he built begins to rise.",
+        "On the anniversary of his death, devotees still come with candles and flowers. For most of the year the traffic is quieter: people stop on the way up the mountain, or on the way down, to leave a garland and go on."
+      ]
+    },
+    "legends": {
+      "title": "What is recorded, and what is told",
+      "note": "Both belong to how he is remembered — but they are not the same kind of claim.",
+      "recordedTitle": "Recorded",
+      "recorded": [
+        "The dates and figures of the Doi Suthep road: 9 November 1934 to 30 April 1935, 11.5 km, more than 11,000 volunteers.",
+        "His reputation as a restorer of temples across Lanna, and the spread of the tradition after his death into Myanmar, Laos and southern China."
+      ],
+      "oralTitle": "Told",
+      "oral": [
+        "That when volunteers hauled stones up the mountain, his blessing lightened the load and rocks moved into place on their own.",
+        "That he could calm storms, and that his merit protected the workers from harm.",
+        "That wishes made at the monument should be repaid with a return visit — a custom still practised today."
+      ]
+    },
+    "today": {
+      "title": "Still remembered",
+      "body": "In 2028 Thailand marks the 150th anniversary of his birth, and institutions including the Ministry of Culture, the tourism authority and Lamphun Province have promoted his inclusion in UNESCO's anniversary programme. A pilgrimage route now links his birthplace and ordination temple in Lamphun to this monument and Doi Suthep.",
+      "linkLabel": "UNESCO bid, the temple network & the pilgrimage route"
+    },
+    "accuracy": {
+      "title": "About the dates on this page",
+      "body": "Two dates deserve caution. His year of death is given as 1939 here, following this site's history section; other references give 1938, and we have not been able to settle the difference from a primary source. The year the monument was erected is likewise not firmly documented — sources describe it only as decades after his death, which is why the timeline says “late 20th century”. The road figures are the most firmly attested and are consistent across Thai sources. If you can point us to a primary document for either uncertain date, please write to us and we will correct this page."
+    },
+    "back": {
+      "title": "Continue",
+      "body": "The worship guide, the visitor guide and the map — all one click away.",
+      "kathaLink": "Katha & worship guide",
+      "guideLink": "Visitor guide",
+      "mapLink": "Map & directions"
+    }
+  },
+  "historyCta": {
+    "tag": "The story behind the statue",
+    "title": "Life & Deeds of Kruba Srivichai",
+    "body": "How 11,000 volunteers cut the road up Doi Suthep by hand in 5 months and 22 days — the full timeline, the recorded facts and the legends.",
+    "button": "Read the history"
   },
   "header": {
     "home": "Home",
+    "katha": "Katha / Prayer",
+    "historyPage": "Life & Deeds",
     "about": "About",
     "history": "History",
     "guide": "Visit Guide",
-    "food": "Nearby Eats",
+    "weather": "Weather",
+    "facilities": "Facilities",
+    "routes": "Routes",
     "gallery": "Gallery",
     "reviews": "Reviews",
     "map": "Map"
@@ -29,8 +254,12 @@
       { "label": "Reviews", "href": "#reviews" }
     ],
     "rating": "4.7",
-    "reviewCount": "8,621",
+    "reviewCount": "8,679",
     "coordsLabel": "Coords: 18.8128°N, 98.9435°E",
+    "city": "Chiang Mai · Thailand",
+    "imgAlt": "Khruba Siwichai Monument - main view in Chiang Mai, Thailand",
+    "ratingNote": "Rating & review count synced from Google Maps user reviews · September 2026",
+    "ratingNoteLink": "See all reviews on Google Maps",
     "viewLocation": "View on Google Maps",
     "boardCategory": "Sacred Site",
     "boardTitle": "Kruba Srivichai Monument",
@@ -57,7 +286,14 @@
   },
   "about": {
     "label": "About",
-    "heading": "Who Was Kruba Srivichai?",
+    "heading": "About Khruba Siwichai Monument (Chiang Mai)",
+    "subheading": "Who Was Kruba Srivichai?",
+    "breadcrumb": {
+      "label": "Location",
+      "items": ["Khruba Siwichai Monument", "Chiang Mai", "Chiang Mai Province", "Thailand"]
+    },
+    "equivalent": "Welcome to Kruba Srivichai Monument (also written Khruba Siwichai or Kruba Sriwichai; Thai: อนุสาวรีย์ครูบาศรีวิชัย), the central monument honouring the Northern Thai monk Kruba Srivichai. Located in the heart of Chiang Mai, Chiang Mai Province, Thailand, this destination serves as a primary hub for travelers visiting the region.",
+    "nearbyCluster": "When visiting Khruba Siwichai Monument, visitors can easily explore surrounding historical landmarks and points of interest, including Wat Phra That Doi Suthep and Huay Kaew Waterfall.",
     "lead": "At the foot of Doi Suthep stands a quiet monument to one of Northern Thailand's most beloved spiritual figures.",
     "paragraph1": "Kruba Srivichai (1878–1939) was a monk of the Lanna tradition, remembered across the North as 'Kruba' — a venerated teacher. Born in Ban Bang village, Li District, Lamphun Province, he devoted his life to meditation, austerity and public works, gathering a vast following.",
     "paragraph2": "He is best known for organizing thousands of volunteers to build roads, bridges and temples where few existed. His most famous work, the road up Doi Suthep, still carries pilgrims and travelers to this day — which is why this monument stands at its base.",
@@ -68,7 +304,7 @@
       { "value": "1878–1939", "label": "Life of Kruba Srivichai" },
       { "value": "100+", "label": "Temples & sites restored" },
       { "value": "24h", "label": "Monument open daily" },
-      { "value": "4.7★", "label": "Visitor rating" }
+      { "value": "4.7★", "label": "Google Maps rating" }
     ],
     "highlights": [
       { "tag": "🛕", "title": "Pay respects", "desc": "Offer flowers or a candle at the base of the statue." },
@@ -83,7 +319,8 @@
   },
   "history": {
     "label": "History",
-    "heading": "History & Legends",
+    "heading": "History & Significance of Khruba Siwichai Monument",
+    "subheading": "History & Legends",
     "intro": "The story of Kruba Srivichai is woven into the modern history of Northern Thailand — a monk whose faith moved both people and, as legend has it, the earth itself.",
     "blocks": [
       { "title": "Early life & ordination", "text": "Born in 1878 in Ban Bang village, Li District, Lamphun Province, he was ordained as a novice and later became a monk devoted to meditation, austerity and public works. He gathered a large following across Lanna." },
@@ -206,10 +443,17 @@
       { "q": "Is there an entrance fee?", "a": "No. The monument grounds are open to everyone free of charge, 24 hours a day." },
       { "q": "How do I continue to Doi Suthep?", "a": "From the monument you can take a red songthaew up the mountain, or walk part of the trail. The temple is a short drive above." },
       { "q": "What should I wear?", "a": "As a religious site, please dress modestly — cover shoulders and knees, and remove hats near the statue." },
-      { "q": "When is the best time to visit?", "a": "Early morning for cool air and soft light, or late afternoon for the sunset glow on the statue." }
+      { "q": "When is the best time to visit?", "a": "Early morning for cool air and soft light, or late afternoon for the sunset glow on the statue." },
+      { "q": "Where is Kruba Srivichai Monument located?", "a": "Kruba Srivichai Monument is located at 99 Huay Kaew Rd, Tambon Su Thep, Mueang Chiang Mai District, Chiang Mai 50300, Thailand, at the foot of Doi Suthep (Plus Code RW7W+4F)." },
+      { "q": "How do I get there from Chiang Mai Old City?", "a": "Take a red songthaew or a Grab ride west along Huay Kaew Road — about 10–15 minutes. The monument sits just before the road begins climbing Doi Suthep." },
+      { "q": "What landmarks are near the monument?", "a": "The closest landmarks are Wat Phra That Doi Suthep and Huay Kaew Waterfall, with Chiang Mai University and the Nimman area a short ride away." },
+      { "q": "Is the monument suitable for wheelchairs and seniors?", "a": "The monument grounds are flat at street level, so the base is reachable without steps. Some surrounding paths are uneven, so take care after rain." },
+      { "q": "Is it “Kruba Srivichai” or “Khruba Siwichai”?", "a": "Both spellings refer to the same Northern Thai monk and the same monument. Thai sources write ครูบาศรีวิชัย; English sources use Kruba Srivichai, Kruba Sriwichai or Khruba Siwichai. Google Maps lists it as “Kruba Srivichai Monument”." },
+      { "q": "How long should I spend here?", "a": "Most visitors spend 20–40 minutes: pay respects, walk around the base and take photographs. Allow extra time if you are continuing up to Doi Suthep or on to Huay Kaew Waterfall." }
     ],
     "nearby": {
-      "title": "Nearby sights",
+      "title": "Landmarks & Attractions Around Khruba Siwichai Monument",
+      "semantic": "When visiting Khruba Siwichai Monument, visitors can easily explore surrounding historical landmarks and points of interest, including Wat Phra That Doi Suthep and Huay Kaew Waterfall.",
       "items": [
         { "name": "Wat Phra That Doi Suthep", "desc": "The famous mountaintop temple, a short drive above.", "url": "https://www.google.com/maps/search/?api=1&query=Wat+Phra+That+Doi+Suthep+18.8061,98.9207" },
         { "name": "Huay Kaew Waterfall", "desc": "A small waterfall a short walk from the monument.", "url": "https://www.google.com/maps/search/?api=1&query=Huay+Kaew+Waterfall+18.8068,98.9512" },
@@ -222,8 +466,13 @@
     "label": "Reviews",
     "heading": "What Visitors Say",
     "intro": "Travelers from Thailand and around the world stop here on their way to Doi Suthep. Here is a sample of what they share.",
-    "disclaimer": "Aggregated from public Google reviews.",
-    "declaration": "Reviews shown for reference; ratings reflect Google as of listing.",
+    "sourceLabel": "Reviews from Google Maps users",
+    "sourceNote": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps",
+    "ratingNote": "Rating & review count synced from Google Maps user reviews · September 2026",
+    "ratingNoteLink": "See all reviews on Google Maps",
+    "viewAll": "View all reviews on Google Maps",
+    "disclaimer": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps",
+    "declaration": "These reviews are displayed on this page only and are not published in this site's structured data (JSON-LD).",
     "featured": [
       { "text": "A peaceful spot to pause and pay respect before heading up the mountain. The statue is beautiful and the air feels calm.", "source": "— A visitor from Bangkok" },
       { "text": "Our songthaew driver stopped here so we could light a candle. Learning about the monk who built the road made the climb meaningful.", "source": "— A traveler from Germany" }
@@ -292,8 +541,14 @@
       { "text": "Photos are sourced from public Google Maps contributors; copyright belongs to the original authors.", "url": "", "linkLabel": "" },
       { "text": "Historical context adapted from open encyclopedic sources.", "url": "https://en.wikipedia.org/wiki/Kruba_Srivichai", "linkLabel": "Wikipedia" }
     ],
+    "reviewTitle": "Reviews",
+    "reviewSync": "Synced September 2026",
+    "reviewNote": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps",
+    "reviewLinkLabel": "View all reviews on Google Maps",
     "factTitle": "Fact-checking",
     "factText": "Key facts (coordinates, rating, hours) are drawn from the official Google Maps listing and public references. If something looks off, tell us.",
+    "photoCredit": "All photos displayed on this website remain the property and copyright of their original photographers.",
+    "lastUpdated": "Content last updated: September 2026",
     "correctionTitle": "Found an error?",
     "correctionText": "We are a small volunteer team. If you spot a mistake in the history or visiting info, please let us know.",
     "correctionMailto": "mailto:n20186005@gmail.com",
@@ -302,10 +557,13 @@
   },
   "mapSection": {
     "label": "Location",
-    "heading": "Location & Directions",
+    "heading": "Location & How to Visit Khruba Siwichai Monument in Chiang Mai",
+    "subheading": "Location & Directions",
     "lead": "Find the monument at the foot of Doi Suthep on Huay Kaew Road — the gateway to the mountain.",
+    "authorityNote": "For official updates and regional tourism information, visit",
+    "authorityLabel": "Thailand / Chiang Mai Official Tourism Portal",
     "stats": [
-      { "tag": "Rating", "value": "4.7", "sub": "from 8,621 reviews" },
+      { "tag": "Rating", "value": "4.7", "sub": "from 8,679 reviews" },
       { "tag": "Hours", "value": "24 hrs", "sub": "open every day" },
       { "tag": "Admission", "value": "Free", "sub": "no ticket required" },
       { "tag": "Setting", "value": "Doi Suthep", "sub": "Chiang Mai" }
@@ -329,7 +587,9 @@
       { "href": "#food", "label": "Nearby Eats" },
       { "href": "#gallery", "label": "Gallery" },
       { "href": "#reviews", "label": "Reviews" },
-      { "href": "#map", "label": "Map" }
+      { "href": "#map", "label": "Map" },
+      { "label": "Katha & Worship", "page": "katha/" },
+      { "label": "Life & Deeds", "page": "history/" }
     ],
     "noteTitle": "Good to know",
     "note": "Information may change; verify before traveling.",
@@ -342,6 +602,7 @@
     "disclaimerLead": "This site is for educational and informational purposes.",
     "unofficial": "This is an unofficial, non-commercial visitors' guide.",
     "dataSource": "Data from open sources and the Google Maps listing.",
+    "photoCredit": "Photo rights: all photos displayed on this website remain the property and copyright of their original photographers.",
     "copyright": "© 2026 Kruba Srivichai Monument · non-profit"
   },
   "legacy": {
@@ -398,6 +659,231 @@
         { "date": "2028", "title": "150th Birth Anniversary & UNESCO Nomination Year", "place": "", "desc": "Thailand is promoting his inclusion among UNESCO anniversary eminent figures as the highest tribute for his 150th birth anniversary." }
       ]
     }
+  },
+  "rituals": {
+    "label": "Etiquette",
+    "heading": "Worship Etiquette & Local Practice",
+    "quote": "People come here not just to look at a statue, but to honour the man who carried a road up the mountain.",
+    "intro": "Khruba Siwichai is venerated across Northern Thailand as the “road-building monk”. The monument is both a historical landmark and a place where locals still pray and fulfil vows. Visitors who do not wish to take part may simply observe quietly without disturbing anyone.",
+    "stepsTitle": "The usual order of a visit",
+    "steps": [
+      { "order": "1", "title": "Compose yourself", "desc": "Tidy your clothing so shoulders and knees are covered; if water is provided, a brief hand rinse signals arriving clean." },
+      { "order": "2", "title": "Light incense and offer a garland", "desc": "Three incense sticks, one candle and a marigold garland are the common offering; follow the on-site guidance rather than a fixed rule." },
+      { "order": "3", "title": "Press palms together and make a wish", "desc": "Raise joined palms to the forehead and state your name and wish. Local custom holds that a fulfilled wish should be acknowledged by returning." },
+      { "order": "4", "title": "Walk clockwise", "desc": "Three clockwise circuits of the base are the usual Northern Thai expression of respect; watch the steps and passing traffic." },
+      { "order": "5", "title": "Make an offering", "desc": "Clean water, flowers, fruit and incense are typical. Any donation box is entirely voluntary, with no expected amount." },
+      { "order": "6", "title": "Dedicate the merit and return", "desc": "Close with one more gesture of respect. Locals believe a granted wish is repaid by returning with flowers, a donation or help with building work." }
+    ],
+    "offeringsTitle": "Common offerings and what they mean",
+    "offerings": [
+      { "title": "Marigold garland", "desc": "The most common Northern Thai offering; its gold colour evokes light and perseverance, echoing monastic robes." },
+      { "title": "Incense and candles", "desc": "Incense stands for purified conduct, the candle for wisdom dispelling ignorance — commonly three sticks and one candle." },
+      { "title": "Clear water", "desc": "The simplest and most universally accepted offering, standing for purity and equality; a glass of water alone is enough." },
+      { "title": "Fruit and sweets", "desc": "Seasonal fruit or traditional sweets, usually taken home and shared afterwards to spread the merit." }
+    ],
+    "noteTitle": "On wishes and vow-keeping",
+    "note": "In Northern Thai belief, returning to fulfil a vow is understood as gratitude made concrete: coming back with flowers, a donation or help with road and temple work. This page describes a folk custom for cultural context only and makes no claim about supernatural effects; take part only if it fits your own beliefs.",
+    "tipsTitle": "Practical etiquette",
+    "tips": [
+      "This is a religious site: do not climb the base, lean on the statue or point your feet towards it.",
+      "Ask before photographing people, especially those mid-prayer; avoid flash and low-flying drones.",
+      "Dress with shoulders and knees covered; remove hats and shoes where signage asks for it.",
+      "Judge any request for donations yourself — this site does not endorse any individual or organisation.",
+      "Light incense only in the designated place and make sure it is fully out before leaving; the mountain is windy.",
+      "Move clockwise and keep to the flow — the simplest way to respect local custom."
+    ]
+  },
+  "weather": {
+    "label": "Weather",
+    "heading": "Current Conditions in Chiang Mai & 7-Day Outlook",
+    "intro": "The monument sits at the foot of Doi Suthep, where altitude and the mountain slope make it feel slightly different from the city centre: cool in the early morning, hot at midday, with brief afternoon showers in the rainy season. A quick look at live conditions and the week ahead makes planning far easier.",
+    "currentLabel": "Current conditions",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "precip": "Chance of rain today",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset",
+    "forecastTitle": "7-day outlook",
+    "todayLabel": "Today",
+    "uv": "UV index",
+    "windMax": "Strongest wind today",
+    "adviceTitle": "Advice for today",
+    "advice": {
+      "dressLabel": "What to wear",
+      "planLabel": "How to plan the visit",
+      "gearLabel": "What to bring",
+      "riskLabel": "Safety alerts",
+      "noAlert": "No weather warning is in force at the moment.",
+      "empty": "Conditions look steady — no special preparation needed, just head out as usual.",
+      "riskAlert": "Weather warning: {event}. Consider changing your plans and avoiding mountain roads and valleys; keep an eye on the latest updates.",
+      "riskThunder": "Thunderstorms are forecast. Do not stay on open ground, on a summit or under a lone tree — move into a building or a vehicle at the first thunder.",
+      "riskFlood": "Rain will be heavy. Valleys, streams and low ground on the mountain can flood quickly, and stone steps turn slick — avoid them.",
+      "riskGale": "Strong winds expected. Keep away from billboards, temporary structures and loose rock on the hillside, and watch for falling branches.",
+      "riskFog": "Visibility is poor. The mountain road and the viewpoints will be limited, so drive slowly and watch for oncoming traffic.",
+      "dressNormal": "Comfortable conditions — ordinary light clothing is fine.",
+      "dressHot": "It will be hot, so wear light, breathable clothing that lets you cool down.",
+      "dressCold": "It will be cold, so dress warm and bring a heavy coat.",
+      "dressLayers": "The temperature swings a lot between day and night — wear a light base layer plus a jacket you can take off.",
+      "dressRain": "Heavy rain is likely — a waterproof jacket, shoes with grip and a spare set of dry clothes are worth packing.",
+      "dressWind": "It will be windy, so wear close-fitting clothes; hats and loose long skirts blow away easily.",
+      "dressSnow": "It is cold and snow is possible — dress for the cold and watch your footing.",
+      "planSunny": "Clear weather, ideal for being outdoors; the hour after sunrise and the hour before sunset give the best light for photos.",
+      "planOvercast": "Overcast light is soft and flattering for photos, with no harsh sun — good for a slow, unhurried visit.",
+      "planRainChance": "Rain is fairly likely, so do any uphill walking in the morning and keep the afternoon for indoor or lowland stops.",
+      "planLightRain": "Light rain is expected and the stone steps get slippery — watch your footing, and expect open-air stops to be less pleasant.",
+      "planHeavy": "Rain will be heavy, so skip the mountain trails and streams and favour indoor sights or postpone the outing.",
+      "planThunder": "With thunderstorms around, open ground on the mountain is unsafe and outdoor or high-up activities will likely pause — stay indoors.",
+      "planHot": "The afternoon will feel hot, so come early or late and rest in the shade around midday.",
+      "planFog": "Visibility is limited, so the views will disappoint — a temple visit or an indoor museum is the better use of the day.",
+      "planSnow": "It is cold with snow possible and the mountain road can ice over — keep time outdoors short.",
+      "planAlert": "Consider changing your plans: stay in town or indoors and put off any hiking or stream-side walking.",
+      "gearUmbrella": "Folding umbrella",
+      "gearRaincoat": "Raincoat (a long umbrella is a poor idea in strong wind)",
+      "gearSunscreen": "Sunscreen, sunglasses and a sun hat",
+      "gearWater": "Plenty of drinking water and something to keep cool",
+      "gearWarm": "Heavy coat and a scarf",
+      "gearMask": "A face mask"
+    },
+    "sunHint": "Sunset today is around {sunset}; the hour before it gives the best side light on the statue.",
+    "updatedPrefix": "Observation time",
+    "offlineNote": "Values shown are a reference snapshot — once you arrive, trust what you feel and the latest local forecast."
+  },
+  "facilities": {
+    "label": "Facilities",
+    "heading": "Visitor Services & Nearby Amenities (neutral, by type)",
+    "intro": "The list below describes the types of facilities you can generally expect at and around the monument. No individual business is recommended; check on-site notices for current opening hours, fees and availability.",
+    "note": "This is a non-profit educational site. No specific shop, brand or venue is recommended — the overview below describes facility types and locations only.",
+    "items": [
+      { "type": "Public toilets", "desc": "Public toilets are usually available along this stretch of road and near the temple and the foot of the mountain; some are fee-based or maintained by donation.", "hint": "Carry tissues and small change" },
+      { "type": "Parking", "desc": "Parking along Huay Kaew Road and at the foot of the mountain is mostly roadside or open-lot, and fills up in high season and early mornings.", "hint": "Arrive early or take a songthaew in peak season" },
+      { "type": "Food and snacks", "desc": "The area offers Northern Thai noodles, snack stalls, coffee and simple meals across a wide price range, mostly along the main road and near the university.", "hint": "Plan lunch around the hottest hours" },
+      { "type": "Accommodation", "desc": "Options range from hostels and guesthouses to mid-range and upper-tier hotels, concentrated in the Old City, the Nimman area and the foot of the mountain.", "hint": "Choose a district by budget and transport needs" },
+      { "type": "Shops and convenience stores", "desc": "Convenience stores and small supermarkets along the main road stock water, rain gear, sunscreen and basic medicines.", "hint": "Refill water before heading uphill" },
+      { "type": "Fuel and charging", "desc": "Petrol stations and EV charging points are spread across the city and main roads; facilities on the mountain road itself are sparse.", "hint": "Check fuel or charge before the climb" },
+      { "type": "Medical care and pharmacies", "desc": "Pharmacies, clinics and general hospitals in the city and around the university can handle heat exhaustion, scrapes and similar issues.", "hint": "Bring insect repellent and stomach remedy" },
+      { "type": "Banking and cash", "desc": "Bank branches and ATMs line the main road and commercial districts; most small stalls take cash only.", "hint": "Keep some small notes handy" },
+      { "type": "Water and rest spots", "desc": "Pavilions, shaded benches and the open ground in front of the temple are the usual places to rest; some offer free or donation-based water.", "hint": "A reusable bottle cuts plastic waste" },
+      { "type": "Accessibility", "desc": "The platform around the base is essentially level with the street with no steps; some surrounding paths and hillside sections remain uneven.", "hint": "Surfaces get slippery after rain" }
+    ]
+  },
+  "seasons": {
+    "label": "Seasons",
+    "heading": "Seasonal Strategy: Climate, Visibility & Crowds",
+    "intro": "Chiang Mai's seasons differ mainly in temperature, rainfall and air quality. The table below compares four standard periods so the question “when should I go” becomes a practical decision.",
+    "headSeason": "Period",
+    "headWeather": "Climate & visibility",
+    "headCrowd": "Crowds & experience",
+    "headAdvice": "Strategy",
+    "rows": [
+      { "season": "Cool season · Nov–Feb", "weather": "15–30°C, little rain, clear air; light mist over the mountain on some mornings", "crowd": "Busiest time of year, especially early mornings and weekends", "advice": "The first choice. 07:00–09:00 gives soft light and fewer people; bring a light jacket for the temperature swing" },
+      { "season": "Hot season & burning period · Mar–May", "weather": "22–38°C; agricultural burning in March–April can raise PM2.5 and cut visibility", "crowd": "Moderate crowds; almost nobody at midday", "advice": "Check air quality before travelling if you are sensitive; keep activity to sunrise and sunset, stay indoors at midday" },
+      { "season": "Rainy season · Jun–Aug", "weather": "23–32°C with short afternoon showers; the mountain and waterfalls look their best after rain", "crowd": "Fewer visitors and fresh post-rain air", "advice": "Carry rain gear and climb in the morning; stone steps are slippery after rain, and insects are more active" },
+      { "season": "Late rains turning cool · Sep–Oct", "weather": "22–31°C as the rains ease, with occasional multi-day downpours and standing water", "crowd": "Visitor numbers rise again and festivals pick up", "advice": "A good balance of greenery and comfort; check the weekly forecast and avoid runs of rainy days" }
+    ],
+    "note": "Temperature and rainfall ranges summarise Chiang Mai's long-term climate normals and can be checked against the averages published by the Thai Meteorological Department; individual years vary somewhat."
+  },
+  "audiences": {
+    "label": "Routes by traveller",
+    "heading": "Itineraries Tailored to Different Visitors",
+    "intro": "The same monument suits very different plans. The three routes below correspond to families with children, photographers and nature watchers, and visitors needing a low-effort, step-free option — pick by who you are travelling with and how fast you want to move.",
+    "routes": [
+      {
+        "name": "Family with children",
+        "tag": "Kids / older relatives",
+        "duration": "About 2–3 hours",
+        "suitable": "Families who want an easy pace with room for rest and a little learning",
+        "steps": [
+          "Start at the base platform with the story of the road-building monk, so children look at the statue with a question in mind",
+          "Follow the flat path towards Huay Kaew Waterfall to see the stream and shade — no climbing involved",
+          "Return to the main road for a Northern Thai noodle or snack meal, away from the midday heat",
+          "If time and energy allow, ride up to the temple for the city panorama"
+        ]
+      },
+      {
+        "name": "Photography and nature",
+        "tag": "Photography / nature",
+        "duration": "Half to full day",
+        "suitable": "Travellers who care about light quality and will wait for the right position",
+        "steps": [
+          "Arrive just after sunrise and use low side light on the statue and the mountain ridgeline",
+          "Walk the mountain road in the morning, recording vegetation, birds and light under the canopy",
+          "Rest in the shade or at a café at midday, waiting out any afternoon shower (in the rainy season)",
+          "Return to the opposite side of the base an hour before sunset for golden light, then stay for blue hour"
+        ]
+      },
+      {
+        "name": "Low-effort and step-free",
+        "tag": "Wheelchair / limited mobility",
+        "duration": "About 1–1.5 hours",
+        "suitable": "Visitors who need level surfaces, short distances and nearby places to sit",
+        "steps": [
+          "Park beside the base platform, which is essentially level with the street and free of steps",
+          "Follow the flat loop for a full frontal view of the statue and inscriptions on hard standing",
+          "Rest on a shaded bench or in a pavilion and watch locals offering flowers and prayers",
+          "Use the public facilities along the main road for toilets and water before leaving"
+        ]
+      }
+    ]
+  },
+  "routes": {
+    "label": "Routes",
+    "heading": "Recommended Routes (Half-Day / Full-Day)",
+    "intro": "Both routes below build outwards from the monument, linking the foot of the mountain to the temple above. Times and distances are estimates — adjust them to your fitness, the weather and the crowds.",
+    "halfDay": {
+      "title": "Half-day essentials",
+      "duration": "About 4 hours",
+      "summary": "Centred on the monument with a short stretch of the lower trail — ideal for a tight schedule or a first visit.",
+      "steps": [
+        "08:30 Arrive at the base platform, walk clockwise and read the inscriptions to learn why it was built",
+        "09:30 Walk along Huay Kaew Road to the waterfall entrance for the stream and shade",
+        "11:00 Return to the main road for lunch or coffee, avoiding the midday heat",
+        "12:30 Add a short climb or end the visit, depending on energy levels"
+      ]
+    },
+    "fullDay": {
+      "title": "Full-day in depth",
+      "duration": "About 8–9 hours",
+      "summary": "Combines the monument, the lower trail and the temple above into one day of history, nature and city views.",
+      "steps": [
+        "08:00 Base of the monument: the best light and the fewest people",
+        "09:30 Lower trail and waterfall: vegetation, birds and the stream",
+        "11:30 Lunch and a water refill back on the main road",
+        "13:00 Ride or walk up to the temple and its viewing platform",
+        "15:30 Return downhill for coffee and bookshops around the university or Nimman",
+        "17:30 Back on the opposite side of the monument to finish in golden light"
+      ]
+    }
+  },
+  "responsibility": {
+    "label": "Science & care",
+    "heading": "What to Know, and How to Behave",
+    "intro": "This is a memorial that is still in daily use, so it asks to be understood as well as respected. Three points worth knowing come first, followed by the boundaries to observe while you are here.",
+    "scienceTitle": "Three things worth knowing first",
+    "science": [
+      { "title": "Why he is remembered", "desc": "Khruba Siwichai (1878–1938) was a Lanna monk renowned for directing the construction of the road up Doi Suthep to Wat Phra That Doi Suthep. Built with hand tools and mass labour before heavy machinery existed, the road remains physical evidence of collective work." },
+      { "title": "It is neither a tomb nor a temple", "desc": "This is a commemorative structure used for remembrance and devotion, not a burial site. Inscriptions and dates around the base record when it was erected and who funded it — the primary evidence for dating and interpreting it." },
+      { "title": "Why road-building is symbolic", "desc": "In Northern Thai religious thought, building a road is at once physical public works and a metaphor for opening a path to goodness for others. That is why the monument is still actively used by the sangha, local communities and pilgrims." }
+    ],
+    "doTitle": "Recommended",
+    "do": [
+      "Walk clockwise, in keeping with local custom",
+      "Keep your voice down and leave prayer space to those who are worshipping",
+      "Take litter with you or use the sorted bins; clearing it on a mountain is costly",
+      "Carry a reusable bottle instead of buying single-use plastic",
+      "Ask before photographing people, especially monks and those at prayer",
+      "Park only in designated areas so emergency access stays clear"
+    ],
+    "dontTitle": "Please avoid",
+    "dont": [
+      "Climbing the base, the statue or the railings — stone surfaces wear quickly",
+      "Touching or moving offerings, incense or garlands",
+      "Flying drones low or setting up tripods for long periods in the core area",
+      "Releasing animals or sky lanterns, which can start wildfires",
+      "Walking against traffic on the mountain road during the burning season; it is narrow with limited sightlines",
+      "Treating any commercial promise of “guaranteed results” as official information"
+    ],
+    "conservation": "The stone and metalwork of the monument weather naturally over time. The most effective protection a visitor can offer is simply to touch nothing, carve nothing and leave no trace — so the next person sees exactly the same thing."
   },
   "legal": {
     "privacy-policy": {

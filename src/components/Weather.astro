@@ -1,0 +1,364 @@
+---
+import { getWeather, fallbackWeather } from '../lib/weather';
+import { weatherLabel, weatherIcon, weatherCodes } from '../lib/weather-codes';
+import { buildAdvice } from '../lib/weather-advice';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  messages: Record<string, any>;
+}
+const { lang, messages } = Astro.props;
+const w = messages.weather;
+const a = w.advice ?? {};
+
+/** Condition labels for the active language, reused by the client refresh. */
+const labels = Object.fromEntries(
+  Object.entries(weatherCodes).map(([code, v]) => [code, v[lang]?.full ?? v.en.full])
+);
+const shorts = Object.fromEntries(
+  Object.entries(weatherCodes).map(([code, v]) => [code, v[lang]?.short ?? v.en.short])
+);
+
+// Fetched on the server (render/build time) and cached between renders.
+const snap = (await getWeather()) ?? fallbackWeather();
+
+const condition = weatherLabel(snap.code, lang, 'full');
+const icon = weatherIcon(snap.code);
+const observed = snap.observedAt ? snap.observedAt.replace('T', ' ') : '';
+
+const advice = buildAdvice(
+  {
+    codeNow: snap.code,
+    codeToday: snap.codeToday,
+    tempNow: snap.temperature,
+    apparent: snap.apparent,
+    tempMax: snap.tempMax,
+    tempMin: snap.tempMin,
+    windNow: snap.wind,
+    windMax: snap.windMax,
+    precipProb: snap.todayPrecip,
+    uvMax: snap.uvMax,
+    alerts: snap.alerts.map((x) => x.event),
+  },
+  a
+);
+
+const hasRisk = advice.risk.length > 0;
+const showEmpty = !hasRisk && advice.dress.length + advice.plan.length + advice.gear.length === 0;
+
+const gearKinds: Record<string, string> = {
+  raincoat: a.gearRaincoat,
+  umbrella: a.gearUmbrella,
+  sunscreen: a.gearSunscreen,
+  water: a.gearWater,
+  warm: a.gearWarm,
+  mask: a.gearMask,
+};
+const gearOn = (kind: string) => advice.gear.includes(gearKinds[kind]);
+
+const weekday = (iso: string) => {
+  const d = new Date(`${iso}T12:00:00`);
+  return Number.isNaN(d.getTime())
+    ? iso
+    : d.toLocaleDateString(lang === 'th' ? 'th-TH' : lang === 'zh' ? 'zh-CN' : 'en-US', {
+        weekday: 'short',
+      });
+};
+
+const dayNum = (iso: string) => {
+  const d = new Date(`${iso}T12:00:00`);
+  return Number.isNaN(d.getTime()) ? '' : d.getDate();
+};
+
+const sunHint = String(w.sunHint ?? '').replace('{sunset}', snap.sunset);
+const locale = lang === 'th' ? 'th-TH' : lang === 'zh' ? 'zh-CN' : 'en-US';
+---
+
+<section id="weather" class="py-20 bg-sand text-ink">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{w.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{w.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ink/80">{w.intro}</p>
+
+    <div
+      id="weather-block"
+      class="mt-10 grid lg:grid-cols-5 gap-6"
+      data-labels={JSON.stringify(labels)}
+      data-shorts={JSON.stringify(shorts)}
+      data-advice={JSON.stringify(a)}
+      data-locale={locale}
+      data-today={w.todayLabel}
+    >
+      <!-- current conditions -->
+      <div class="lg:col-span-2 rounded-2xl bg-teak text-ivory p-6 shadow-lg">
+        <p class="text-xs uppercase tracking-[0.18em] text-gold">{w.currentLabel}</p>
+        <div class="mt-3 flex items-start justify-between gap-4">
+          <div>
+            <div class="flex items-end gap-2">
+              <span id="wx-temp" class="font-display text-6xl font-semibold text-goldBright leading-none"
+                >{snap.temperature}°</span
+              >
+              <span id="wx-icon" class="text-3xl leading-none">{icon}</span>
+            </div>
+            <p id="wx-cond" class="mt-2 text-ivory/85">{condition}</p>
+            <p id="wx-range" class="mt-1 text-sm text-ivory/60">
+              {snap.tempMax}° / {snap.tempMin}°
+            </p>
+          </div>
+          {observed && (
+            <p id="wx-time" class="text-[11px] text-ivory/50 text-right whitespace-nowrap">
+              {w.updatedPrefix}
+              <br />{observed}
+            </p>
+          )}
+        </div>
+
+        <dl class="mt-6 grid grid-cols-2 gap-3 text-sm">
+          <div class="rounded-xl bg-teakDeep/60 border border-gold/20 px-4 py-3">
+            <dt class="text-ivory/60 text-xs">{w.feelsLike}</dt>
+            <dd id="wx-feels" class="font-semibold text-goldBright mt-0.5">{snap.apparent}°C</dd>
+          </div>
+          <div class="rounded-xl bg-teakDeep/60 border border-gold/20 px-4 py-3">
+            <dt class="text-ivory/60 text-xs">{w.precip}</dt>
+            <dd id="wx-precip" class="font-semibold text-goldBright mt-0.5">{snap.todayPrecip}%</dd>
+          </div>
+          <div class="rounded-xl bg-teakDeep/60 border border-gold/20 px-4 py-3">
+            <dt class="text-ivory/60 text-xs">{w.wind}</dt>
+            <dd id="wx-wind" class="font-semibold text-goldBright mt-0.5">{snap.wind} km/h</dd>
+          </div>
+          <div class="rounded-xl bg-teakDeep/60 border border-gold/20 px-4 py-3">
+            <dt class="text-ivory/60 text-xs">{w.windMax}</dt>
+            <dd id="wx-windmax" class="font-semibold text-goldBright mt-0.5">{snap.windMax} km/h</dd>
+          </div>
+          <div class="rounded-xl bg-teakDeep/60 border border-gold/20 px-4 py-3">
+            <dt class="text-ivory/60 text-xs">☀️ {w.uv}</dt>
+            <dd id="wx-uv" class="font-semibold text-goldBright mt-0.5">{snap.uvMax}</dd>
+          </div>
+          <div class="rounded-xl bg-teakDeep/60 border border-gold/20 px-4 py-3">
+            <dt class="text-ivory/60 text-xs">{w.humidity}</dt>
+            <dd id="wx-humidity" class="font-semibold text-goldBright mt-0.5">{snap.humidity}%</dd>
+          </div>
+          <div class="rounded-xl bg-teakDeep/60 border border-gold/20 px-4 py-3">
+            <dt class="text-ivory/60 text-xs">🌅 {w.sunrise}</dt>
+            <dd id="wx-sunrise" class="font-semibold text-goldBright mt-0.5">{snap.sunrise}</dd>
+          </div>
+          <div class="rounded-xl bg-teakDeep/60 border border-gold/20 px-4 py-3">
+            <dt class="text-ivory/60 text-xs">🌇 {w.sunset}</dt>
+            <dd id="wx-sunset" class="font-semibold text-goldBright mt-0.5">{snap.sunset}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- forecast + advice -->
+      <div class="lg:col-span-3 space-y-6">
+        <div class="rounded-2xl border border-gold/30 bg-white p-6 shadow-sm">
+          <h3 class="font-display text-xl text-teak">{w.forecastTitle}</h3>
+          <div id="wx-days" class="mt-4 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+            {
+              snap.days.map((d: any, i: number) => (
+                <div class="rounded-xl bg-sand border border-gold/20 px-3 py-4 text-center">
+                  <p class="text-xs text-ink/60">{i === 0 ? w.todayLabel : weekday(d.date)}</p>
+                  <p class="text-[10px] text-ink/40">{dayNum(d.date)}</p>
+                  <p class="text-2xl my-1.5">{weatherIcon(d.code)}</p>
+                  <p class="text-[11px] text-ink/65 leading-tight">{weatherLabel(d.code, lang, 'short')}</p>
+                  <p class="mt-2 text-sm font-semibold text-teak">
+                    {d.max}° <span class="text-ink/50 font-normal">/ {d.min}°</span>
+                  </p>
+                  <p class="text-[11px] text-gold mt-0.5">💧 {d.precip}%</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-gold/30 bg-white p-6 shadow-sm">
+          <h3 class="font-display text-xl text-teak">{w.adviceTitle}</h3>
+
+          <div id="wx-advice" class="mt-4 space-y-3">
+            <!-- risk: only when something applies -->
+            <div id="wx-risk" hidden={!hasRisk} class="rounded-xl border border-red-300 bg-red-50 px-4 py-3">
+              <p class="text-xs font-semibold tracking-wide text-red-700">⚠️ {a.riskLabel}</p>
+              <ul class="mt-1.5 space-y-1 text-sm text-red-800 list-disc pl-5">
+                <li id="wx-risk-alert" hidden={snap.alerts.length === 0}>
+                  {String(a.riskAlert ?? '').replace('{event}', snap.alerts.map((x) => x.event).join(' · '))}
+                </li>
+                <li id="wx-risk-thunder" hidden={!advice.risk.includes(a.riskThunder)}>{a.riskThunder}</li>
+                <li id="wx-risk-flood" hidden={!advice.risk.includes(a.riskFlood)}>{a.riskFlood}</li>
+                <li id="wx-risk-gale" hidden={!advice.risk.includes(a.riskGale)}>{a.riskGale}</li>
+                <li id="wx-risk-fog" hidden={!advice.risk.includes(a.riskFog)}>{a.riskFog}</li>
+              </ul>
+            </div>
+            <p id="wx-norisk" hidden={hasRisk} class="text-sm text-ink/55">⚠️ {a.noAlert}</p>
+
+            <div id="wx-dress-row" hidden={advice.dress.length === 0} class="rounded-xl bg-sand px-4 py-3">
+              <p class="text-xs font-semibold tracking-wide text-teak">👕 {a.dressLabel}</p>
+              <p id="wx-dress" class="mt-1 text-sm text-ink/85 leading-relaxed">{advice.dress[0]}</p>
+            </div>
+
+            <div id="wx-plan-row" hidden={advice.plan.length === 0} class="rounded-xl bg-sand px-4 py-3">
+              <p class="text-xs font-semibold tracking-wide text-teak">🧭 {a.planLabel}</p>
+              <p id="wx-plan" class="mt-1 text-sm text-ink/85 leading-relaxed">{advice.plan[0]}</p>
+            </div>
+
+            <div id="wx-gear-row" hidden={advice.gear.length === 0} class="rounded-xl bg-sand px-4 py-3">
+              <p class="text-xs font-semibold tracking-wide text-teak">🎒 {a.gearLabel}</p>
+              <div id="wx-gear" class="mt-2 flex flex-wrap gap-2">
+                {
+                  Object.entries(gearKinds).map(([kind, text]) => (
+                    <span
+                      data-gear={kind}
+                      hidden={!gearOn(kind)}
+                      class="rounded-full border border-gold/40 bg-white px-3 py-1 text-xs text-ink/80"
+                    >
+                      {text}
+                    </span>
+                  ))
+                }
+              </div>
+            </div>
+
+            <p id="wx-empty" hidden={!showEmpty} class="text-sm text-ink/70">{a.empty}</p>
+          </div>
+
+          {sunHint && <p class="mt-4 text-sm text-ink/60">{sunHint}</p>}
+          <p class="mt-3 text-xs text-ink/45">{w.offlineNote}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { normalizeWeather, weatherApiUrl } from '../lib/weather';
+  import { buildAdvice } from '../lib/weather-advice';
+  import { weatherIcon } from '../lib/weather-codes';
+
+  const block = document.getElementById('weather-block');
+  if (block) {
+    const api = weatherApiUrl;
+    const labels: Record<string, string> = JSON.parse(block.dataset.labels || '{}');
+    const shorts: Record<string, string> = JSON.parse(block.dataset.shorts || '{}');
+    const strings: Record<string, string> = JSON.parse(block.dataset.advice || '{}');
+    const locale = block.dataset.locale || 'en-US';
+    const todayLabel = block.dataset.today || 'Today';
+
+    const set = (id: string, value: string) => {
+      const el = document.getElementById(id);
+      if (el && value !== undefined && value !== null) el.textContent = value;
+    };
+    const show = (id: string, on: boolean) => {
+      const el = document.getElementById(id);
+      if (el) el.hidden = !on;
+    };
+
+    const apply = (snap: any) => {
+      set('wx-temp', `${snap.temperature}°`);
+      set('wx-icon', weatherIcon(snap.code));
+      set('wx-cond', labels[String(snap.code)] ?? labels['3']);
+      set('wx-range', `${snap.tempMax}° / ${snap.tempMin}°`);
+      if (snap.observedAt) set('wx-time', snap.observedAt.replace('T', ' '));
+      set('wx-feels', `${snap.apparent}°C`);
+      set('wx-precip', `${snap.todayPrecip}%`);
+      set('wx-wind', `${snap.wind} km/h`);
+      set('wx-windmax', `${snap.windMax} km/h`);
+      set('wx-uv', `${snap.uvMax}`);
+      set('wx-humidity', `${snap.humidity}%`);
+      set('wx-sunrise', snap.sunrise);
+      set('wx-sunset', snap.sunset);
+
+      const days = document.getElementById('wx-days');
+      if (days && snap.days?.length) {
+        days.innerHTML = snap.days
+          .map((d: any, i: number) => {
+            const date = new Date(`${d.date}T12:00:00`);
+            const name = Number.isNaN(date.getTime())
+              ? d.date
+              : i === 0
+                ? todayLabel
+                : date.toLocaleDateString(locale, { weekday: 'short' });
+            const num = Number.isNaN(date.getTime()) ? '' : date.getDate();
+            return `<div class="rounded-xl bg-sand border border-gold/20 px-3 py-4 text-center">
+              <p class="text-xs text-ink/60">${name}</p>
+              <p class="text-[10px] text-ink/40">${num}</p>
+              <p class="text-2xl my-1.5">${weatherIcon(d.code)}</p>
+              <p class="text-[11px] text-ink/65 leading-tight">${shorts[String(d.code)] ?? ''}</p>
+              <p class="mt-2 text-sm font-semibold text-teak">${d.max}° <span class="text-ink/50 font-normal">/ ${d.min}°</span></p>
+              <p class="text-[11px] text-gold mt-0.5">💧 ${d.precip}%</p>
+            </div>`;
+          })
+          .join('');
+      }
+
+      const advice = buildAdvice(
+        {
+          codeNow: snap.code,
+          codeToday: snap.codeToday,
+          tempNow: snap.temperature,
+          apparent: snap.apparent,
+          tempMax: snap.tempMax,
+          tempMin: snap.tempMin,
+          windNow: snap.wind,
+          windMax: snap.windMax,
+          precipProb: snap.todayPrecip,
+          uvMax: snap.uvMax,
+          alerts: snap.alerts.map((x: any) => x.event),
+        },
+        strings
+      );
+
+      const gearKinds: Record<string, string> = {
+        raincoat: strings.gearRaincoat,
+        umbrella: strings.gearUmbrella,
+        sunscreen: strings.gearSunscreen,
+        water: strings.gearWater,
+        warm: strings.gearWarm,
+        mask: strings.gearMask,
+      };
+      const on = new Set(advice.gear);
+      document.querySelectorAll<HTMLElement>('#wx-gear [data-gear]').forEach((el) => {
+        el.hidden = !on.has(gearKinds[el.dataset.gear ?? ''] ?? '');
+      });
+
+      const alertEl = document.getElementById('wx-risk-alert');
+      const alerts = snap.alerts ?? [];
+      if (alertEl) {
+        alertEl.hidden = alerts.length === 0;
+        if (alerts.length) {
+          alertEl.textContent = String(strings.riskAlert ?? '').replace(
+            /\{event\}/g,
+            alerts.map((x: any) => x.event).join(' · ')
+          );
+        }
+      }
+      show('wx-risk-thunder', advice.risk.includes(strings.riskThunder));
+      show('wx-risk-flood', advice.risk.includes(strings.riskFlood));
+      show('wx-risk-gale', advice.risk.includes(strings.riskGale));
+      show('wx-risk-fog', advice.risk.includes(strings.riskFog));
+
+      const hasRisk = advice.risk.length > 0;
+      show('wx-risk', hasRisk);
+      show('wx-norisk', !hasRisk);
+
+      set('wx-dress', advice.dress[0] ?? '');
+      show('wx-dress-row', advice.dress.length > 0);
+      set('wx-plan', advice.plan[0] ?? '');
+      show('wx-plan-row', advice.plan.length > 0);
+      show('wx-gear-row', advice.gear.length > 0);
+      show(
+        'wx-empty',
+        !hasRisk && advice.dress.length + advice.plan.length + advice.gear.length === 0
+      );
+    };
+
+    fetch(api)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((raw) => {
+        if (!raw || !raw.current) return;
+        apply(normalizeWeather(raw));
+      })
+      .catch(() => {
+        /* keep the server-rendered values */
+      });
+  }
+</script>

@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { languagesList, type Lang, getI18n } from '../../i18n/ui';
+import { siteConfig } from '../../config';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const { messages } = await getI18n(new URL(`/${lang}/katha/`, 'http://localhost'));
+const k = messages.katha;
+const steps = k.steps;
+---
+
+<BaseLayout
+  lang={lang}
+  title={k.meta.title}
+  description={k.meta.description}
+  messages={messages}
+  meta={k.meta}
+  pagePath="katha/"
+  pageName={k.title}
+  includeFaq={false}
+>
+  <Header lang={lang} messages={messages} base={`/${lang}/`} switchPath="katha/" />
+
+  <main class="pt-28 pb-20 bg-ivory text-ink">
+    <div class="max-w-4xl mx-auto px-5">
+      <!-- breadcrumb -->
+      <nav aria-label="Breadcrumb" class="text-xs text-ink/55">
+        <a href={`/${lang}/`} class="hover:text-gold">{siteConfig.name[lang]}</a>
+        <span class="mx-1.5 text-gold/60">›</span>
+        <span class="text-ink/75">{k.title}</span>
+      </nav>
+
+      <p class="font-hand text-gold text-xl md:text-2xl mt-6">{k.eyebrow}</p>
+      <h1 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{k.title}</h1>
+      <p class="mt-4 text-lg text-ink/80">{k.subtitle}</p>
+      <div class="section-divider my-8"></div>
+      <p class="text-ink/80 leading-relaxed">{k.intro}</p>
+    </div>
+
+    <!-- ① Chanting order -->
+    <section id="chants" class="max-w-4xl mx-auto px-5 mt-14">
+      <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{steps.label}</h2>
+      <p class="mt-2 text-sm text-ink/70">{steps.note}</p>
+
+      <div class="mt-6 space-y-5">
+        {
+          steps.items.map((s: any) => (
+            <article class="rounded-2xl border border-gold/30 bg-white/60 p-6 shadow-sm">
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <span class="w-8 h-8 shrink-0 rounded-full bg-teak text-goldBright font-display text-sm grid place-items-center">
+                  {s.no}
+                </span>
+                <h3 class="font-display text-xl text-teak font-semibold">{s.title}</h3>
+                <span class="chip text-gold">{steps.repeatLabel} · {s.repeat}</span>
+              </div>
+
+              <dl class="mt-4 space-y-3 text-sm">
+                <div class="grid sm:grid-cols-[7rem_1fr] gap-1 sm:gap-4">
+                  <dt class="text-ink/55">{steps.paliLabel}</dt>
+                  <dd class="italic text-teak/90">{s.pali}</dd>
+                </div>
+                <div class="grid sm:grid-cols-[7rem_1fr] gap-1 sm:gap-4">
+                  <dt class="text-ink/55">{steps.thaiLabel}</dt>
+                  <dd class="text-teak text-base leading-loose">{s.thai}</dd>
+                </div>
+                <div class="grid sm:grid-cols-[7rem_1fr] gap-1 sm:gap-4">
+                  <dt class="text-ink/55">{steps.romanLabel}</dt>
+                  <dd class="text-ink/80 tracking-wide">{s.roman}</dd>
+                </div>
+                <div class="grid sm:grid-cols-[7rem_1fr] gap-1 sm:gap-4">
+                  <dt class="text-ink/55">{steps.meaningLabel}</dt>
+                  <dd class="text-ink/80">{s.meaning}</dd>
+                </div>
+              </dl>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- ② Offerings -->
+    <section id="offerings" class="max-w-4xl mx-auto px-5 mt-16">
+      <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{k.offerings.title}</h2>
+      <p class="mt-2 text-sm text-ink/70">{k.offerings.note}</p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        {
+          k.offerings.items.map((o: any) => (
+            <div class="rounded-xl border border-gold/25 bg-teak/5 p-5">
+              <div class="font-display text-teak font-semibold">{o.name}</div>
+              <p class="mt-1.5 text-sm text-ink/75">{o.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- ③ Etiquette -->
+    <section id="etiquette" class="max-w-4xl mx-auto px-5 mt-16">
+      <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{k.etiquette.title}</h2>
+      <ul class="mt-6 space-y-3">
+        {
+          k.etiquette.items.map((e: any) => (
+            <li class="rounded-xl border border-gold/25 bg-white/60 p-5">
+              <div class="font-display text-teak font-semibold">{e.name}</div>
+              <p class="mt-1 text-sm text-ink/75">{e.desc}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- ④ Best time -->
+    <section id="best-time" class="max-w-4xl mx-auto px-5 mt-16">
+      <h2 class="font-display text-2xl md:text-3xl text-teak font-semibold">{k.bestTime.title}</h2>
+      <ul class="mt-6 rounded-2xl border border-gold/30 bg-white/60 p-6 space-y-3 text-sm">
+        {
+          k.bestTime.items.map((b: any) => (
+            <li class="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4 border-b border-gold/15 pb-3 last:border-0 last:pb-0">
+              <span class="text-teak font-medium whitespace-nowrap">{b.label}</span>
+              <span class="text-ink/75 sm:text-right">{b.value}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- ⑤ Accuracy note -->
+    <section id="accuracy" class="max-w-4xl mx-auto px-5 mt-14">
+      <div class="rounded-2xl border border-gold/40 bg-sand p-6">
+        <h2 class="font-display text-lg text-teak font-semibold">{k.accuracy.title}</h2>
+        <p class="mt-2 text-sm text-ink/80 leading-relaxed">{k.accuracy.body}</p>
+      </div>
+    </section>
+
+    <!-- ⑥ Back to the main guide (reverse internal link) -->
+    <section id="back" class="max-w-4xl mx-auto px-5 mt-14">
+      <div class="rounded-2xl bg-teakDeep text-ivory p-7">
+        <h2 class="font-display text-2xl text-goldBright">{k.back.title}</h2>
+        <p class="mt-2 text-sm text-ivory/80">{k.back.body}</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a
+            href={`/${lang}/#guide`}
+            class="inline-flex items-center bg-gold text-teakDeep font-semibold px-5 py-2.5 rounded-full hover:bg-goldBright transition-colors"
+          >
+            {k.back.guideLink}
+          </a>
+          <a
+            href={`/${lang}/#map`}
+            class="inline-flex items-center border border-gold/60 text-gold px-5 py-2.5 rounded-full hover:bg-gold/10 transition-colors"
+          >
+            {k.back.mapLink}
+          </a>
+          <a
+            href={`/${lang}/history/`}
+            class="inline-flex items-center border border-gold/60 text-gold px-5 py-2.5 rounded-full hover:bg-gold/10 transition-colors"
+          >
+            {messages.header.historyPage}
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} messages={messages} />
+</BaseLayout>

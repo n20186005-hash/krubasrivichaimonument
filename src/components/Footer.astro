@@ -23,7 +23,12 @@ const mapsUrl = siteConfig.mapsUrl;
         <div class="text-xs uppercase tracking-wider text-gold mb-3">{footer.navTitle}</div>
         <ul class="grid grid-cols-2 gap-2 text-sm">
           {footer.navItems.map((n) => (
-            <li><a href={n.href} class="text-ivory/80 hover:text-goldBright transition-colors">{n.label}</a></li>
+            <li>
+              <a
+                href={n.page ? `/${lang}/${n.page}` : n.href}
+                class={`transition-colors ${n.page ? 'text-goldBright hover:text-gold' : 'text-ivory/80 hover:text-goldBright'}`}
+              >{n.label}</a>
+            </li>
           ))}
         </ul>
       </div>
@@ -74,6 +79,7 @@ const mapsUrl = siteConfig.mapsUrl;
       <p>{footer.disclaimerLead}</p>
       <p class="text-ivory/70">{footer.unofficial}</p>
       <p>{footer.dataSource}</p>
+      {footer.photoCredit && <p class="text-ivory/70">{footer.photoCredit}</p>}
       <p class="pt-2 text-ivory/40">{footer.copyright}</p>
     </div>
   </div>

@@ -1,19 +1,77 @@
 import { languagesList, htmlLang, type Lang } from './i18n/ui';
 
+/**
+ * Single source of truth for the Khruba Siwichai Monument entity.
+ * Every value here is mirrored into JSON-LD, TDK, headings and body copy.
+ */
 export const siteConfig = {
   domain: 'https://krubasrivichaimonument.com',
 
+  /**
+   * Official full name — matches the Google Business Profile listing exactly.
+   * GSC: 94 of 109 impressions come from "kruba*" spellings, only 4 from "khruba*",
+   * so the primary name must be "Kruba Srivichai"; "Khruba Siwichai" stays an alias.
+   */
   name: {
     th: 'อนุสาวรีย์ครูบาศรีวิชัย',
     en: 'Kruba Srivichai Monument',
     zh: '古巴·斯里维差纪念碑',
   },
+  /** Common short name / what the domain means */
   nameShort: {
     th: 'ครูบาศรีวิชัย',
     en: 'Kruba Srivichai',
     zh: '古巴·斯里维差',
   },
+  /** Alternate names used for entity disambiguation (Knowledge Graph) */
+  alternateName: {
+    th: [
+      'อนุสาวรีย์ครูบาศรีวิชัย',
+      'ครูบาศรีวิชัย',
+      'อนุสาวรีย์ครูบาศรีวิชัย เชียงใหม่',
+      'ครูบาศรีวิชัย เชียงใหม่',
+      'Kruba Srivichai Monument',
+      'Khruba Siwichai Monument',
+    ],
+    en: [
+      'Khruba Siwichai Monument',
+      'Khruba Siwichai',
+      'Kruba Srivichai',
+      'Kruba Sriwichai Monument',
+      'Kruba Srivichai Monument Chiang Mai',
+      'Chiang Mai Kruba Srivichai Monument',
+      'ครูบาศรีวิชัย',
+    ],
+    zh: [
+      '古巴·斯里维差纪念碑',
+      '库巴·西威猜纪念碑',
+      '古巴洗威猜纪念碑',
+      '清迈古巴·斯里维差纪念碑',
+      'Kruba Srivichai Monument',
+      'Khruba Siwichai Monument',
+    ],
+  },
   nameLocal: 'อนุสาวรีย์ครูบาศรีวิชัย (Kruba Srivichai Monument)',
+
+  city: {
+    th: 'เชียงใหม่',
+    en: 'Chiang Mai',
+    zh: '清迈',
+  },
+  province: {
+    th: 'จังหวัดเชียงใหม่',
+    en: 'Chiang Mai Province',
+    zh: '清迈府',
+  },
+  country: {
+    th: 'ประเทศไทย',
+    en: 'Thailand',
+    zh: '泰国',
+  },
+  countryCode: 'TH',
+  postalCode: '50300',
+  streetAddress: '99 Huay Kaew Rd, Tambon Su Thep, Mueang Chiang Mai District',
+  addressFull: '99 Huay Kaew Rd, Tambon Su Thep, Mueang Chiang Mai District, Chiang Mai 50300, Thailand',
 
   coords: {
     lat: 18.81284892072076,
@@ -30,8 +88,14 @@ export const siteConfig = {
     closes: '23:59',
     time: '00:00–23:59',
   },
+  isAccessibleForFree: true,
+  touristType: ['Monument', 'Historical Landmark', 'Sacred Site'],
+
+  /** Latest Google Maps listing data (rating & review count) */
   rating: '4.7',
-  reviewCount: '8,621',
+  reviewCount: '8,679',
+  /** Month the rating / review count was last synced from Google Maps */
+  ratingSyncedAt: '2026-09',
 
   phone: '',
   phoneDisplay: '',
@@ -40,11 +104,24 @@ export const siteConfig = {
   galleryCount: 18,
   ogImage: '/gallery/kruba-srivichai-monument-1.jpg',
 
+  /** Official tourism authority — authoritative outbound link */
+  govtTourismUrl: 'https://www.tourismthailand.org',
+
+  /** Content last reviewed / updated */
+  lastUpdated: '2026-09-14',
+
+  /** Core landmarks used for the semantic cluster around the entity */
+  nearbyLandmarks: {
+    th: ['วัดพระธาตุดอยสุเทพ', 'น้ำตกห้วยแก้ว'],
+    en: ['Wat Phra That Doi Suthep', 'Huay Kaew Waterfall'],
+    zh: ['素贴山双龙寺', '惠考瀑布'],
+  },
+
   sources: [
     {
       name: {
         th: 'การท่องเที่ยวแห่งประเทศไทย',
-        en: 'Tourism Thailand',
+        en: 'Tourism Authority of Thailand',
         zh: '泰国国家旅游局',
       },
       url: 'https://www.tourismthailand.org',
@@ -52,7 +129,7 @@ export const siteConfig = {
     {
       name: {
         th: 'วิกิพีเดีย: ครูบาศรีวิชัย',
-        en: 'Wikipedia: Kruba Srivichai',
+        en: 'Wikipedia: Khruba Siwichai',
         zh: '维基百科：克里巴·斯里维差',
       },
       url: 'https://en.wikipedia.org/wiki/Kruba_Srivichai',
@@ -73,3 +150,11 @@ export const siteConfig = {
     'https://www.tourismthailand.org',
   ],
 };
+
+/** Build the "Full name (City)" string used in H1 / title slots. */
+export const fullNameWithCity = (lang: Lang) => `${siteConfig.name[lang]} (${siteConfig.city[lang]})`;
+
+/** hreflang tag for a locale (zh -> zh-CN, th -> th, en -> en). */
+export const hreflangTag = (lang: Lang) => htmlLang[lang];
+
+export const alternateLocales = (): Lang[] => [...languagesList];

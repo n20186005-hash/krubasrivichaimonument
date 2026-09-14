@@ -1,0 +1,40 @@
+---
+interface Props {
+  messages: Record<string, any>;
+}
+const { messages } = Astro.props;
+const r = messages.routes;
+---
+
+<section id="routes" class="py-20 bg-ivory text-ink">
+  <div class="max-w-7xl mx-auto px-5">
+    <p class="font-hand text-gold text-xl md:text-2xl">{r.label}</p>
+    <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{r.heading}</h2>
+    <p class="mt-4 max-w-3xl text-ink/80">{r.intro}</p>
+
+    <div class="mt-10 grid lg:grid-cols-2 gap-6">
+      {
+        [r.halfDay, r.fullDay].map((plan: any) => (
+          <div class="rounded-2xl border border-gold/25 bg-sand p-6 md:p-8">
+            <div class="flex flex-wrap items-baseline justify-between gap-3">
+              <h3 class="font-display text-2xl text-teak">{plan.title}</h3>
+              <span class="text-sm text-teak bg-gold/15 border border-gold/30 rounded-full px-3 py-1">
+                {plan.duration}
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-ink/75 leading-relaxed">{plan.summary}</p>
+
+            <ol class="mt-6 space-y-3">
+              {plan.steps.map((step: string) => (
+                <li class="flex gap-4 rounded-xl bg-white border border-gold/20 px-4 py-3">
+                  <span aria-hidden="true" class="text-gold mt-0.5">◈</span>
+                  <span class="text-sm text-ink/85 leading-relaxed">{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

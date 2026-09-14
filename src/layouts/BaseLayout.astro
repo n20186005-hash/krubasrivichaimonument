@@ -8,55 +8,176 @@ interface Props {
   title: string;
   description: string;
   messages: Record<string, any>;
+  /** Sub-page segment, e.g. `katha/`. Empty for the language home page. */
+  pagePath?: string;
+  /** Short name used for the last breadcrumb level; defaults to `title`. */
+  pageName?: string;
+  /** Per-page meta (title/description/keywords/og*). Falls back to `messages.meta`. */
+  meta?: Record<string, any>;
+  /** Emit the FAQPage node — only the home page has the visible FAQ list. */
+  includeFaq?: boolean;
 }
-const { lang, title, description, messages } = Astro.props;
-const canonical = `${siteConfig.domain}/${lang}/`;
+const {
+  lang,
+  title,
+  description,
+  messages,
+  pagePath = '',
+  pageName,
+  meta: metaOverride,
+  includeFaq = true,
+} = Astro.props;
 
-const faqs = (messages && messages.guide && messages.guide.faqs) ? messages.guide.faqs : [];
+const homeUrl = `${siteConfig.domain}/${lang}/`;
+const canonical = `${homeUrl}${pagePath}`;
+const ogImage = `${siteConfig.domain}${siteConfig.ogImage}`;
+const meta = metaOverride || messages.meta || {};
+const ogTitle = meta.ogTitle || title;
+const ogDescription = meta.ogDescription || description;
+const ogImageAlt = meta.ogImageAlt || `${siteConfig.name[lang]} - ${siteConfig.city[lang]}`;
+const keywords: string = meta.keywords || '';
 
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'TouristAttraction',
-    name: siteConfig.name[lang],
-    description,
-    image: `${siteConfig.domain}${siteConfig.ogImage}`,
-    url: canonical,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: siteConfig.address,
-      addressCountry: 'TH',
+const faqs = messages && messages.guide && messages.guide.faqs ? messages.guide.faqs : [];
+
+const attractionId = `${siteConfig.domain}/#attraction`;
+const organizationId = `${siteConfig.domain}/#organization`;
+const websiteId = `${siteConfig.domain}/#website`;
+const webpageId = `${canonical}#webpage`;
+const breadcrumbId = `${canonical}#breadcrumb`;
+const faqId = `${canonical}#faq`;
+
+/** Google Maps listing figures, kept as numbers for the schema graph. */
+const reviewCount = Number(String(siteConfig.reviewCount).replace(/[^\d]/g, ''));
+
+const attraction = {
+  '@type': 'TouristAttraction',
+  '@id': attractionId,
+  name: siteConfig.name[lang],
+  alternateName: siteConfig.alternateName[lang],
+  description,
+  url: homeUrl,
+  image: [ogImage],
+  isAccessibleForFree: siteConfig.isAccessibleForFree,
+  touristType: siteConfig.touristType,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteConfig.streetAddress,
+    addressLocality: siteConfig.city[lang],
+    addressRegion: siteConfig.province[lang],
+    postalCode: siteConfig.postalCode,
+    addressCountry: siteConfig.countryCode,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: siteConfig.coords.lat,
+    longitude: siteConfig.coords.lng,
+  },
+  hasMap: siteConfig.mapsUrl,
+  publicAccess: true,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: siteConfig.rating,
+    reviewCount,
+    bestRating: '5',
+    worstRating: '1',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: siteConfig.openingHours.opens,
+      closes: siteConfig.openingHours.closes,
     },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: siteConfig.coords.lat,
-      longitude: siteConfig.coords.lng,
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: siteConfig.rating,
-      reviewCount: siteConfig.reviewCount.replace(/,/g, ''),
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: siteConfig.openingHours.opens,
-        closes: siteConfig.openingHours.closes,
+  ],
+  sameAs: siteConfig.sameAs,
+};
+
+/** Reviews are shown on the page only — deliberately NOT emitted as structured data. */
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: siteConfig.name[lang],
+      url: siteConfig.domain,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.domain}/icons/icon-512.png`,
       },
-    ],
-    sameAs: siteConfig.sameAs,
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  },
-];
+    },
+    {
+      '@type': 'WebSite',
+      '@id': websiteId,
+      url: siteConfig.domain,
+      name: siteConfig.name[lang],
+      inLanguage: htmlLang[lang],
+      publisher: { '@id': organizationId },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': webpageId,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: { '@id': websiteId },
+      about: { '@id': attractionId },
+      primaryImageOfPage: { '@type': 'ImageObject', url: ogImage },
+      inLanguage: htmlLang[lang],
+      datePublished: siteConfig.lastUpdated,
+      dateModified: siteConfig.lastUpdated,
+      breadcrumb: { '@id': breadcrumbId },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': breadcrumbId,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: siteConfig.country[lang],
+          item: `${homeUrl}#about`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: siteConfig.province[lang],
+          item: `${homeUrl}#history`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: siteConfig.city[lang],
+          item: `${homeUrl}#map`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          name: siteConfig.name[lang],
+          item: pagePath ? homeUrl : canonical,
+        },
+        // Sub-pages add their own level so the breadcrumb matches the URL depth.
+        ...(pagePath
+          ? [{ '@type': 'ListItem', position: 5, name: pageName || title, item: canonical }]
+          : []),
+      ],
+    },
+    attraction,
+    ...(includeFaq
+      ? [
+          {
+            '@type': 'FAQPage',
+            '@id': faqId,
+            mainEntity: faqs.map((f: { q: string; a: string }) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          },
+        ]
+      : []),
+  ],
+};
 ---
 
 <!doctype html>
@@ -64,21 +185,44 @@ const jsonLd = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/jpeg" href={siteConfig.ogImage} />
+    <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
     <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / social -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.name[lang]} />
     <meta property="og:locale" content={htmlLang[lang]} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${siteConfig.domain}${siteConfig.ogImage}`} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="4000" />
+    <meta property="og:image:height" content="2252" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+
+    <!-- language alternates -->
     {languagesList.map((l) => (
-      <link rel="alternate" hreflang={htmlLang[l]} href={`${siteConfig.domain}/${l}/`} />
+      <link rel="alternate" hreflang={htmlLang[l]} href={`${siteConfig.domain}/${l}/${pagePath}`} />
     ))}
-    <link rel="alternate" hreflang="x-default" href={`${siteConfig.domain}/th/`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteConfig.domain}/th/${pagePath}`} />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0d2a2e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content={siteConfig.name[lang]} />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -102,5 +246,12 @@ const jsonLd = [
   </head>
   <body class="grain">
     <slot />
+    <script is:inline>
+      if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+      }
+    </script>
   </body>
 </html>

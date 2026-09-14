@@ -20,7 +20,15 @@ const legal = (messages.legal && messages.legal[doc]) || { title: doc, body: [] 
 const description = (legal.body && legal.body[0]) || legal.title;
 ---
 
-<BaseLayout lang={lang} title={legal.title} description={description} messages={messages}>
+<BaseLayout
+  lang={lang}
+  title={legal.title}
+  description={description}
+  messages={messages}
+  pagePath={`${doc}/`}
+  pageName={legal.title}
+  includeFaq={false}
+>
   <div class="min-h-screen bg-ivory text-ink pt-28 pb-20">
     <div class="max-w-3xl mx-auto px-5">
       <a href={`/${lang}/`} class="text-sm text-gold hover:underline">← {messages.footer.brand.name}</a>

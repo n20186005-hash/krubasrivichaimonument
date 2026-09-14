@@ -1,0 +1,30 @@
+---
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  messages: Record<string, any>;
+}
+const { lang, messages } = Astro.props;
+const c = messages.historyCta;
+---
+
+<section id="history-cta" class="py-14 bg-teak text-ivory">
+  <div class="max-w-7xl mx-auto px-5">
+    <div
+      class="rounded-2xl border border-gold/40 bg-teakDeep/60 p-7 md:p-9 flex flex-col md:flex-row md:items-center gap-6"
+    >
+      <div class="flex-1">
+        <span class="chip text-goldBright">{c.tag}</span>
+        <h2 class="font-display text-2xl md:text-3xl text-ivory font-semibold mt-3">{c.title}</h2>
+        <p class="mt-2 text-ivory/80 max-w-2xl">{c.body}</p>
+      </div>
+      <a
+        href={`/${lang}/history/`}
+        class="shrink-0 inline-flex items-center justify-center gap-2 bg-gold text-teakDeep font-semibold px-6 py-3 rounded-full hover:bg-goldBright transition-colors"
+      >
+        {c.button} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>

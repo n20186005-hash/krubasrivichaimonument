@@ -1,0 +1,13 @@
+{
+  // Cloudflare Workers — static assets deployment for the Astro build output.
+  // Deploy with: npx wrangler deploy   (or: npm run deploy)
+  "name": "krubasrivichaimonument",
+  "compatibility_date": "2026-09-14",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

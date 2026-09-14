@@ -5,22 +5,36 @@ import { languages, languagesList, type Lang } from '../i18n/ui';
 interface Props {
   lang: Lang;
   messages: Record<string, any>;
+  /**
+   * Prefix for in-page anchors. Empty on the language home page (keeps `#about`);
+   * `/<lang>/` on sub-pages so the same menu still resolves.
+   */
+  base?: string;
+  /** Sub-page segment for the language switcher, e.g. `katha/`. */
+  switchPath?: string;
 }
-const { lang, messages } = Astro.props;
+const { lang, messages, base = '', switchPath = '' } = Astro.props;
 const h = messages.header;
 
+/** Hub cross-page links — always absolute so they work from any page. */
+const kathaHref = `/${lang}/katha/`;
+const historyHref = `/${lang}/history/`;
+
 const navItems = [
-  { label: h.home, href: '#home' },
-  { label: h.about, href: '#about' },
-  { label: h.history, href: '#history' },
-  { label: h.guide, href: '#guide' },
-  { label: h.food, href: '#food' },
-  { label: h.gallery, href: '#gallery' },
-  { label: h.reviews, href: '#reviews' },
-  { label: h.map, href: '#map' },
+  { label: h.home, href: `${base}#home` },
+  { label: h.about, href: `${base}#about` },
+  { label: h.guide, href: `${base}#guide` },
+  { label: h.weather, href: `${base}#weather` },
+  { label: h.facilities, href: `${base}#facilities` },
+  { label: h.routes, href: `${base}#routes` },
+  { label: h.gallery, href: `${base}#gallery` },
+  { label: h.reviews, href: `${base}#reviews` },
+  { label: h.map, href: `${base}#map` },
+  { label: h.katha, href: kathaHref, accent: true },
+  { label: h.historyPage, href: historyHref, accent: true },
 ];
 
-const switchTo = (target: Lang) => `/${target}/`;
+const switchTo = (target: Lang) => `/${target}/${switchPath}`;
 ---
 
 <header class="fixed top-0 inset-x-0 z-50 bg-teak/90 backdrop-blur-md border-b border-gold/20">
@@ -29,9 +43,12 @@ const switchTo = (target: Lang) => `/${target}/`;
       {siteConfig.name[lang]}
     </a>
 
-    <nav class="hidden md:flex items-center md:gap-4 lg:gap-7 text-sm text-ivory/80">
+    <nav class="hidden lg:flex items-center gap-4 xl:gap-5 text-sm text-ivory/80">
       {navItems.map((item) => (
-        <a href={item.href} class="hover:text-goldBright transition-colors whitespace-nowrap">{item.label}</a>
+        <a
+          href={item.href}
+          class={`transition-colors whitespace-nowrap ${item.accent ? 'text-gold hover:text-goldBright' : 'hover:text-goldBright'}`}
+        >{item.label}</a>
       ))}
     </nav>
 
@@ -57,7 +74,10 @@ const switchTo = (target: Lang) => `/${target}/`;
   <nav id="mobile-menu" class="hidden md:hidden border-t border-gold/20 bg-teakDeep">
     <div class="max-w-7xl mx-auto px-5 py-3 grid grid-cols-2 gap-2 text-sm text-ivory/80">
       {navItems.map((item) => (
-        <a href={item.href} class="py-1.5 hover:text-goldBright transition-colors">{item.label}</a>
+        <a
+          href={item.href}
+          class={`py-1.5 transition-colors ${item.accent ? 'text-gold hover:text-goldBright' : 'hover:text-goldBright'}`}
+        >{item.label}</a>
       ))}
     </div>
   </nav>
