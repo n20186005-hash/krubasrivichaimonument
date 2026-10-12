@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Kruba Srivichai Monument, Chiang Mai: Doi Suthep Map & Hours",
-    "description": "Free and open 24/7 at the foot of Doi Suthep. Exact location, plus code, songthaew directions, best photo times and the story of the road-building monk.",
+    "title": "Kruba Srivichai Monument Chiang Mai | Hours & Visit Guide",
+    "description": "Visit Kruba Srivichai Monument at the foot of Doi Suthep in Chiang Mai. Find its location, visiting hours, directions, worship etiquette and history.",
     "keywords": "Kruba Srivichai Monument, Khruba Siwichai Monument, Kruba Srivichai, Chiang Mai, Doi Suthep, Huay Kaew Road, songthaew, Thailand attractions",
-    "ogTitle": "Kruba Srivichai Monument, Chiang Mai — Free 24/7 at the Foot of Doi Suthep",
-    "ogDescription": "Visitor guide to Kruba Srivichai Monument (อนุสาวรีย์ครูบาศรีวิชัย) in Chiang Mai: map, plus code, hours, songthaew route and the story of the monk who built the Doi Suthep road.",
+    "ogTitle": "Kruba Srivichai Monument, Chiang Mai — Free 24/7 Visit Guide",
+    "ogDescription": "Visitor guide to Kruba Srivichai Monument (อนุสาวรีย์ครูบาศรีวิชัย) in Chiang Mai: location, visiting hours, songthaew directions, worship etiquette and the story of the monk who built the Doi Suthep road.",
     "ogImageAlt": "Kruba Srivichai Monument in Chiang Mai, Thailand"
   },
   "mobileCta": {
@@ -100,6 +100,10 @@
         { "label": "Buddhist holy days", "value": "More devotees, more flower stalls and a more ceremonial atmosphere." },
         { "label": "Any hour", "value": "It is a roadside public shrine: free of charge and open 24 hours." }
       ]
+    },
+    "further": {
+      "title": "Sources & further reading",
+      "note": "The chants on this page are standard Pali used across Thai Buddhism. For the monument's history and visiting details, see the references below and the Life & Deeds page."
     },
     "accuracy": {
       "title": "About the texts on this page",
@@ -207,6 +211,10 @@
       "body": "In 2028 Thailand marks the 150th anniversary of his birth, and institutions including the Ministry of Culture, the tourism authority and Lamphun Province have promoted his inclusion in UNESCO's anniversary programme. A pilgrimage route now links his birthplace and ordination temple in Lamphun to this monument and Doi Suthep.",
       "linkLabel": "UNESCO bid, the temple network & the pilgrimage route"
     },
+    "further": {
+      "title": "Sources & further reading",
+      "note": "The dates and claims on this page are drawn from the references below. The monument's location description was checked against the Su Thep Municipality area guide, which places it at the entrance to the road up Doi Suthep, before Huay Kaew Waterfall."
+    },
     "accuracy": {
       "title": "About the dates on this page",
       "body": "Two dates deserve caution. His year of death is given as 1939 here, following this site's history section; other references give 1938, and we have not been able to settle the difference from a primary source. The year the monument was erected is likewise not firmly documented — sources describe it only as decades after his death, which is why the timeline says “late 20th century”. The road figures are the most firmly attested and are consistent across Thai sources. If you can point us to a primary document for either uncertain date, please write to us and we will correct this page."
@@ -254,11 +262,11 @@
       { "label": "Reviews", "href": "#reviews" }
     ],
     "rating": "4.7",
-    "reviewCount": "8,679",
+    "reviewCount": "8,691",
     "coordsLabel": "Coords: 18.8128°N, 98.9435°E",
     "city": "Chiang Mai · Thailand",
     "imgAlt": "Khruba Siwichai Monument - main view in Chiang Mai, Thailand",
-    "ratingNote": "Rating & review count synced from Google Maps user reviews · September 2026",
+    "ratingNote": "Rating & review count synced from Google Maps user reviews · October 2026",
     "ratingNoteLink": "See all reviews on Google Maps",
     "viewLocation": "View on Google Maps",
     "boardCategory": "Sacred Site",
@@ -281,7 +289,7 @@
     "crowdWarningLabel": "Tip",
     "defaultTip": "Busy in the early evening",
     "lightCaption": "Times are calculated from the monument's actual coordinates.",
-    "weatherError": "",
+    "weatherError": "Reference values",
     "goldenChanceLabel": "Golden chance"
   },
   "about": {
@@ -298,6 +306,7 @@
     "paragraph1": "Kruba Srivichai (1878–1939) was a monk of the Lanna tradition, remembered across the North as 'Kruba' — a venerated teacher. Born in Ban Bang village, Li District, Lamphun Province, he devoted his life to meditation, austerity and public works, gathering a vast following.",
     "paragraph2": "He is best known for organizing thousands of volunteers to build roads, bridges and temples where few existed. His most famous work, the road up Doi Suthep, still carries pilgrims and travelers to this day — which is why this monument stands at its base.",
     "neutrality": "This page is an independent, educational overview; it is not affiliated with any temple or foundation.",
+    "neutralityLabel": "Editor's note:",
     "quote": "He built the roads so that others could reach the mountain.",
     "quoteAuthor": "— A Northern Thai saying about Kruba Srivichai",
     "stats": [
@@ -336,6 +345,7 @@
       "title": "Did you know?",
       "text": "He is often called the 'Father of Northern Thai Roads'. The Doi Suthep road was built by hand by over 11,000 volunteers in just 5 months and 22 days (opened 30 April 1935). His death anniversary is still marked by candle processions and offerings, and the monument sits at the traditional 'kilometer zero' of the Doi Suthep climb."
     },
+    "dateNote": "Dates on this page follow the site's history section: Kruba Srivichai lived 1878–1939. Some references give his year of death as 1938; the difference is explained, with sources, on the Life & Deeds page.",
     "folklore": {
       "title": "Stories still told",
       "tale": "Elders say Kruba Srivichai could calm storms and that his merit protected workers from harm. Whether literal or symbolic, these stories show how deeply he is trusted as a guardian of the road and the mountain.",
@@ -465,35 +475,22 @@
   "reviews": {
     "label": "Reviews",
     "heading": "What Visitors Say",
-    "intro": "Travelers from Thailand and around the world stop here on their way to Doi Suthep. Here is a sample of what they share.",
+    "intro": "Travellers from Thailand and around the world stop here on their way to Doi Suthep. The monument holds a strong aggregate rating on Google Maps, shown below as a snapshot.",
     "sourceLabel": "Reviews from Google Maps users",
-    "sourceNote": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps",
-    "ratingNote": "Rating & review count synced from Google Maps user reviews · September 2026",
+    "ratingNote": "Rating & review count synced from Google Maps user reviews · October 2026",
     "ratingNoteLink": "See all reviews on Google Maps",
     "viewAll": "View all reviews on Google Maps",
-    "disclaimer": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps",
-    "declaration": "These reviews are displayed on this page only and are not published in this site's structured data (JSON-LD).",
-    "featured": [
-      { "text": "A peaceful spot to pause and pay respect before heading up the mountain. The statue is beautiful and the air feels calm.", "source": "— A visitor from Bangkok" },
-      { "text": "Our songthaew driver stopped here so we could light a candle. Learning about the monk who built the road made the climb meaningful.", "source": "— A traveler from Germany" }
-    ],
-    "items": [
-      { "text": "[Atmosphere] Quiet and reverent, not touristy at all. Loved the mountain backdrop.", "rating": "5", "name": "Pimrada T.", "date": "2025-11-02" },
-      { "text": "[History] Finally understood why locals respect Kruba Srivichai so much. Great starting point for Doi Suthep.", "rating": "5", "name": "Daniel R.", "date": "2025-10-18" },
-      { "text": "[Photo] Came at 7am, perfect light on the statue. Easy to combine with the temple above.", "rating": "5", "name": "Yuki M.", "date": "2025-09-30" },
-      { "text": "[Family] Our kids enjoyed the open space and the story. Free and accessible.", "rating": "4", "name": "Somchai K.", "date": "2025-12-05" },
-      { "text": "[Tip] Combine with Huay Kaew waterfall a short walk away. Bring water in the heat.", "rating": "5", "name": "Emma L.", "date": "2025-08-21" },
-      { "text": "[Local] We stop here every year on his anniversary — very meaningful for Northern Thais.", "rating": "5", "name": "Nisachon W.", "date": "2025-07-14" },
-      { "text": "[Convenience] Right by the road, hard to miss if you're heading to Doi Suthep.", "rating": "4", "name": "Tom B.", "date": "2025-06-09" },
-      { "text": "[Peace] A calm breath before the busy temple. Worth five minutes of your time.", "rating": "5", "name": "Aisha P.", "date": "2025-05-27" }
-    ]
+    "disclaimer": "Aggregate rating and review count from the Google Maps listing · October 2026",
+    "declaration": "The aggregate rating is displayed on this page only and is not published in this site's structured data (JSON-LD). Individual reviews are not reproduced on this site — read them in full on Google Maps.",
+    "featured": [],
+    "items": []
   },
   "gallery": {
     "label": "Gallery",
     "heading": "Monument Gallery",
     "intro": "A look at the statue, the surrounding grounds, and the mountain it watches over.",
     "historicalNote": "",
-    "credits": "Photos via public Google Maps contributors.",
+    "credits": "Illustrative photos of the monument; all rights remain with the original photographers. Credit corrections or removal requests: see the Sources section.",
     "alts": [
       "Kruba Srivichai Monument standing statue",
       "Front view of the monument at the foot of Doi Suthep",
@@ -538,17 +535,17 @@
     "intro": "This non-profit guide compiles publicly available information to help visitors learn about the monument.",
     "photoTitle": "Photo credits",
     "photoItems": [
-      { "text": "Photos are sourced from public Google Maps contributors; copyright belongs to the original authors.", "url": "", "linkLabel": "" },
+      { "text": "Photos are used for illustration only and remain the property of their original authors; naming the copyright holder does not imply a reuse licence. If you own a photo shown here and want it credited or removed, contact us.", "url": "", "linkLabel": "" },
       { "text": "Historical context adapted from open encyclopedic sources.", "url": "https://en.wikipedia.org/wiki/Kruba_Srivichai", "linkLabel": "Wikipedia" }
     ],
     "reviewTitle": "Reviews",
-    "reviewSync": "Synced September 2026",
-    "reviewNote": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps",
+    "reviewSync": "Synced October 2026",
+    "reviewNote": "Synced from Google Maps user reviews, synced October 2026; copyright belongs to the original authors and Google Maps",
     "reviewLinkLabel": "View all reviews on Google Maps",
     "factTitle": "Fact-checking",
     "factText": "Key facts (coordinates, rating, hours) are drawn from the official Google Maps listing and public references. If something looks off, tell us.",
-    "photoCredit": "All photos displayed on this website remain the property and copyright of their original photographers.",
-    "lastUpdated": "Content last updated: September 2026",
+    "photoCredit": "All photos displayed on this website remain the property and copyright of their original photographers and are reproduced here for illustration only.",
+    "lastUpdated": "Content last updated: October 2026",
     "correctionTitle": "Found an error?",
     "correctionText": "We are a small volunteer team. If you spot a mistake in the history or visiting info, please let us know.",
     "correctionMailto": "mailto:n20186005@gmail.com",
@@ -563,7 +560,7 @@
     "authorityNote": "For official updates and regional tourism information, visit",
     "authorityLabel": "Thailand / Chiang Mai Official Tourism Portal",
     "stats": [
-      { "tag": "Rating", "value": "4.7", "sub": "from 8,679 reviews" },
+      { "tag": "Rating", "value": "4.7", "sub": "from 8,691 reviews" },
       { "tag": "Hours", "value": "24 hrs", "sub": "open every day" },
       { "tag": "Admission", "value": "Free", "sub": "no ticket required" },
       { "tag": "Setting", "value": "Doi Suthep", "sub": "Chiang Mai" }
@@ -574,7 +571,8 @@
     "rWalkTip": {
       "title": "Start of the climb",
       "desc": "This is the traditional launch point for songthaews and the walking trail up to Wat Phra That Doi Suthep."
-    }
+    },
+    "localNote": "Local verification: the Su Thep Municipality area guide describes the monument as standing at the entrance to the road up Doi Suthep, before Huay Kaew Waterfall — which is why visitors traditionally stop here to pay respects before continuing up the mountain."
   },
   "footer": {
     "brand": { "name": "Kruba Srivichai Monument", "tagline": "A Chiang Mai landmark of devotion" },
@@ -602,7 +600,7 @@
     "disclaimerLead": "This site is for educational and informational purposes.",
     "unofficial": "This is an unofficial, non-commercial visitors' guide.",
     "dataSource": "Data from open sources and the Google Maps listing.",
-    "photoCredit": "Photo rights: all photos displayed on this website remain the property and copyright of their original photographers.",
+    "photoCredit": "Photo rights: all photos displayed on this website remain the property and copyright of their original photographers and are reproduced here for illustration only.",
     "copyright": "© 2026 Kruba Srivichai Monument · non-profit"
   },
   "legacy": {
@@ -861,7 +859,7 @@
     "intro": "This is a memorial that is still in daily use, so it asks to be understood as well as respected. Three points worth knowing come first, followed by the boundaries to observe while you are here.",
     "scienceTitle": "Three things worth knowing first",
     "science": [
-      { "title": "Why he is remembered", "desc": "Khruba Siwichai (1878–1938) was a Lanna monk renowned for directing the construction of the road up Doi Suthep to Wat Phra That Doi Suthep. Built with hand tools and mass labour before heavy machinery existed, the road remains physical evidence of collective work." },
+      { "title": "Why he is remembered", "desc": "Kruba Srivichai (1878–1939) was a Lanna monk renowned for directing the construction of the road up Doi Suthep to Wat Phra That Doi Suthep. Built with hand tools and mass labour before heavy machinery existed, the road remains physical evidence of collective work. His year of death is given as 1939 on this site; some references give 1938 — the difference is explained on the Life & Deeds page." },
       { "title": "It is neither a tomb nor a temple", "desc": "This is a commemorative structure used for remembrance and devotion, not a burial site. Inscriptions and dates around the base record when it was erected and who funded it — the primary evidence for dating and interpreting it." },
       { "title": "Why road-building is symbolic", "desc": "In Northern Thai religious thought, building a road is at once physical public works and a metaphor for opening a path to goodness for others. That is why the monument is still actively used by the sangha, local communities and pilgrims." }
     ],

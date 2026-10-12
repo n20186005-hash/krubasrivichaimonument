@@ -56,8 +56,8 @@ for (const lang of langs) {
   check('manifest linked', html.includes('/site.webmanifest'));
   check('service worker registered', html.includes('/sw.js'));
   check('GA4 G-HXM22WWPKP', html.includes('G-HXM22WWPKP'));
-  check('review count 8,679 present', html.includes('8,679'));
-  check('old review count 8,621 absent', !html.includes('8,621'));
+  check('review count 8,691 present', html.includes('8,691'));
+  check('old review counts 8,621 / 8,679 absent', !html.includes('8,621') && !html.includes('8,679'));
 
   // GSC: 94 of 109 impressions come from "kruba*" spellings — every page must carry both variants.
   check('primary name "Kruba Srivichai" present', /Kruba Srivichai/.test(html));
@@ -106,8 +106,8 @@ for (const lang of langs) {
     check('JSON-LD has ItemList (routes)', flat.includes('ItemList'));
     // GSC: star ratings in the SERP lift CTR, so the Google Maps figures must be in the graph.
     check(
-      'JSON-LD aggregateRating 4.7 / 8679',
-      flat.includes('"ratingValue":"4.7"') && flat.includes('"reviewCount":8679')
+      'JSON-LD aggregateRating 4.7 / 8691',
+      flat.includes('"ratingValue":"4.7"') && flat.includes('"reviewCount":8691')
     );
     check('JSON-LD BreadcrumbList @id + item on every level', (() => {
       for (const p of parsed) {

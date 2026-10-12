@@ -75,6 +75,10 @@ const googleMapsEmbed = siteConfig.googleMapsEmbed.replace(
       </div>
     </div>
 
+    {map.localNote && (
+      <p class="mt-6 max-w-3xl text-sm text-ink/70 border-l-2 border-gold/40 pl-4 leading-relaxed">{map.localNote}</p>
+    )}
+
     <!-- Authoritative outbound link (official tourism portal) -->
     <p class="mt-8 text-sm text-ink/75">
       {map.authorityNote}{' '}

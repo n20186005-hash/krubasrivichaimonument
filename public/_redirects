@@ -1,1 +1,22 @@
-/  /th/  302
+# Cloudflare Workers Static Assets path-level redirects.
+# Canonical URLs always carry a trailing slash; non-slash variants 301 to them
+# (GSC showed both /en/privacy-policy and /en/privacy-policy/ in search data).
+/ /th/ 301
+/th /th/ 301
+/en /en/ 301
+/zh /zh/ 301
+/th/katha /th/katha/ 301
+/en/katha /en/katha/ 301
+/zh/katha /zh/katha/ 301
+/th/history /th/history/ 301
+/en/history /en/history/ 301
+/zh/history /zh/history/ 301
+/th/privacy-policy /th/privacy-policy/ 301
+/en/privacy-policy /en/privacy-policy/ 301
+/zh/privacy-policy /zh/privacy-policy/ 301
+/th/terms-of-service /th/terms-of-service/ 301
+/en/terms-of-service /en/terms-of-service/ 301
+/zh/terms-of-service /zh/terms-of-service/ 301
+/th/cookie-settings /th/cookie-settings/ 301
+/en/cookie-settings /en/cookie-settings/ 301
+/zh/cookie-settings /zh/cookie-settings/ 301

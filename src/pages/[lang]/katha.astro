@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import SourceLinks from '../../components/SourceLinks.astro';
 import { languagesList, type Lang, getI18n } from '../../i18n/ui';
 import { siteConfig } from '../../config';
 
@@ -137,6 +138,9 @@ const steps = k.steps;
         <p class="mt-2 text-sm text-ink/80 leading-relaxed">{k.accuracy.body}</p>
       </div>
     </section>
+
+    <!-- ⑤b Sources & further reading -->
+    {k.further && <SourceLinks lang={lang} messages={messages} title={k.further.title} note={k.further.note} />}
 
     <!-- ⑥ Back to the main guide (reverse internal link) -->
     <section id="back" class="max-w-4xl mx-auto px-5 mt-14">

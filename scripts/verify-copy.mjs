@@ -7,12 +7,12 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const expectations = {
   zh: [
-    '评分与评价数同步自谷歌地图（Google Maps）用户评价 · 2026 年 9 月',
+    '评分与评价数同步自谷歌地图（Google Maps）用户评价 · 2026 年 10 月',
     '点击查看谷歌地图全部评价',
-    '同步自 Google 地图用户评价，同步时间 2026 年 9 月；版权归原作者与 Google 地图所有',
+    '同步自 Google 地图用户评价，同步时间 2026 年 10 月；版权归原作者与 Google 地图所有',
     '在谷歌地图查看全部评价',
     '评价 ·',
-    '同步时间 2026 年 9 月',
+    '同步时间 2026 年 10 月',
     '关于古巴·斯里维差纪念碑（清迈）',
     '如何前往清迈的古巴·斯里维差纪念碑',
     '古巴·斯里维差纪念碑周边地标与景点',
@@ -21,9 +21,9 @@ const expectations = {
     'tourismthailand.org',
   ],
   en: [
-    'Rating &amp; review count synced from Google Maps user reviews · September 2026',
+    'Rating &amp; review count synced from Google Maps user reviews · October 2026',
     'See all reviews on Google Maps',
-    'Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps',
+    'Synced from Google Maps user reviews, synced October 2026; copyright belongs to the original authors and Google Maps',
     'View all reviews on Google Maps',
     'About Khruba Siwichai Monument (Chiang Mai)',
     'Location &amp; How to Visit Khruba Siwichai Monument in Chiang Mai',
@@ -32,7 +32,7 @@ const expectations = {
     'All photos displayed on this website remain the property and copyright of their original photographers',
   ],
   th: [
-    'ซิงก์จากรีวิวของผู้ใช้ Google Maps เวลาซิงก์กันยายน 2026 ลิขสิทธิ์เป็นของผู้เขียนต้นฉบับและ Google Maps',
+    'ซิงก์จากรีวิวของผู้ใช้ Google Maps เวลาซิงก์ตุลาคม 2026 ลิขสิทธิ์เป็นของผู้เขียนต้นฉบับและ Google Maps',
     'ดูรีวิวทั้งหมดบน Google Maps',
     'เกี่ยวกับอนุสาวรีย์ครูบาศรีวิชัย (เชียงใหม่)',
     'วิธีเดินทางไปอนุสาวรีย์ครูบาศรีวิชัยในเชียงใหม่',

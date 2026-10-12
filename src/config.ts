@@ -93,9 +93,9 @@ export const siteConfig = {
 
   /** Latest Google Maps listing data (rating & review count) */
   rating: '4.7',
-  reviewCount: '8,679',
+  reviewCount: '8,691',
   /** Month the rating / review count was last synced from Google Maps */
-  ratingSyncedAt: '2026-09',
+  ratingSyncedAt: '2026-10',
 
   phone: '',
   phoneDisplay: '',
@@ -108,7 +108,7 @@ export const siteConfig = {
   govtTourismUrl: 'https://www.tourismthailand.org',
 
   /** Content last reviewed / updated */
-  lastUpdated: '2026-09-14',
+  lastUpdated: '2026-10-12',
 
   /** Core landmarks used for the semantic cluster around the entity */
   nearbyLandmarks: {
@@ -141,6 +141,14 @@ export const siteConfig = {
         zh: '清迈府官方网站',
       },
       url: 'https://www.chiangmai.go.th',
+    },
+    {
+      name: {
+        th: 'เทศบาลนครสุเทพ (ภาพรวมสถานที่)',
+        en: 'Su Thep Municipality — local area guide',
+        zh: '素贴市政府 — 当地景点介绍',
+      },
+      url: 'https://www.suthep.go.th',
     },
   ],
 

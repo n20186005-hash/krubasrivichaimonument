@@ -1,0 +1,34 @@
+---
+import { siteConfig } from '../config';
+
+interface Props {
+  lang: any;
+  messages: Record<string, any>;
+  title: string;
+  note: string;
+}
+const { lang, messages, title, note } = Astro.props;
+const sources = siteConfig.sources;
+---
+
+<section id="further-reading" class="max-w-4xl mx-auto px-5 mt-14">
+  <div class="rounded-2xl border border-gold/30 bg-white/60 p-6">
+    <h2 class="font-display text-lg text-teak font-semibold">{title}</h2>
+    <p class="mt-2 text-sm text-ink/75 leading-relaxed">{note}</p>
+    <ul class="mt-4 space-y-2 text-sm">
+      {sources.map((s: any) => (
+        <li class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 border-b border-gold/15 pb-2 last:border-0 last:pb-0">
+          <a
+            href={s.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-teak font-medium underline underline-offset-2 hover:text-gold"
+          >
+            {s.name[lang]} ↗
+          </a>
+          <span class="text-xs text-ink/45 break-all">{s.url}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

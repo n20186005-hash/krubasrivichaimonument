@@ -23,6 +23,10 @@ const history = messages.history;
       ))}
     </div>
 
+    {history.dateNote && (
+      <p class="mt-6 max-w-3xl text-xs text-ivory/55 leading-relaxed border-l-2 border-gold/40 pl-4">{history.dateNote}</p>
+    )}
+
     <div class="grid md:grid-cols-2 gap-6 mt-6">
       <div class="rounded-2xl bg-gold/10 border border-gold/30 p-6">
         <h3 class="font-display text-xl text-goldBright mb-2">{history.legend.title}</h3>

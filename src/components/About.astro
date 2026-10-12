@@ -38,7 +38,7 @@ const about = messages.about;
         )}
         {about.neutrality && (
           <div class="mt-4 p-4 rounded-xl bg-gold/10 border border-gold/20 text-teak text-sm">
-            <span class="font-bold mr-1">💡 客观提示：</span>{about.neutrality}
+            <span class="font-bold mr-1">💡 {about.neutralityLabel || 'Note:'}</span>{about.neutrality}
           </div>
         )}
         <blockquote class="border-l-4 border-gold pl-5 italic text-teak font-display text-xl my-6">

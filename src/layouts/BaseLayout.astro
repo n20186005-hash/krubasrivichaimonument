@@ -16,6 +16,8 @@ interface Props {
   meta?: Record<string, any>;
   /** Emit the FAQPage node — only the home page has the visible FAQ list. */
   includeFaq?: boolean;
+  /** Thin utility pages (legal docs) are kept out of the index. */
+  noIndex?: boolean;
 }
 const {
   lang,
@@ -26,6 +28,7 @@ const {
   pageName,
   meta: metaOverride,
   includeFaq = true,
+  noIndex = false,
 } = Astro.props;
 
 const homeUrl = `${siteConfig.domain}/${lang}/`;
@@ -188,6 +191,7 @@ const jsonLd = {
     <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
     <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
     <title>{title}</title>
+    {noIndex && <meta name="robots" content="noindex, follow" />}
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}
     <link rel="canonical" href={canonical} />
