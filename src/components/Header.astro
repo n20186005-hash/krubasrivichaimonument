@@ -33,6 +33,8 @@ const navItems = [
   { label: h.katha, href: kathaHref, accent: true },
   { label: h.historyPage, href: historyHref, accent: true },
   { label: { en: 'Explore', th: 'เที่ยวใกล้เคียง', zh: '周边景点' }[lang], href: `/${lang}/explore/`, accent: true },
+  { label: { en: 'Sources', th: 'แหล่งข้อมูล', zh: '资料来源' }[lang], href: `/${lang}/sources/` },
+  { label: { en: 'Reviews', th: 'รีวิว', zh: '游客评分' }[lang], href: `/${lang}/reviews/` },
 ];
 
 const switchTo = (target: Lang) => `/${target}/${switchPath}`;
