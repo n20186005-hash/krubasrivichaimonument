@@ -25,23 +25,6 @@ const stars = (r: string) => {
       <span class="font-display text-2xl text-goldBright">{siteConfig.rating}</span>
       <span class="text-ivory/70">{reviews.disclaimer}</span>
     </div>
-    {reviews.ratingNote && (
-      <p class="mt-2 text-xs text-ivory/60">
-        {reviews.ratingNote} ·{' '}
-        <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="text-goldBright hover:text-gold underline underline-offset-2">
-          {reviews.ratingNoteLink} ↗
-        </a>
-      </p>
-    )}
-    <p class="mt-2 text-xs text-ivory/50">{reviews.declaration}</p>
-    {reviews.sourceLabel && (
-      <p class="mt-4 text-xs text-ivory/60">
-        {reviews.sourceLabel} ·{' '}
-        <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="text-goldBright hover:text-gold underline underline-offset-2">
-          {reviews.ratingNoteLink} ↗
-        </a>
-      </p>
-    )}
 
     {reviews.featured.length > 0 && (
       <div class="grid md:grid-cols-2 gap-4 mt-8">
@@ -84,6 +67,7 @@ const stars = (r: string) => {
     )}
 
     <div class="mt-10 text-center">
+      <a href={Astro.url.pathname.startsWith('/en/') ? '/en/reviews/' : Astro.url.pathname.startsWith('/th/') ? '/th/reviews/' : '/zh/reviews/'} class="inline-flex text-goldBright underline mr-5">{ { en: 'Review sources and details', th: 'แหล่งที่มาของรีวิว', zh: '评分来源与详细说明' }[Astro.url.pathname.split('/')[1] as 'en'|'th'|'zh'] }</a>
       <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-ivory border border-gold/50 px-6 py-3 rounded-full hover:bg-gold hover:text-teak transition-colors">
         {reviews.viewAll}
       </a>
