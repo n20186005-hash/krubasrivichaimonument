@@ -29,7 +29,6 @@ const SECTIONS = [
   'gallery',
   'reviews',
   'responsibility',
-  'sources',
   'map',
 ];
 
@@ -132,7 +131,16 @@ for (const lang of langs) {
 
   check('iframe lazy + referrerpolicy', html.includes('loading="lazy"') && html.includes('referrerpolicy="strict-origin-when-cross-origin"'));
   check('govt tourism outbound', html.includes('tourismthailand.org'));
-  check('photo credit', /图片产权|All photos displayed|ภาพทั้งหมด/.test(html));
+  check('sources moved off home', !html.includes('id="sources"'));
+  check('sources page linked in navigation', html.includes(`/${lang}/sources/`));
+  for (const reference of ['sources', 'reviews', 'photo-credits']) {
+    const referenceFile = resolve(root, 'dist', lang, reference, 'index.html');
+    check(`${reference} standalone page exists`, existsSync(referenceFile));
+    if (existsSync(referenceFile)) {
+      const referenceHtml = readFileSync(referenceFile, 'utf8');
+      check(`${reference} contains main content`, referenceHtml.includes('<h1'));
+    }
+  }
 }
 
 // Content-hub sub-pages: /katha/ (worship guide) and /history/ (life & deeds)
