@@ -10,25 +10,31 @@ const copy = {
   zh: {
     rights: '版權所有',
     independence: '本网站是一个独立的旅游信息项目。我们与任何政府机构或官方组织均无关联',
-    accuracy: '信息可能随时变更，请在出行前确认。',
+    privacy: '隐私政策', terms: '服务条款', cookies: 'Cookie 设置',
   },
   en: {
     rights: 'All rights reserved',
     independence: 'This website is an independent travel information project. We are not affiliated with any government agency or official organization.',
-    accuracy: 'Information may change at any time. Please check before traveling.',
+    privacy: 'Privacy Policy', terms: 'Terms of Service', cookies: 'Cookie Settings',
   },
   th: {
     rights: 'สงวนลิขสิทธิ์',
     independence: 'เว็บไซต์นี้เป็นโครงการข้อมูลการท่องเที่ยวอิสระ ไม่มีความเกี่ยวข้องกับหน่วยงานรัฐบาลหรือองค์กรทางการใด ๆ',
-    accuracy: 'ข้อมูลอาจเปลี่ยนแปลงได้ โปรดตรวจสอบก่อนเดินทาง',
+    privacy: 'นโยบายความเป็นส่วนตัว', terms: 'ข้อกำหนดการใช้บริการ', cookies: 'ตั้งค่าคุกกี้',
   },
 }[lang];
 ---
 
 <footer class="bg-teakDeep text-ivory py-8">
-  <div class="max-w-7xl mx-auto px-5 text-xs md:text-sm text-ivory/75 leading-relaxed space-y-2">
-    <p>© 2026 {siteConfig.name[lang]} · {copy.rights}</p>
-    <p>{copy.independence}</p>
-    <p>{copy.accuracy}</p>
+  <div class="max-w-7xl mx-auto px-5 text-xs md:text-sm text-ivory/75 leading-relaxed flex flex-col md:flex-row justify-between gap-6">
+    <div class="space-y-2">
+      <p>© 2026 {siteConfig.name[lang]} · {copy.rights}</p>
+      <p>{copy.independence}</p>
+    </div>
+    <nav aria-label="Legal" class="flex flex-wrap items-start gap-x-5 gap-y-2 md:justify-end md:text-right shrink-0">
+      <a class="hover:text-white underline-offset-4 hover:underline" href={`/${lang}/privacy-policy/`}>{copy.privacy}</a>
+      <a class="hover:text-white underline-offset-4 hover:underline" href={`/${lang}/terms-of-service/`}>{copy.terms}</a>
+      <a class="hover:text-white underline-offset-4 hover:underline" href={`/${lang}/cookie-settings/`}>{copy.cookies}</a>
+    </nav>
   </div>
 </footer>
