@@ -235,15 +235,20 @@ const jsonLd = {
       rel="stylesheet"
     />
 
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-HXM22WWPKP');
+      window.krubaEnableAnalytics = function () {
+        if (window.krubaAnalyticsStarted) return;
+        window.krubaAnalyticsStarted = true;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-HXM22WWPKP');
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP';
+        document.head.appendChild(script);
+      };
+      try { if (localStorage.getItem('kruba-analytics-consent') === 'allow') window.krubaEnableAnalytics(); } catch (_) {}
     </script>
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
