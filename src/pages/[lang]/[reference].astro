@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getI18n, languagesList, type Lang } from '../../i18n/ui';
+import { siteConfig } from '../../config';
+
+const sections = ['sources', 'reviews', 'photo-credits'] as const;
+type Section = (typeof sections)[number];
+export function getStaticPaths() {
+  return languagesList.flatMap(lang => (['sources', 'reviews', 'photo-credits'] as const).map(reference => ({params:{lang,reference}})));
+}
+const { lang, reference } = Astro.params as {lang: Lang;reference: Section};
+const { messages } = await getI18n(new URL(`/${lang}/`, 'http://localhost'));
+const s = messages.sources;
+const r = messages.reviews;
+const f = messages.footer;
+const titles = {
+  sources: {en:'Sources and fact-checking', th:'แหล่งข้อมูลและการตรวจสอบข้อเท็จจริง', zh:'资料来源与事实核查'},
+  reviews: {en:'Visitor ratings and review sources', th:'คะแนนผู้เข้าชมและแหล่งที่มา', zh:'游客评分与评论来源'},
+  'photo-credits': {en:'Photography and image credits', th:'ภาพถ่ายและที่มาของภาพ', zh:'实景照片与图片来源'},
+};
+const title = titles[reference][lang];
+---
+<BaseLayout lang={lang} title={`${title} | ${siteConfig.name[lang]}`} description={s.intro} messages={messages} pagePath={`${reference}/`} pageName={title} includeFaq={false}>
+  <Header lang={lang} messages={messages} base={`/${lang}/`} switchPath={`${reference}/`} />
+  <main class="bg-ivory text-ink pt-28 pb-20 min-h-screen">
+    <div class="max-w-4xl mx-auto px-5">
+      <a href={`/${lang}/`} class="text-gold hover:underline">← {messages.header.home}</a>
+      <h1 class="font-display text-teak text-4xl md:text-5xl mt-6">{title}</h1>
+      {reference === 'sources' && <>
+        <p class="mt-6 text-ink/75 leading-relaxed">{s.intro}</p>
+        <section class="mt-10 rounded-2xl bg-white border border-gold/20 p-7">
+          <h2 class="font-display text-teak text-2xl">{s.factTitle}</h2>
+          <p class="mt-4 text-ink/75">{s.factText}</p>
+        </section>
+        <section class="mt-10">
+          <h2 class="font-display text-teak text-2xl">{f.sourcesTitle}</h2>
+          <p class="mt-3 text-ink/70">{f.sourcesNote}</p>
+          <ul class="mt-5 space-y-3">
+            {siteConfig.sources.map((item: any) => <li><a class="text-gold hover:underline" target="_blank" rel="noopener noreferrer" href={item.url}>{item.name[lang]} ↗</a></li>)}
+          </ul>
+          <a href="https://en.wikipedia.org/wiki/Kruba_Srivichai" target="_blank" rel="noopener noreferrer" class="text-gold hover:underline inline-block mt-4">{s.photoItems[1].text} ↗</a>
+        </section>
+        <section class="mt-10 rounded-2xl bg-white border border-gold/20 p-7">
+          <h2 class="font-display text-teak text-2xl">{s.correctionTitle}</h2>
+          <p class="mt-3 text-ink/75">{s.correctionText}</p>
+          <a class="text-gold underline inline-block mt-3" href={s.correctionMailto}>{s.correctionCta}</a>
+          {s.lastUpdated && <p class="text-sm text-ink/60 mt-5">{s.lastUpdated}</p>}
+        </section>
+        <nav class="mt-10 flex flex-wrap gap-4 text-sm">
+          <a class="text-gold underline" href={`/${lang}/privacy-policy`}>{f.privacy}</a>
+          <a class="text-gold underline" href={`/${lang}/terms-of-service`}>{f.terms}</a>
+          <a class="text-gold underline" href={`/${lang}/cookie-settings`}>{f.cookies}</a>
+        </nav>
+      </>}
+      {reference === 'reviews' && <>
+        <p class="mt-6 text-ink/75">{r.intro}</p>
+        <div class="mt-8 rounded-2xl bg-white border border-gold/20 p-7">
+          <p class="text-3xl text-teak font-display">★ {siteConfig.rating} · {siteConfig.reviewCount}</p>
+          <h2 class="font-display text-teak text-2xl mt-6">{s.reviewTitle}</h2>
+          <p class="mt-3 text-ink/75">{s.reviewSync}</p>
+          <p class="mt-3 text-ink/75">{s.reviewNote}</p>
+          <a class="text-gold underline inline-block mt-4" target="_blank" rel="noopener noreferrer" href={siteConfig.mapsUrl}>{s.reviewLinkLabel} ↗</a>
+        </div>
+      </>}
+      {reference === 'photo-credits' && <>
+        <h2 class="font-display text-teak text-2xl mt-9">{s.photoTitle}</h2>
+        <ul class="list-disc pl-6 mt-5 space-y-3 text-ink/75">
+          {s.photoItems.filter((item:any) => !item.url).map((item:any) => <li>{item.text}</li>)}
+        </ul>
+        <p class="mt-6 text-ink/70">{s.photoCredit}</p>
+        <p class="mt-4 text-ink/70">{ {en:'Published photographs remain in the original gallery. Individual nearby guides identify the matching place and image source.',th:'ภาพถ่ายที่เผยแพร่แล้วยังคงอยู่ในแกลเลอรีเดิม คู่มือแต่ละสถานที่ระบุภาพและแหล่งที่มาที่เกี่ยวข้อง',zh:'已发布的实景照片继续保留在原有图库；各篇周边指南标明对应地点及图片来源。'}[lang] }</p>
+        <a class="text-gold underline inline-block mt-5" href={`/${lang}/#gallery`}>{messages.gallery.heading} ↗</a>
+      </>}
+      <nav class="mt-14 pt-6 border-t border-gold/20 flex flex-wrap gap-5 text-gold text-sm">
+        {sections.filter(k => k !== reference).map(k => <a class="hover:underline" href={`/${lang}/${k}/`}>{titles[k][lang]} →</a>)}
+        <a class="hover:underline" href={`/${lang}/explore/`}>{ {en:'Explore nearby',th:'เที่ยวชมรอบ ๆ',zh:'周边景点'}[lang] } →</a>
+      </nav>
+    </div>
+  </main>
+  <Footer lang={lang} messages={messages} />
+</BaseLayout>
