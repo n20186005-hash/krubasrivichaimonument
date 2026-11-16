@@ -32,6 +32,7 @@ const navItems = [
   { label: h.map, href: `${base}#map` },
   { label: h.katha, href: kathaHref, accent: true },
   { label: h.historyPage, href: historyHref, accent: true },
+  { label: { en: 'Explore', th: 'เที่ยวใกล้เคียง', zh: '周边景点' }[lang], href: `/${lang}/explore/`, accent: true },
 ];
 
 const switchTo = (target: Lang) => `/${target}/${switchPath}`;

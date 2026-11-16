@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { getI18n, languagesList, type Lang } from '../../../i18n/ui';
+import { nearby, mapUrl } from '../../../data/nearby';
+import { exploreMedia } from '../../../data/explore-media';
+import { exploreDetail } from '../../../data/explore-detail';
+export function getStaticPaths() {
+  return languagesList.flatMap(lang => nearby.map(place => ({ params: { lang, slug: place.slug }, props: { place } })));
+}
+const { lang } = Astro.params as { lang: Lang };
+const { place } = Astro.props;
+const { messages } = await getI18n(new URL(`/${lang}/`, 'http://localhost'));
+const p = place.content[lang];
+const media = exploreMedia[place.slug];
+const detail = exploreDetail[place.slug][lang];
+const management: Record<string, [string,string,string]> = {
+  'huay-kaew-waterfall': ['Doi Suthep–Pui National Park / local park authorities', 'หน่วยงานอุทยานแห่งชาติดอยสุเทพ–ปุย', '素贴山—培山国家公园相关管理单位'],
+  'monthathan-waterfall': ['Doi Suthep–Pui National Park', 'อุทยานแห่งชาติดอยสุเทพ–ปุย', '素贴山—培山国家公园'],
+  'wat-phra-that-doi-suthep': ['Wat Phra That Doi Suthep temple administration', 'คณะผู้ดูแลวัดพระธาตุดอยสุเทพ', '素贴山双龙寺寺院管理方'],
+  'wat-pha-lat': ['Wat Pha Lat temple community and applicable park authorities', 'คณะสงฆ์วัดผาลาดและหน่วยงานอุทยานที่เกี่ยวข้อง', '帕拉寺寺院僧团及相关公园单位'],
+  'wat-umong': ['Wat Umong temple administration', 'คณะผู้ดูแลวัดอุโมงค์', '悟孟寺寺院管理方'],
+  'wat-suan-dok': ['Wat Suan Dok temple administration', 'คณะผู้ดูแลวัดสวนดอก', '松德寺寺院管理方'],
+  'wat-chet-yot': ['Wat Chet Yot temple administration', 'คณะผู้ดูแลวัดเจ็ดยอด', '七塔寺寺院管理方'],
+  'ang-kaew-reservoir': ['Chiang Mai University', 'มหาวิทยาลัยเชียงใหม่', '清迈大学'],
+  'chiang-mai-university': ['Chiang Mai University', 'มหาวิทยาลัยเชียงใหม่', '清迈大学'],
+  'bhubing-palace': ['Bhubing Palace visitor administration', 'หน่วยงานดูแลพระตำหนักภูพิงคราชนิเวศน์', '蒲屏皇宫访客管理单位'],
+  'chiang-mai-zoo': ['Chiang Mai Zoo', 'สวนสัตว์เชียงใหม่', '清迈动物园'],
+  'doi-suthep-songthaew': ['Individual songthaew transport operators', 'ผู้ประกอบการรถสองแถวแต่ละราย', '各双条车营运者'],
+  'monks-trail-wat-pha-lat': ['Applicable national park and temple authorities', 'หน่วยงานอุทยานและวัดที่เกี่ยวข้อง', '相关国家公园及寺院管理单位'],
+};
+const authority = management[place.slug]?.[{en:0,th:1,zh:2}[lang]] || {en:'The relevant local site or community operator',th:'ผู้ดูแลพื้นที่หรือชุมชนที่เกี่ยวข้อง',zh:'当地相关景点或社区管理单位'}[lang];
+const sections = {
+  en: { manager:'About the managing body', highlights:'Why visit', advice:'Before you go', hours:'Opening hours', price:'Admission and costs', transport:'Getting there', experiences:'History, landscape and experiences', steps:'Suggested visit in three steps', step1:'Locate the correct entrance or pickup point', step2:'Explore the main features respectfully', step3:'Continue to another verified nearby stop', lodging:'Where to stay', reviews:'Visitor reviews', reviewText:'Ratings vary by listing and date. Open the exact place on Google Maps for the latest visitor reviews; no unverified score is reproduced here.', stayText:'For a short visit, Chiang Mai city or the university/Nimman area is a practical base. For mountain excursions, factor winding roads and return transport into your lodging choice.', map:'Address and navigation', images:'Site photographs', source:'Photo source', routes:'Walking and transport guidance' },
+  th: { manager:'หน่วยงานดูแลสถานที่', highlights:'จุดเด่น', advice:'ข้อควรรู้ก่อนเดินทาง', hours:'เวลาเปิดเข้าชม', price:'ค่าใช้จ่าย', transport:'วิธีเดินทาง', experiences:'ประวัติ ภูมิทัศน์และประสบการณ์', steps:'เส้นทางเที่ยวแนะนำ 3 ขั้นตอน', step1:'ค้นหาทางเข้าหรือจุดขึ้นรถให้ถูกต้อง', step2:'ชมจุดสำคัญอย่างเคารพสถานที่', step3:'เดินทางต่อไปยังสถานที่ใกล้เคียงที่ตรวจสอบได้', lodging:'ที่พักแนะนำตามพื้นที่', reviews:'รีวิวผู้เยี่ยมชม', reviewText:'คะแนนเปลี่ยนแปลงตามรายการและเวลา โปรดเปิดรายการสถานที่นั้นใน Google Maps เพื่ออ่านรีวิวล่าสุด โดยไม่แสดงคะแนนที่ยังไม่ได้ตรวจสอบ', stayText:'หากเที่ยวช่วงสั้น พักในเมืองเชียงใหม่หรือย่านมหาวิทยาลัยและนิมมานสะดวกกว่า หากขึ้นดอยให้เผื่อถนนคดเคี้ยวและรถกลับ', map:'ที่อยู่และแผนที่', images:'ภาพสถานที่จริง', source:'ที่มาภาพ', routes:'คำแนะนำเส้นทางเดินและการเดินทาง' },
+  zh: { manager:'景点管理主体', highlights:'景点特色', advice:'出发前须知', hours:'开放时间', price:'门票与费用', transport:'交通方式', experiences:'历史、建筑与核心体验', steps:'三步游览路线', step1:'找准景点入口或上车地点', step2:'尊重场所规则，观察主要看点', step3:'根据路线继续前往下一处周边景点', lodging:'住宿建议', reviews:'游客评价', reviewText:'各地点的评分会随时间变化。请打开该景点专属 Google Maps 页面查看最新评价；本站不填写未经核验的分数。', stayText:'短途游览可住清迈市区或清迈大学、宁曼路一带。上山行程须考虑盘山道路与返程车辆安排。', map:'详细地址与交通导航', images:'景点实景照片', source:'图片出处', routes:'步行与乘车提示' }
+}[lang];
+const labels = {
+  en: ['Visitor overview', 'About this place and its setting', 'Basic information', 'Address', 'Visiting conditions', 'Suggested route', 'What to notice', 'Photography tips', 'Frequently asked question', 'Nearby guides', 'Open dedicated Google Maps location', 'Source and local checks', 'The individual site or facility is managed by its respective local operator; this independent visitor guide does not manage it. Confirm opening arrangements and any charges on site.'],
+  th: ['ข้อมูลการเยือน', 'เกี่ยวกับสถานที่และภูมิทัศน์', 'ข้อมูลพื้นฐาน', 'ที่อยู่', 'เงื่อนไขเข้าชม', 'เส้นทางแนะนำ', 'จุดสังเกต', 'เคล็ดลับถ่ายภาพ', 'คำถามพบบ่อย', 'สถานที่ใกล้เคียง', 'เปิดตำแหน่งเฉพาะใน Google Maps', 'แหล่งข้อมูลและการตรวจสอบ ณ สถานที่', 'สถานที่แต่ละแห่งมีหน่วยงานหรือผู้ดำเนินการดูแลของตนเอง คู่มืออิสระนี้ไม่ได้เป็นผู้บริหารสถานที่ กรุณาตรวจสอบเวลาและค่าบริการ ณ สถานที่'],
+  zh: ['游览概览', '关于景点与周边环境', '基本信息', '具体地址', '开放与费用', '建议路线', '观察重点', '拍照建议', '常见问题', '其他周边指南', '打开该景点专属 Google 地图', '资料来源与现场核实', '各景点由各自主管或运营单位负责管理；本独立旅行指南并非管理机构。开放安排和收费请以现场信息为准。']
+}[lang];
+---
+<BaseLayout lang={lang} title={`${p.name} | ${messages.meta.title}`} description={p.intro} messages={messages} pagePath={`explore/${place.slug}/`} pageName={p.name} includeFaq={false}>
+  <Header lang={lang} messages={messages} base={`/${lang}/`} switchPath={`explore/${place.slug}/`} />
+  <main class="bg-ivory text-ink pt-28 pb-20">
+    <div class="max-w-4xl mx-auto px-5">
+      <nav class="text-sm text-gold"><a href={`/${lang}/`}>{messages.header.home}</a> / <a href={`/${lang}/explore/`}>Explore</a> / {p.name}</nav>
+      <h1 class="font-display text-4xl md:text-5xl text-teak mt-6">{p.name}</h1>
+      <p class="text-lg mt-5 text-ink/75">{p.intro}</p>
+      <div class="mt-6 overflow-hidden rounded-2xl bg-white/75 border border-gold/20">
+        <img src={media.src} width="1280" height="850" class="w-full max-h-[430px] object-cover" loading="eager" decoding="async" alt={`${p.name} — ${media.label}`} />
+        <p class="px-4 py-2 text-xs text-ink/60">{sections.source}: <a href={media.source} target="_blank" rel="noopener" class="underline">{media.label}</a></p>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-5 text-sm text-teak/80"><span class="rounded-full border border-gold/30 px-4 py-2">{sections.hours}: {lang === 'zh' ? '现场核实' : lang === 'th' ? 'ตรวจสอบ ณ สถานที่' : 'Check locally'}</span><span class="rounded-full border border-gold/30 px-4 py-2">{place.address}</span></div>
+      <a class="inline-flex bg-gold text-teak rounded-full py-3 px-6 mt-6 font-semibold" href={mapUrl(place.query)} rel="noopener" target="_blank">{labels[10]} ↗</a>
+      <section class="mt-14 rounded-2xl bg-white/70 border border-gold/25 p-7">
+        <h2 class="font-display text-teak text-2xl">{sections.manager}</h2>
+        <p class="font-display text-teak text-xl mt-4">{authority}</p>
+        <p class="mt-3 text-ink/75 leading-relaxed">{lang === 'zh' ? '上述主体负责相应地点的日常管理、参观秩序或服务安排。到访前可参考其公布的开放规定；宗教活动与自然保护区域须遵守现场要求。' : lang === 'th' ? 'หน่วยงานดังกล่าวดูแลพื้นที่ การเข้าชมหรือบริการที่เกี่ยวข้อง ควรตรวจสอบข้อกำหนดการเข้าชมและปฏิบัติตามกฎของวัดหรือพื้นที่อนุรักษ์' : 'The named operator or relevant local authority oversees visitor arrangements, site use or services. Follow current entrance notices, temple etiquette and conservation rules as applicable.'}</p>
+      </section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{labels[2]}</h2>
+        <dl class="grid sm:grid-cols-2 gap-4 mt-5"><div class="bg-white/70 p-5 rounded-xl"><dt class="font-semibold">{labels[3]}</dt><dd class="mt-2 text-ink/75">{place.address}</dd></div><div class="bg-white/70 p-5 rounded-xl"><dt class="font-semibold">{labels[4]}</dt><dd class="mt-2 text-ink/75">{lang === 'th' ? 'ตรวจสอบเวลาเปิดและค่าบริการ ณ สถานที่' : lang === 'zh' ? '开放时间与费用请现场核实' : place.access}</dd></div></dl>
+      </section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{sections.highlights}</h2><p class="mt-4 leading-relaxed">{detail}</p></section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{sections.hours} · {sections.price}</h2><p class="mt-4 leading-relaxed text-ink/80">{lang === 'zh' ? '建议出发前核对当日入口公告、开放时段、门票或停车费用。不同景点或不同管理区域可能独立收费；本站不提供未经现场核实的固定价格。' : lang === 'th' ? 'ควรตรวจสอบประกาศทางเข้า เวลาเปิด ค่าเข้าชมและค่าจอดรถในวันที่ไป พื้นที่ต่างกันอาจเก็บค่าบริการแยก จึงไม่ระบุราคาที่ยังไม่ได้ตรวจสอบ' : 'Verify the entrance notice, opening window, admission or parking fee on the day of travel. Separate facilities may charge independently; an unverified fixed price is intentionally omitted.'}</p></section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{sections.transport} · {labels[5]}</h2><p class="mt-4 leading-relaxed text-ink/80">{p.route}</p><p class="mt-3 text-sm text-ink/65">{lang === 'zh' ? '山地路线建议提前确认返程车辆、天气及弯道行车条件；步行路线只使用允许进入的步道。' : lang === 'th' ? 'การเดินทางขึ้นดอยควรตรวจสอบรถกลับ สภาพอากาศและถนนโค้ง หากเดินป่าให้ใช้เส้นทางที่อนุญาต' : 'For mountain roads, confirm return transport and weather. Use designated walking trails rather than traffic lanes.'}</p></section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{sections.experiences}</h2><p class="mt-4 leading-relaxed text-ink/80">{p.context}</p><h3 class="font-display text-teak text-xl mt-6">{labels[6]}</h3><p class="mt-2 text-ink/80">{p.observe}</p></section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{sections.steps}</h2><ol class="mt-5 space-y-4">{[sections.step1,sections.step2,sections.step3].map((step,i) => <li class="flex gap-4 rounded-xl bg-white/75 border border-gold/20 p-5"><span class="text-gold font-semibold text-xl">{i+1}</span><span>{step}{i===0 ? ` — ${p.route}` : i===1 ? ` — ${p.photo}` : ''}</span></li>)}</ol></section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{sections.advice}</h2><p class="mt-4 text-ink/80">{lang === 'zh' ? '带饮水、防晒用品，雨季留意湿滑地面。尊重宗教场所的服装及拍摄规定，不在危险路边停留。' : lang === 'th' ? 'เตรียมน้ำดื่ม อุปกรณ์กันแดด และระวังพื้นลื่นในฤดูฝน แต่งกายสุภาพเมื่อเข้าวัด ไม่หยุดรถในจุดอันตราย' : 'Carry drinking water and sun protection, expect slippery ground during rainy weather, dress respectfully at temples, and avoid unsafe roadside stops.'}</p></section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{labels[7]}</h2><p class="mt-4 text-ink/80">{p.photo}</p></section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{sections.lodging}</h2><p class="mt-4 text-ink/80">{sections.stayText}</p></section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{sections.reviews}</h2><p class="mt-4 text-ink/80">{sections.reviewText}</p><a href={mapUrl(place.query)} target="_blank" rel="noopener" class="text-gold underline inline-block mt-3">Google Maps ↗</a></section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{labels[8]}</h2><p class="mt-4 text-ink/80">{p.faq}</p></section>
+      <section class="mt-12 rounded-2xl border border-gold/25 bg-white/75 p-6"><h2 class="font-display text-teak text-2xl">{sections.map}</h2><p class="mt-3 text-ink/75">{place.address}</p><a href={mapUrl(place.query)} target="_blank" rel="noopener" class="inline-block mt-4 bg-gold text-teak px-5 py-3 rounded-full font-semibold">{labels[10]} ↗</a></section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{labels[11]}</h2><p class="mt-3 text-ink/75">{lang === 'zh' ? '旅行背景参考泰国旅游局的清迈资料；如果下方提供景点专属资料链接，可进一步核对。出行前以现场公告为准。' : lang === 'th' ? 'บริบทการเที่ยวอ้างอิงข้อมูลเชียงใหม่จากการท่องเที่ยวแห่งประเทศไทย หากมีลิงก์เฉพาะสถานที่สามารถตรวจสอบเพิ่มเติมได้ โปรดยึดประกาศ ณ สถานที่' : 'General Chiang Mai travel context is informed by Tourism Authority of Thailand resources. Where available, a dedicated destination reference is linked below; confirm visiting conditions locally.'}</p><a class="text-gold underline mt-3 inline-block" target="_blank" rel="noopener" href={place.official || 'https://www.tourismthailand.org/Destinations/Provinces/Chiang-Mai/101'}>{place.official ? 'Destination reference' : 'Tourism Authority of Thailand'} ↗</a></section>
+      <section class="mt-12"><h2 class="font-display text-teak text-2xl">{labels[9]}</h2><div class="grid sm:grid-cols-2 gap-3 mt-5">{nearby.filter(other => other.slug !== place.slug).map(other => <a class="rounded-xl bg-white/70 p-4 text-gold hover:underline" href={`/${lang}/explore/${other.slug}/`}>{other.content[lang].name} →</a>)}</div></section>
+    </div>
+  </main>
+  <Footer lang={lang} messages={messages} />
+</BaseLayout>

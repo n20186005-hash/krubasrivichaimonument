@@ -2,7 +2,7 @@
 import { siteConfig } from '../config';
 
 interface Props {
-  lang: any;
+  lang: 'th' | 'en' | 'zh';
   messages: Record<string, any>;
 }
 const { lang, messages } = Astro.props;

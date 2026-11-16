@@ -1,0 +1,20 @@
+/** Location-matched photo provenance. The main monument photo is reused without altering the original. */
+export const exploreMedia: Record<string, { src: string; source: string; label: string }> = {
+  'huay-kaew-waterfall': { src: '/explore/huay-kaew-waterfall/1.jpg', source: 'https://www.livetheworld.com/post/huay-kaew-waterfall-an-oasis-in-the-city-of-chiang-mai-44qi', label: 'Huay Kaew waterfall — Live the World' },
+  'wat-phra-that-doi-suthep': { src: '/explore/wat-phra-that-doi-suthep/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:20171106_Wat_Phra_That_Doi_Suthep_0103_DxO.jpg', label: 'Wat Phra That Doi Suthep — Wikimedia Commons' },
+  'wat-pha-lat': { src: '/explore/wat-pha-lat/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Chiang_Mai_-_Wat_Pha_Lat_-_0001.jpg', label: 'Wat Pha Lat — Wikimedia Commons' },
+  'chiang-mai-zoo': { src: '/explore/chiang-mai-zoo/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Thailand_-Chiang_Mai_Zoo_-_2.jpg', label: 'Chiang Mai Zoo — Wikimedia Commons' },
+  'monthathan-waterfall': { src: '/explore/monthathan-waterfall/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Monthathan_Waterfall,_Chiangmai,_Thailand.jpg', label: 'Monthathan Waterfall — Wikimedia Commons' },
+  'bhubing-palace': { src: '/explore/bhubing-palace/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Bhubing_Palace_garden_P1040312a.jpg', label: 'Bhubing Palace garden — Wikimedia Commons' },
+  'doi-pui-hmong-village': { src: '/explore/doi-pui-hmong-village/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Hmong_tribal_village_in_the_middle_of_Doi_Suthep-Pui_mountain.jpg', label: 'Doi Pui village — Wikimedia Commons' },
+  'wat-umong': { src: '/explore/wat-umong/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Tunnels_at_Wat_Umong_Suan_Phutthatham-10.jpg', label: 'Wat Umong tunnels — Wikimedia Commons' },
+  'wat-suan-dok': { src: '/explore/wat-suan-dok/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Wat_Suan_Dok_2026_(325013).jpg', label: 'Wat Suan Dok — Wikimedia Commons' },
+  'wat-chet-yot': { src: '/explore/wat-chet-yot/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Wat_Chet_Yot,_Chiang_Mai_-_2008-02-24_-_001.jpg', label: 'Wat Chet Yot — Wikimedia Commons' },
+  'ang-kaew-reservoir': { src: '/explore/ang-kaew-reservoir/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Ang_Kaew_reservoir.jpg', label: 'Ang Kaew Reservoir — Wikimedia Commons' },
+  'chiang-mai-university': { src: '/explore/chiang-mai-university/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Chiang_Mai_University_Library_in_2025.jpg', label: 'Chiang Mai University Library — Wikimedia Commons' },
+  'nimman-road': { src: '/explore/nimman-road/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Nimmanhaeminda_Road_2025.jpg', label: 'Nimmanhaemin Road — Wikimedia Commons' },
+  'huay-tung-tao': { src: '/explore/huay-tung-tao/1.jpg', source: 'https://trusteddmc.com/experiences/cities/13-best-experiences-and-attractions-in-chiang-mai.aspx', label: 'Huay Tung Tao Lake — Trusted DMC' },
+  'doi-suthep-songthaew': { src: '/explore/doi-suthep-songthaew/1.jpg', source: 'https://commons.wikimedia.org/wiki/File:Red_Car_Chiang_Mai_queue_in_front_of_Chiang_Mai_Zoo.jpg', label: 'Songthaew rank by Chiang Mai Zoo — Wikimedia Commons' },
+  'monks-trail-wat-pha-lat': { src: '/explore/monks-trail-wat-pha-lat/1.jpg', source: 'https://es.wikiloc.com/rutas-senderismo/ruta-hasta-wat-pha-lat-monks-trail-145420353', label: 'Monk’s Trail sign — Wikiloc' },
+  'srivichai-road-pilgrimage': { src: '/gallery/kruba-srivichai-monument-1.jpg', source: 'https://krubasrivichaimonument.com/en/', label: 'Kruba Srivichai Monument — existing site gallery' },
+};

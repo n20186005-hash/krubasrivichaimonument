@@ -17,13 +17,13 @@ const legacy = messages.legacy;
       <h3 class="font-display text-2xl text-teak mb-2">{legacy.philosophies.title}</h3>
       <p class="text-sm text-ink/75 mb-6 max-w-3xl">{legacy.philosophies.intro}</p>
       <div class="grid md:grid-cols-3 gap-6">
-        {legacy.philosophies.items.map((p) => (
+        {legacy.philosophies.items.map((p: any) => (
           <div class="rounded-2xl border border-gold/30 bg-white/60 p-6 shadow-sm">
             <div class="font-display text-2xl text-teak font-semibold">{p.name}</div>
             <div class="text-sm text-gold tracking-wide mb-3">{p.nameEn}</div>
             <p class="text-sm font-medium text-teak/90 mb-3">{p.tagline}</p>
             <ul class="space-y-2 text-sm text-ink/75">
-              {p.points.map((pt) => (
+              {p.points.map((pt: any) => (
                 <li class="flex gap-2">
                   <span class="text-gold mt-0.5" aria-hidden="true">•</span>
                   <span>{pt}</span>
@@ -48,7 +48,7 @@ const legacy = messages.legacy;
             </tr>
           </thead>
           <tbody>
-            {legacy.gms.rows.map((r) => (
+            {legacy.gms.rows.map((r: any) => (
               <tr class="border-t border-gold/20 odd:bg-white/50">
                 <td class="px-5 py-4 align-top font-semibold text-teak whitespace-nowrap">{r.region}</td>
                 <td class="px-5 py-4 align-top text-ink/80">{r.temples}</td>
@@ -72,7 +72,7 @@ const legacy = messages.legacy;
             </tr>
           </thead>
           <tbody>
-            {legacy.unesco.rows.map((r) => (
+            {legacy.unesco.rows.map((r: any) => (
               <tr class="border-t border-gold/20 odd:bg-white/50">
                 <td class="px-5 py-4 align-top font-semibold text-teak whitespace-nowrap">{r.area}</td>
                 <td class="px-5 py-4 align-top text-ink/80">{r.fit}</td>
@@ -88,7 +88,7 @@ const legacy = messages.legacy;
       <h3 class="font-display text-2xl text-teak mb-2">{legacy.pilgrimage.title}</h3>
       <p class="text-sm text-ink/75 mb-6 max-w-3xl">{legacy.pilgrimage.intro}</p>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {legacy.pilgrimage.stations.map((s) => (
+        {legacy.pilgrimage.stations.map((s: any) => (
           <div class="rounded-2xl border border-gold/25 bg-white/50 p-5">
             <div class="font-display text-gold text-sm mb-2">{s.num}</div>
             <h4 class="font-display text-teak font-semibold leading-snug mb-2">{s.name}</h4>
@@ -102,7 +102,7 @@ const legacy = messages.legacy;
     <div class="mt-16">
       <h3 class="font-display text-2xl text-teak mb-6">{legacy.timeline.title}</h3>
       <ol class="relative border-l-2 border-gold/40 ml-3 space-y-8">
-        {legacy.timeline.events.map((e) => (
+        {legacy.timeline.events.map((e: any) => (
           <li class="ml-6">
             <span class="absolute -left-[9px] mt-1.5 h-4 w-4 rounded-full bg-gold border-2 border-ivory"></span>
             <div class="font-display text-gold text-sm">{e.date}</div>

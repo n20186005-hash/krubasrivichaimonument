@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { getI18n, languagesList, type Lang } from '../../../i18n/ui';
+import { nearby } from '../../../data/nearby';
+export function getStaticPaths() { return languagesList.map(lang => ({ params: { lang } })); }
+const { lang } = Astro.params as { lang: Lang };
+const { messages } = await getI18n(new URL(`/${lang}/`, 'http://localhost'));
+const titles = { en: 'Explore around Kruba Srivichai Monument', th: 'เที่ยวรอบอนุสาวรีย์ครูบาศรีวิชัย', zh: '古巴·斯里维差纪念碑周边景点' };
+const intros = { en: 'Seventeen distinct guides across Doi Suthep temples, waterfalls, pilgrimage routes, highland villages, Chiang Mai University and practical transport. Some stops require a separate drive.', th: 'คู่มือ 17 เรื่อง ทั้งวัด น้ำตก เส้นทางศรัทธา ชุมชนบนดอย ย่านมหาวิทยาลัยเชียงใหม่ และการเดินทาง บางจุดต้องใช้รถแยกต่างหาก', zh: '17 篇独立指南涵盖素贴山寺庙、瀑布、朝圣路线、山地村落、清迈大学周边与交通；部分目的地需要单独乘车。' };
+const more = { en: 'Read the local guide', th: 'อ่านคู่มือสถานที่', zh: '查看景点指南' };
+---
+<BaseLayout lang={lang} title={titles[lang]} description={intros[lang]} messages={messages} pagePath="explore/" pageName={titles[lang]} includeFaq={false}>
+  <Header lang={lang} messages={messages} base={`/${lang}/`} switchPath="explore/" />
+  <main class="bg-ivory text-ink pt-28 pb-20 min-h-screen">
+    <div class="max-w-6xl mx-auto px-5">
+      <a href={`/${lang}/`} class="text-gold text-sm">← {messages.header.home}</a>
+      <h1 class="font-display text-teak text-4xl mt-6">{titles[lang]}</h1>
+      <p class="text-lg text-ink/75 mt-5 max-w-3xl">{intros[lang]}</p>
+      <div class="mt-10 grid md:grid-cols-2 gap-6">
+        {nearby.map(place => <article class="rounded-2xl border border-gold/25 bg-white/70 p-7">
+          <h2 class="font-display text-teak text-2xl">{place.content[lang].name}</h2>
+          <p class="text-ink/70 mt-3">{place.content[lang].intro}</p>
+          <a class="inline-block mt-5 text-gold font-semibold hover:underline" href={`/${lang}/explore/${place.slug}/`}>{more[lang]} →</a>
+        </article>)}
+      </div>
+    </div>
+  </main>
+  <Footer lang={lang} messages={messages} />
+</BaseLayout>
