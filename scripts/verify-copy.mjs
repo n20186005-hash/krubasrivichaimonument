@@ -43,7 +43,9 @@ const expectations = {
 
 let fail = 0;
 for (const [lang, list] of Object.entries(expectations)) {
-  const html = readFileSync(resolve(root, 'dist', lang, 'index.html'), 'utf8');
+  // Source attribution now lives on dedicated pages rather than occupying the homepage.
+  const html = ['index.html', 'sources/index.html', 'reviews/index.html', 'photo-credits/index.html']
+    .map(path => readFileSync(resolve(root, 'dist', lang, path), 'utf8')).join('\n');
   console.log(`\n--- ${lang} ---`);
   for (const needle of list) {
     const ok = html.includes(needle);
