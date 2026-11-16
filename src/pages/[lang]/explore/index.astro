@@ -4,6 +4,7 @@ import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 import { getI18n, languagesList, type Lang } from '../../../i18n/ui';
 import { nearby } from '../../../data/nearby';
+import { exploreMedia } from '../../../data/explore-media';
 export function getStaticPaths() { return languagesList.map(lang => ({ params: { lang } })); }
 const { lang } = Astro.params as { lang: Lang };
 const { messages } = await getI18n(new URL(`/${lang}/`, 'http://localhost'));
@@ -20,6 +21,7 @@ const more = { en: 'Read the local guide', th: 'อ่านคู่มือ�
       <p class="text-lg text-ink/75 mt-5 max-w-3xl">{intros[lang]}</p>
       <div class="mt-10 grid md:grid-cols-2 gap-6">
         {nearby.map(place => <article class="rounded-2xl border border-gold/25 bg-white/70 p-7">
+          <a href={`/${lang}/explore/${place.slug}/`}><img src={exploreMedia[place.slug].src} loading="lazy" width="640" height="400" class="w-full h-52 object-cover rounded-xl mb-5" alt={`${place.content[lang].name} — ${exploreMedia[place.slug].label}`} /></a>
           <h2 class="font-display text-teak text-2xl">{place.content[lang].name}</h2>
           <p class="text-ink/70 mt-3">{place.content[lang].intro}</p>
           <a class="inline-block mt-5 text-gold font-semibold hover:underline" href={`/${lang}/explore/${place.slug}/`}>{more[lang]} →</a>
