@@ -12,6 +12,7 @@ const alts: string[] = gallery.alts;
 // 以实际存在的图片数量为准，并取与 alts 的较小值，防止删图后 alts 未同步导致空图
 const count = Math.min(siteConfig.galleryCount, alts.length);
 const mapsUrl = siteConfig.mapsUrl;
+const creditsLinkText = { th: 'ที่มาและเครดิตภาพ', en: 'Photo credits', zh: '图片来源与版权说明' }[lang];
 ---
 
 <section id="gallery" class="py-20 bg-ivory text-ink">
@@ -20,7 +21,7 @@ const mapsUrl = siteConfig.mapsUrl;
     <h2 class="font-display font-semibold text-3xl md:text-5xl text-teak mt-2">{gallery.heading}</h2>
     <p class="mt-4 max-w-2xl text-ink/80">{gallery.intro}</p>
     {gallery.historicalNote && <p class="mt-2 max-w-2xl text-ink/70 italic text-sm">{gallery.historicalNote}</p>}
-    <p class="mt-3 text-xs text-ink/50">{gallery.credits}</p>
+    <a href={`/${lang}/photo-credits/`} class="mt-3 inline-block text-xs text-ink/60 underline underline-offset-4 hover:text-teak">{creditsLinkText} →</a>
 
     <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 auto-rows-[180px]">
       {Array.from({ length: count }).map((_, i) => {
