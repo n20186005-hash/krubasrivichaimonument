@@ -13,11 +13,83 @@ export async function getStaticPaths() {
   return paths;
 }
 
-const { lang, doc } = Astro.params as { lang: Lang; doc: string };
+const { lang, doc } = Astro.params as { lang: Lang; doc: 'privacy-policy' | 'terms-of-service' | 'cookie-settings' };
 const { getI18n } = await import('../../i18n/ui');
 const { messages } = await getI18n(new URL(`/${lang}/${doc}`, 'http://localhost'));
 const legal = (messages.legal && messages.legal[doc]) || { title: doc, body: [] };
 const description = (legal.body && legal.body[0]) || legal.title;
+const details = {
+  zh: {
+    'privacy-policy': [
+      ['适用范围与运营方式', '本站为独立旅游资讯项目，无用户账户、评论表单、在线订票或付款功能。网页托管服务与第三方链接可能独立处理技术数据。'],
+      ['我们处理哪些数据', '访问时，Cloudflare 可能为网络连接、日志、安全和性能处理 IP 地址、请求时间、设备及浏览器信息。本站不主动要求姓名、电话或住址。'],
+      ['可选访问分析', '本站使用 Google Analytics 了解访问趋势，但仅在您主动允许分析 Cookie 后才加载其脚本。允许后 Google 可能接收页面 URL、访问来源、浏览器信息及访问事件；这不保证完全匿名。'],
+      ['Cookie 与您的选择', '分析选项保存在本浏览器的 localStorage 中。您可以在 Cookie 设置页允许或拒绝；拒绝后本站不再加载新的分析脚本。已经发出的数据无法撤回。'],
+      ['第三方网站和保存时间', 'Google 地图、维基百科等外部网站有独立隐私规则；Cloudflare 与 Google 的数据保存时间遵循各自政策。我们不出售用户资料。'],
+      ['更正与联系', '如有隐私、页面内容或数据处理问题，可发送邮件至 laupetter72@gmail.com。政策随实际服务调整，更新时将修改本页日期。'],
+    ],
+    'terms-of-service': [
+      ['服务性质', '本站提供古巴·斯里维差纪念碑及清迈周边景点的非营利性旅游、历史与科普信息，不提供预约、门票销售或官方服务。'],
+      ['准确性与出行风险', '开放时间、门票、交通、路线及天气可能变化。出发前请查阅管理单位公告，并遵循现场规则。任何行程选择由访客自行判断。'],
+      ['资料、图片及外部链接', '文字内容为公开资料整理；图片版权归原作者所有。本站的来源说明不代表获得所有图片的再使用授权。外部网站由第三方独立经营。'],
+      ['合理使用与限制', '请勿利用本站传播违法内容、冒用管理机构或干扰网站服务。对于因第三方信息变动或服务中断造成的损失，本站不作超出适用法律要求的保证。'],
+      ['反馈与变更', '发现事实错误、失效链接或图片署名问题，请联系 laupetter72@gmail.com。条款更新后将在本页公布。'],
+    ],
+    'cookie-settings': [
+      ['必要存储', '本站使用浏览器本地存储记录您的分析选择。该项用于记住是否允许分析，并不用于广告画像。'],
+      ['可选分析', 'Google Analytics 默认不加载。只有选择“允许分析”后，相关脚本和可能的分析 Cookie 才会启用。'],
+      ['拒绝与撤回', '点击“拒绝分析”可阻止后续加载；如果当前页面此前已加载分析，页面将重新载入。本站会尝试删除本域常见的 Google Analytics Cookie，但不能撤回先前发送的数据或清除第三方域 Cookie。'],
+      ['第三方与浏览器控制', '访问外部地图、视频或其他网站时，它们可能使用自己的 Cookie。您也可以在浏览器设置中清除本地存储与 Cookie。'],
+    ],
+  },
+  en: {
+    'privacy-policy': [
+      ['Scope and operation', 'This is an independent travel information site without accounts, comment forms, bookings or payments. Hosting and linked services may process technical information separately.'],
+      ['Information processed', 'Cloudflare may process IP addresses, request times and browser or device data for connectivity, security and performance. We do not ask for names, phone numbers or home addresses.'],
+      ['Optional analytics', 'Google Analytics is loaded only after you choose to allow analytics. It may receive page URLs, referrers, browser details and browsing events; such data is not guaranteed anonymous.'],
+      ['Your choices', 'The decision is stored in localStorage on this browser. You may change it on the Cookie Settings page. Refusing stops future loading, but does not retract data already sent.'],
+      ['Third parties and retention', 'External sites such as Google Maps and Wikipedia have their own policies. Cloudflare and Google apply their own retention practices. We do not sell visitor data.'],
+      ['Corrections and contact', 'For privacy or factual corrections contact laupetter72@gmail.com. We will revise the update date when the policy changes.'],
+    ],
+    'terms-of-service': [
+      ['Nature of service', 'We provide nonprofit travel, historical and educational information about the Kruba Srivichai Monument and nearby Chiang Mai attractions; we do not sell tickets or offer official services.'],
+      ['Accuracy and travel decisions', 'Hours, admissions, transport, routes and weather can change. Check announcements from the relevant operator before visiting and follow on-site rules.'],
+      ['Content, photographs and links', 'Text summarizes public sources; photograph rights belong to their creators. Credit statements do not imply authorization for reuse. External websites operate independently.'],
+      ['Acceptable use and limitations', 'Do not impersonate authorities, interfere with the site or use it for unlawful purposes. We provide no warranty beyond what applicable law requires for third-party changes or outages.'],
+      ['Feedback and changes', 'Report corrections, broken links or photo-credit requests to laupetter72@gmail.com. Updated terms will appear here.'],
+    ],
+    'cookie-settings': [
+      ['Essential local storage', 'This site saves your analytics preference in browser localStorage. It is used to remember your choice, not for advertising profiles.'],
+      ['Optional analytics', 'Google Analytics does not load by default. Its script and possible cookies activate only when you allow analytics.'],
+      ['Rejecting or withdrawing', 'Rejecting prevents further loading and reloads the page if analytics was previously active. We attempt to delete common first-party GA cookies, but cannot undo data already transmitted or clear third-party cookies.'],
+      ['External services', 'Linked maps and other third-party websites may use their own cookies. You can also clear cookies and local storage in your browser settings.'],
+    ],
+  },
+  th: {
+    'privacy-policy': [
+      ['ขอบเขตและการดำเนินงาน', 'เว็บไซต์นี้เป็นคู่มือท่องเที่ยวอิสระ ไม่มีบัญชีผู้ใช้ แบบฟอร์มความคิดเห็น การจอง หรือการชำระเงิน บริการโฮสต์และลิงก์ภายนอกอาจประมวลผลข้อมูลทางเทคนิคแยกกัน'],
+      ['ข้อมูลที่เกี่ยวข้อง', 'Cloudflare อาจประมวลผลที่อยู่ IP เวลาเรียกหน้าเว็บ และข้อมูลเบราว์เซอร์หรืออุปกรณ์เพื่อการเชื่อมต่อ ความปลอดภัย และประสิทธิภาพ เราไม่ขอชื่อ เบอร์โทร หรือที่อยู่บ้าน'],
+      ['การวิเคราะห์ที่เลือกได้', 'Google Analytics จะโหลดเมื่อคุณอนุญาตเท่านั้น โดยอาจได้รับ URL หน้าเว็บ แหล่งที่มา ข้อมูลเบราว์เซอร์ และเหตุการณ์การเข้าชม ข้อมูลดังกล่าวไม่รับประกันว่าไม่สามารถระบุตัวตนได้'],
+      ['ทางเลือกของคุณ', 'การเลือกบันทึกไว้ใน localStorage ของเบราว์เซอร์ เปลี่ยนได้ในหน้าตั้งค่าคุกกี้ การปฏิเสธหยุดการโหลดครั้งต่อไป แต่ไม่สามารถเรียกคืนข้อมูลที่ส่งไปแล้ว'],
+      ['บุคคลที่สามและการเก็บรักษา', 'Google Maps และ Wikipedia มีนโยบายของตนเอง Cloudflare และ Google จัดการระยะเวลาเก็บข้อมูลตามนโยบายของแต่ละบริการ เราไม่ขายข้อมูลผู้เข้าชม'],
+      ['ติดต่อและแก้ไข', 'แจ้งปัญหาความเป็นส่วนตัวหรือข้อผิดพลาดได้ที่ laupetter72@gmail.com เมื่อแก้ไขนโยบายจะปรับปรุงวันที่หน้าเว็บ'],
+    ],
+    'terms-of-service': [
+      ['ลักษณะบริการ', 'เว็บไซต์ให้ข้อมูลท่องเที่ยว ประวัติศาสตร์ และการศึกษาเกี่ยวกับอนุสาวรีย์ครูบาศรีวิชัยและสถานที่ใกล้เคียงโดยไม่แสวงหากำไร ไม่ขายบัตรหรือให้บริการอย่างเป็นทางการ'],
+      ['ความถูกต้องและการเดินทาง', 'เวลาเปิด ค่าเข้าชม การเดินทาง เส้นทาง และสภาพอากาศอาจเปลี่ยนแปลง โปรดตรวจสอบประกาศผู้ดูแลสถานที่และปฏิบัติตามกฎก่อนเดินทาง'],
+      ['เนื้อหา ภาพถ่าย และลิงก์', 'ข้อความเรียบเรียงจากแหล่งสาธารณะ ลิขสิทธิ์ภาพเป็นของผู้สร้าง การให้เครดิตไม่ใช่การอนุญาตให้นำภาพไปใช้ต่อ เว็บไซต์ภายนอกดำเนินการอย่างอิสระ'],
+      ['การใช้งานและข้อจำกัด', 'ห้ามแอบอ้างหน่วยงาน รบกวนการให้บริการ หรือใช้เว็บไซต์ในทางผิดกฎหมาย เว็บไซต์ไม่รับประกันความเปลี่ยนแปลงของข้อมูลภายนอกเกินกว่าที่กฎหมายกำหนด'],
+      ['ข้อเสนอแนะและการแก้ไข', 'แจ้งข้อมูลผิด ลิงก์เสีย หรือคำขอเกี่ยวกับภาพถ่ายที่ laupetter72@gmail.com การเปลี่ยนแปลงข้อกำหนดจะแสดงในหน้านี้'],
+    ],
+    'cookie-settings': [
+      ['พื้นที่จัดเก็บที่จำเป็น', 'เว็บไซต์ใช้ localStorage เพื่อจดจำการอนุญาตวิเคราะห์ ไม่ใช้เพื่อสร้างโปรไฟล์โฆษณา'],
+      ['การวิเคราะห์ทางเลือก', 'Google Analytics ไม่โหลดโดยค่าเริ่มต้น สคริปต์และคุกกี้ที่เกี่ยวข้องจะทำงานเมื่อคุณเลือกอนุญาต'],
+      ['การปฏิเสธและถอนความยินยอม', 'เมื่อปฏิเสธจะหยุดการโหลดใหม่ และรีโหลดหน้าเว็บหากเคยเปิดใช้งาน เราจะพยายามลบคุกกี้ GA ทั่วไปในโดเมนนี้ แต่เรียกคืนข้อมูลที่ส่งแล้วหรือลบคุกกี้โดเมนอื่นไม่ได้'],
+      ['บริการภายนอก', 'แผนที่และเว็บไซต์ภายนอกอาจใช้คุกกี้ของตนเอง คุณสามารถลบคุกกี้และข้อมูลเว็บไซต์ในเบราว์เซอร์ได้'],
+    ],
+  },
+}[lang][doc];
+const cookieLabels = { zh: ['允许分析', '拒绝分析', '当前选择：', '尚未选择', '已允许', '已拒绝'], en: ['Allow analytics', 'Reject analytics', 'Current choice: ', 'No choice saved', 'Allowed', 'Rejected'], th: ['อนุญาตการวิเคราะห์', 'ปฏิเสธการวิเคราะห์', 'ตัวเลือกปัจจุบัน: ', 'ยังไม่ได้เลือก', 'อนุญาตแล้ว', 'ปฏิเสธแล้ว'] }[lang];
 ---
 
 <BaseLayout
@@ -34,9 +106,33 @@ const description = (legal.body && legal.body[0]) || legal.title;
     <div class="max-w-3xl mx-auto px-5">
       <a href={`/${lang}/`} class="text-sm text-gold hover:underline">← {messages.footer.brand.name}</a>
       <h1 class="font-display text-3xl md:text-4xl text-teak mt-4">{legal.title}</h1>
-      <div class="mt-6 space-y-4 text-ink/80 leading-relaxed">
-        {legal.body.map((p: string) => <p>{p}</p>)}
+      <p class="text-xs text-ink/50 mt-3">2026-11-16</p>
+      <div class="mt-8 space-y-8 text-ink/80 leading-relaxed">
+        {details.map(([heading, body]) => <section><h2 class="font-display text-xl text-teak mb-3">{heading}</h2><p>{body}</p></section>)}
       </div>
+      {doc === 'cookie-settings' && <div class="mt-10 rounded-xl border border-gold/30 p-6 bg-white/70">
+        <p id="consent-status" class="mb-5" data-prefix={cookieLabels[2]} data-none={cookieLabels[3]} data-allow={cookieLabels[4]} data-deny={cookieLabels[5]}>{cookieLabels[2]}{cookieLabels[3]}</p>
+        <div class="flex flex-wrap gap-3">
+          <button id="allow-analytics" class="rounded-full bg-teak text-white px-5 py-3" type="button">{cookieLabels[0]}</button>
+          <button id="deny-analytics" class="rounded-full border border-teak px-5 py-3" type="button">{cookieLabels[1]}</button>
+        </div>
+        <script is:inline>
+          (() => {
+            const status = document.getElementById('consent-status');
+            if (!status) return;
+            const key = 'kruba-analytics-consent';
+            const show = () => { const choice = localStorage.getItem(key); status.textContent = status.dataset.prefix + (choice === 'allow' ? status.dataset.allow : choice === 'deny' ? status.dataset.deny : status.dataset.none); };
+            try { show(); } catch (_) {}
+            document.getElementById('allow-analytics')?.addEventListener('click', () => { localStorage.setItem(key, 'allow'); window.krubaEnableAnalytics?.(); show(); });
+            document.getElementById('deny-analytics')?.addEventListener('click', () => {
+              const wasAllowed = localStorage.getItem(key) === 'allow';
+              localStorage.setItem(key, 'deny');
+              document.cookie.split(';').forEach(c => { const name = c.trim().split('=')[0]; if (name === '_ga' || name.startsWith('_ga_') || name === '_gid') document.cookie = name + '=; Max-Age=0; Path=/; SameSite=Lax'; });
+              show(); if (wasAllowed) location.reload();
+            });
+          })();
+        </script>
+      </div>}
     </div>
   </div>
 </BaseLayout>
